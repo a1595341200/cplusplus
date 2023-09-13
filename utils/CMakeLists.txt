@@ -43,6 +43,8 @@ include_directories(
 
 link_libraries(
     glog::glog
+    GTest::gtest
+    GTest::gmock
 )
 
 add_library(${PROJECT_N} SHARED ${SRCS})
@@ -64,7 +66,7 @@ add_executable(test_${PROJECT_N}
     ${SRCS}
 )
 
-target_link_libraries(test_${PROJECT_N}
+target_link_libraries(test_${PROJECT_N} PUBLIC
 GTest::gtest
 GTest::gmock
 )
