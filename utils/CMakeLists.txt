@@ -5,9 +5,12 @@ project(${PROJECT_N} VERSION 1.0)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
-set(CMAKE_CXX_FLAGS "-O0 -g3")
+
+set(CMAKE_CXX_FLAGS_DEBUG "-O0 -g3")
+find_package(glog REQUIRED)
 
 file(GLOB_RECURSE SRCS ${PROJECT_SOURCE_DIR}/src/*.cpp)
+file(GLOB_RECURSE TEST_SRCS ${PROJECT_SOURCE_DIR}/test/*tests.cpp)
 
 # a macro that gets all of the header containing directories. 
 MACRO(header_directories return_list includes_base_folder extention )
@@ -37,7 +40,18 @@ endforeach()
 include_directories(
     include
 )
+
+link_libraries(
+    glog::glog
+)
+
 add_library(${PROJECT_N} SHARED ${SRCS})
+
+set_target_properties(${PROJECT_N} PROPERTIES
+    DEBUG_POSTFIX "_debug"
+    RELEASE_POSTFIX "_release"
+)
+
 target_include_directories(${PROJECT_N} PUBLIC include)
 
 set(UNIT_TEST ON)
@@ -46,7 +60,7 @@ if (UNIT_TEST)
 enable_testing()
 find_package(GTest CONFIG REQUIRED)
 add_executable(test_${PROJECT_N} 
-    ${PROJECT_SOURCE_DIR}/test/Utils_tests.cpp 
+    ${TEST_SRCS}
     ${SRCS}
 )
 
