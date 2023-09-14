@@ -1,0 +1,31 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+// C++ Insights, copyright (C) by Andreas Fertig
+// Distributed under an MIT license. See LICENSE for details
+//
+///////////////////////////////////////////////////////////////////////////////
+
+/// \brief C++ Insights options definition
+#ifndef INSIGHTS_OPT
+#define INSIGHTS_OPT(opt, name, deflt, description, category)
+#endif
+
+INSIGHTS_OPT("alt-syntax-for",
+             UseAltForSyntax,
+             false,
+             "Transform all for-loops into their equivalent while-loop.",
+             gInsightCategory)
+INSIGHTS_OPT("alt-syntax-subscription",
+             UseAltArraySubscriptionSyntax,
+             false,
+             "Transform array subscriptions E1[E2] into (*(E1 + E2)).", gInsightCategory)
+INSIGHTS_OPT("show-all-implicit-casts", ShowAllImplicitCasts, false, "Show all implicit casts which can be noisy.", gInsightCategory)
+INSIGHTS_OPT("edu-show-initlist", UseShowInitializerList, false, "Transform a std::initializer list", gInsightEduCategory)
+INSIGHTS_OPT("edu-show-noexcept", UseShowNoexcept, false, "Transform a noexcept function", gInsightEduCategory)
+INSIGHTS_OPT("edu-show-padding", UseShowPadding, false, "Show the padding bytes in a struct/class", gInsightEduCategory)
+INSIGHTS_OPT("edu-show-coroutine-transformation",
+             ShowCoroutineTransformation,
+             false,
+             "Show transformations of coroutines.",
+             gInsightEduCategory)
+#undef INSIGHTS_OPT

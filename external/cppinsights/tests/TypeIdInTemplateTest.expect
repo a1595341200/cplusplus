@@ -1,0 +1,47 @@
+#define INSIGHTS_USE_TEMPLATE
+
+#include <string>
+#include <typeinfo>
+
+template<typename T>
+class Foo
+{
+  
+  public: 
+  inline std::basic_string<char, std::char_traits<char>, std::allocator<char> > Get()
+  {
+    std::basic_string<char, std::char_traits<char>, std::allocator<char> > typeId = std::basic_string<char, std::char_traits<char>, std::allocator<char> >{typeid(T).name()} /* NRVO variable */;
+    return std::basic_string<char, std::char_traits<char>, std::allocator<char> >(static_cast<std::basic_string<char, std::char_traits<char>, std::allocator<char> > &&>(typeId));
+  }
+  
+};
+
+/* First instantiated from: TypeIdInTemplateTest.cpp:20 */
+#ifdef INSIGHTS_USE_TEMPLATE
+template<>
+class Foo<int>
+{
+  
+  public: 
+  inline std::basic_string<char, std::char_traits<char>, std::allocator<char> > Get()
+  {
+    std::basic_string<char, std::char_traits<char>, std::allocator<char> > typeId = std::basic_string<char, std::char_traits<char>, std::allocator<char> >{typeid(int).name()} /* NRVO variable */;
+    return std::basic_string<char, std::char_traits<char>, std::allocator<char> >(static_cast<std::basic_string<char, std::char_traits<char>, std::allocator<char> > &&>(typeId));
+  }
+  
+  // inline constexpr Foo() noexcept = default;
+};
+
+#endif
+
+
+
+
+int main()
+{
+  Foo<int> i;
+  i.Get();
+  return 0;
+}
+
+

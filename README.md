@@ -2,7 +2,7 @@
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2023-09-12 17:51:54
  * @LastEditors: yao.xie 1595341200@qq.com
- * @LastEditTime: 2023-09-13 11:57:53
+ * @LastEditTime: 2023-09-14 09:32:14
  * @FilePath: /cplusplus/README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -13,6 +13,9 @@
     - [1.3.1. 构建](#131-构建)
     - [1.3.2. 使用](#132-使用)
     - [1.3.3. DLOG 只在Debug模式下生效](#133-dlog-只在debug模式下生效)
+  - [eigen](#eigen)
+  - [vector](#vector)
+  - [ref](#ref)
 
 # 1. cplusplus
 ## 1.1. 设置DEBUG与release前缀
@@ -66,7 +69,7 @@ cmake --build build --target install
 ```
 ### 1.3.3. DLOG 只在Debug模式下生效
 ## eigen
-### 安装
-```
-
-```
+## vector
+不允许存取引用
+## ref
+引用包装，内存存着对象的指针。

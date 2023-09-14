@@ -11,3 +11,5 @@ include_directories(
 add_subdirectory(utils)
 add_subdirectory(eigenlearning)
 add_subdirectory(vector)
+add_subdirectory(ref)
+add_subdirectory(addressof)
