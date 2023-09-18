@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="linux (59705d15-6d09-4714-9c9e-1b7bfb9ddffa)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/tmp/tmp.fhqj6AkBPz" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
