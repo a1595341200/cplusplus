@@ -34,6 +34,19 @@ cmake .. -DCMAKE_BUILD_TYPE=Debug
 ```
 TEST是一个宏，用来创建测试用例，它有test_case_name和test_name两个参数。分别是测试用例名和测试名
 ```
+### 安装
+```
+# 下载googletest
+$ sudo apt-get install libgtest-dev
+
+# 进入googletest目录
+$ cd /usr/src/googletest
+
+# 执行cmake && make
+$ sudo cmake -S . -B build
+$ sudo cmake --build build
+$ sudo cmake --build build --target install
+```
 ## 1.3. glog
 [教程](https://blog.csdn.net/weixin_44947987/article/details/126214261)
 ### 1.3.1. 构建
