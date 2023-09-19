@@ -12,17 +12,21 @@
 using namespace std;
 
 class A {
-public:
-  void set() { SLOG(INFO) << "A set"; }
+ public:
+  void set() {
+    SLOG(INFO) << "A set";
+  }
 };
 
 class B : public A {
-public:
-  void set() { SLOG(INFO) << "B set"; }
+ public:
+  void set() {
+    SLOG(INFO) << "B set";
+  }
 };
 
 class C : public B {
-public:
+ public:
 };
 
 int main(int argc, char *argv[]) {
