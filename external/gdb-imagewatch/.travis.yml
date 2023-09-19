@@ -1,0 +1,33 @@
+language: cpp
+
+matrix:
+ include:
+  - os: osx
+  
+  - os: linux
+    dist: xenial
+    
+  - os: linux
+    dist: bionic
+
+addons:
+  homebrew:
+    packages:
+      - qt5
+    update: true
+  apt:
+    packages:
+      - qt5-default
+      - libqt5opengl5-dev
+      - python3-dev
+      - pkg-config
+    update: true
+
+before_install:
+ # Allow qmake to be called via CLI on MacOS
+  - if [ $TRAVIS_OS_NAME = osx ]; then brew link qt5 --force; fi
+
+script:
+  - mkdir build && cd build
+  - qmake ..
+  - make -j4

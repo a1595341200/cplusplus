@@ -2,7 +2,7 @@
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2023-09-12 17:51:54
  * @LastEditors: yao.xie 1595341200@qq.com
- * @LastEditTime: 2023-09-14 09:32:14
+ * @LastEditTime: 2023-09-18 17:37:27
  * @FilePath: /cplusplus/README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -33,6 +33,19 @@ cmake .. -DCMAKE_BUILD_TYPE=Debug
 [csdn教程](https://blog.csdn.net/sevenjoin/article/details/89962344?app_version=6.1.4&csdn_share_tail=%7B%22type%22%3A%22blog%22%2C%22rType%22%3A%22article%22%2C%22rId%22%3A%2289962344%22%2C%22source%22%3A%22a159534120%22%7D&utm_source=app)
 ```
 TEST是一个宏，用来创建测试用例，它有test_case_name和test_name两个参数。分别是测试用例名和测试名
+```
+### 安装
+```
+# 下载googletest
+$ sudo apt-get install libgtest-dev
+
+# 进入googletest目录
+$ cd /usr/src/googletest
+
+# 执行cmake && make
+$ sudo cmake -S . -B build
+$ sudo cmake --build build
+$ sudo cmake --build build --target install
 ```
 ## 1.3. glog
 [教程](https://blog.csdn.net/weixin_44947987/article/details/126214261)
@@ -73,3 +86,10 @@ cmake --build build --target install
 不允许存取引用
 ## ref
 引用包装，内存存着对象的指针。
+## opencv
+### ImageWatch
+```
+git clone https://github.com/csantosbh/gdb-imagewatch
+cd gdb-imagewatch
+sudo ./configure_ubuntu_16.sh
+```

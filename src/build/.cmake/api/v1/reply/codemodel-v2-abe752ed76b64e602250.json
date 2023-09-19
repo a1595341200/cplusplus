@@ -1,0 +1,646 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "utils",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "utils",
+					"targetIndexes" : 
+					[
+						14,
+						16
+					]
+				},
+				{
+					"build" : "eigenlearning",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "eigenlearning",
+					"targetIndexes" : 
+					[
+						11
+					]
+				},
+				{
+					"build" : "vector",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "vector",
+					"targetIndexes" : 
+					[
+						17
+					]
+				},
+				{
+					"build" : "ref",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 3,
+					"source" : "ref",
+					"targetIndexes" : 
+					[
+						13
+					]
+				},
+				{
+					"build" : "addressof",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 4,
+					"source" : "addressof",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "align",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 5,
+					"source" : "align",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "any",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 6,
+					"source" : "any",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "time",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 7,
+					"source" : "time",
+					"targetIndexes" : 
+					[
+						15
+					]
+				},
+				{
+					"build" : "assert",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 8,
+					"source" : "assert",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "atomic",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 9,
+					"source" : "atomic",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "auto",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 10,
+					"source" : "auto",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "backtrace",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 11,
+					"source" : "backtrace",
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"build" : "boolalpha",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 12,
+					"source" : "boolalpha",
+					"targetIndexes" : 
+					[
+						7
+					]
+				},
+				{
+					"build" : "char",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 13,
+					"source" : "char",
+					"targetIndexes" : 
+					[
+						8
+					]
+				},
+				{
+					"build" : "chrnon",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 14,
+					"source" : "chrnon",
+					"targetIndexes" : 
+					[
+						9
+					]
+				},
+				{
+					"build" : "class_template",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 15,
+					"source" : "class_template",
+					"targetIndexes" : 
+					[
+						10
+					]
+				},
+				{
+					"build" : "opencv",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 16,
+					"source" : "opencv",
+					"targetIndexes" : 
+					[
+						12
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						2
+					],
+					"name" : "eigenlearning",
+					"targetIndexes" : 
+					[
+						11
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "utils",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						14,
+						16
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "vector",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						17
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "ref",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						13
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "addressof",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						6
+					],
+					"name" : "align",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						7
+					],
+					"name" : "any",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						8
+					],
+					"name" : "time",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						15
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						9
+					],
+					"name" : "assert",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						10
+					],
+					"name" : "atomic",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						11
+					],
+					"name" : "auto",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						12
+					],
+					"name" : "backtrace",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						13
+					],
+					"name" : "boolalpha",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						7
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						14
+					],
+					"name" : "char",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						8
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						15
+					],
+					"name" : "chrnon",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						9
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						16
+					],
+					"name" : "class_template",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						10
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						17
+					],
+					"name" : "opencv",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						12
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 5,
+					"id" : "addressof::@74fd70eb438347648ac8",
+					"jsonFile" : "target-addressof-Debug-a2c47b1120a2969aa7e0.json",
+					"name" : "addressof",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "align::@dc89857ca5875678e6ff",
+					"jsonFile" : "target-align-Debug-60dc4309240d761e592a.json",
+					"name" : "align",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "any::@7798f5d064ee771c317e",
+					"jsonFile" : "target-any-Debug-fc733b06116bf21a2b39.json",
+					"name" : "any",
+					"projectIndex" : 6
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "assert::@1671d8e23090e9d198dd",
+					"jsonFile" : "target-assert-Debug-d68e23a723c53578bc4a.json",
+					"name" : "assert",
+					"projectIndex" : 8
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "atomic::@7ad8afc5eb09044c0c9a",
+					"jsonFile" : "target-atomic-Debug-b58486b20f884427bd27.json",
+					"name" : "atomic",
+					"projectIndex" : 9
+				},
+				{
+					"directoryIndex" : 11,
+					"id" : "auto::@2e876e81139916358e94",
+					"jsonFile" : "target-auto-Debug-931d609bfd8ab192c2ae.json",
+					"name" : "auto",
+					"projectIndex" : 10
+				},
+				{
+					"directoryIndex" : 12,
+					"id" : "backtrace::@417deeafed4ca30bc197",
+					"jsonFile" : "target-backtrace-Debug-2843ad4430e429dc3fad.json",
+					"name" : "backtrace",
+					"projectIndex" : 11
+				},
+				{
+					"directoryIndex" : 13,
+					"id" : "boolalpha::@8f5729bf2f6e366cd37a",
+					"jsonFile" : "target-boolalpha-Debug-3a6510b5833f7ce1afb2.json",
+					"name" : "boolalpha",
+					"projectIndex" : 12
+				},
+				{
+					"directoryIndex" : 14,
+					"id" : "char::@5e1a28b356d8c6313cda",
+					"jsonFile" : "target-char-Debug-f09be4f1183bd40b05ae.json",
+					"name" : "char",
+					"projectIndex" : 13
+				},
+				{
+					"directoryIndex" : 15,
+					"id" : "chrnon::@d3b3a0ea1d2bac0c60b6",
+					"jsonFile" : "target-chrnon-Debug-d3f79207150e70a277ff.json",
+					"name" : "chrnon",
+					"projectIndex" : 14
+				},
+				{
+					"directoryIndex" : 16,
+					"id" : "class_template::@43e9586e72f4a9ecf9b8",
+					"jsonFile" : "target-class_template-Debug-66e12ca1771490109f70.json",
+					"name" : "class_template",
+					"projectIndex" : 15
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "eigenlearning::@743b3f85ed4177d80744",
+					"jsonFile" : "target-eigenlearning-Debug-95f5546f9541fb976439.json",
+					"name" : "eigenlearning",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 17,
+					"id" : "opencv::@6c6ca097bd0c4b839919",
+					"jsonFile" : "target-opencv-Debug-5826cb4889ec150ee5c1.json",
+					"name" : "opencv",
+					"projectIndex" : 16
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "ref::@44be5e14ce216f4b2c35",
+					"jsonFile" : "target-ref-Debug-616b3a84cc3e7b3afc23.json",
+					"name" : "ref",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "test_utils::@c810615cce0f7acb82dc",
+					"jsonFile" : "target-test_utils-Debug-fccd8f888569e86cc5d9.json",
+					"name" : "test_utils",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "time::@bd83b289c10ac4bbd907",
+					"jsonFile" : "target-time-Debug-31ae826e60430f838203.json",
+					"name" : "time",
+					"projectIndex" : 7
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "utils::@c810615cce0f7acb82dc",
+					"jsonFile" : "target-utils-Debug-baae790e52a0c8fb5f7c.json",
+					"name" : "utils",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "vector::@95776985c747069fcc28",
+					"jsonFile" : "target-vector-Debug-fff4118efd68ac55a91a.json",
+					"name" : "vector",
+					"projectIndex" : 2
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/media/psf/Home/Desktop/work/cplusplus/build",
+		"source" : "/media/psf/Home/Desktop/work/cplusplus"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 0
+	}
+}

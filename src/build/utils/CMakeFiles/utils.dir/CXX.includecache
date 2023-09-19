@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../utils/include/Log.h
+glog/logging.h
+-
+
+../utils/include/Timer.h
+chrono
+-
+string
+-
+
+/media/psf/Home/Desktop/work/cplusplus/utils/src/Log.cpp
+Log.h
+/media/psf/Home/Desktop/work/cplusplus/utils/src/Log.h
+
+/media/psf/Home/Desktop/work/cplusplus/utils/src/Timer.cpp
+Timer.h
+/media/psf/Home/Desktop/work/cplusplus/utils/src/Timer.h
+sstream
+-
+
+/media/psf/Home/Desktop/work/cplusplus/utils/src/Utils.cpp
+Log.h
+/media/psf/Home/Desktop/work/cplusplus/utils/src/Log.h
+sched.h
+-
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+thread
+-
+unistd.h
+-
+
