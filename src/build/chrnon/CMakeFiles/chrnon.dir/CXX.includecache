@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../utils/include/Log.h
+glog/logging.h
+-
+
+../utils/include/Utils.h
+Log.h
+-
+boost/type_index.hpp
+-
+thread
+-
+
+/media/psf/Home/Desktop/work/cplusplus/chrnon/src/main.cpp
+Utils.h
+-
+iostream
+-
+

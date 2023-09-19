@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-set(PROJECT_N eigenlearning)
+set(PROJECT_N cplusplus)
 project(${PROJECT_N} VERSION 1.0)
 
 set(CMAKE_CXX_STANDARD 17)
@@ -9,18 +9,4 @@ include_directories(
     "utils/include"
 )
 add_subdirectory(utils)
-add_subdirectory(eigenlearning)
-add_subdirectory(vector)
-add_subdirectory(ref)
-add_subdirectory(addressof)
-add_subdirectory(align)
-add_subdirectory(any)
-add_subdirectory(time)
-add_subdirectory(assert)
-add_subdirectory(atomic)
-add_subdirectory(auto)
-add_subdirectory(backtrace)
-add_subdirectory(boolalpha)
-add_subdirectory(char)
-add_subdirectory(chrnon)
-add_subdirectory(class_template)
+add_subdirectory(src)

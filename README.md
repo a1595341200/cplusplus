@@ -2,7 +2,7 @@
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2023-09-12 17:51:54
  * @LastEditors: yao.xie 1595341200@qq.com
- * @LastEditTime: 2023-09-14 09:32:14
+ * @LastEditTime: 2023-09-18 17:37:27
  * @FilePath: /cplusplus/README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -86,3 +86,10 @@ cmake --build build --target install
 不允许存取引用
 ## ref
 引用包装，内存存着对象的指针。
+## opencv
+### ImageWatch
+```
+git clone https://github.com/csantosbh/gdb-imagewatch
+cd gdb-imagewatch
+sudo ./configure_ubuntu_16.sh
+```

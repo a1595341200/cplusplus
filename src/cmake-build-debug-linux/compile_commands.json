@@ -1,0 +1,37 @@
+[
+{
+  "directory": "/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/atomic",
+  "command": "/usr/bin/c++   -I/tmp/tmp.fhqj6AkBPz/utils/include -I/tmp/tmp.fhqj6AkBPz/atomic/include  -g   -DGTEST_HAS_PTHREAD=1 -std=gnu++17 -o CMakeFiles/atomic.dir/src/main.cpp.o -c /tmp/tmp.fhqj6AkBPz/atomic/src/main.cpp",
+  "file": "/tmp/tmp.fhqj6AkBPz/atomic/src/main.cpp"
+},
+{
+  "directory": "/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/auto",
+  "command": "/usr/bin/c++   -I/tmp/tmp.fhqj6AkBPz/utils/include -I/tmp/tmp.fhqj6AkBPz/auto/include  -g   -DGTEST_HAS_PTHREAD=1 -std=gnu++17 -o CMakeFiles/auto.dir/src/main.cpp.o -c /tmp/tmp.fhqj6AkBPz/auto/src/main.cpp",
+  "file": "/tmp/tmp.fhqj6AkBPz/auto/src/main.cpp"
+},
+{
+  "directory": "/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/backtrace",
+  "command": "/usr/bin/c++   -I/tmp/tmp.fhqj6AkBPz/utils/include -I/tmp/tmp.fhqj6AkBPz/backtrace/include  -g   -DGTEST_HAS_PTHREAD=1 -std=gnu++17 -o CMakeFiles/backtrace.dir/src/main.cpp.o -c /tmp/tmp.fhqj6AkBPz/backtrace/src/main.cpp",
+  "file": "/tmp/tmp.fhqj6AkBPz/backtrace/src/main.cpp"
+},
+{
+  "directory": "/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/boolalpha",
+  "command": "/usr/bin/c++   -I/tmp/tmp.fhqj6AkBPz/utils/include -I/tmp/tmp.fhqj6AkBPz/boolalpha/include  -g   -DGTEST_HAS_PTHREAD=1 -std=gnu++17 -o CMakeFiles/boolalpha.dir/src/main.cpp.o -c /tmp/tmp.fhqj6AkBPz/boolalpha/src/main.cpp",
+  "file": "/tmp/tmp.fhqj6AkBPz/boolalpha/src/main.cpp"
+},
+{
+  "directory": "/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/char",
+  "command": "/usr/bin/c++   -I/tmp/tmp.fhqj6AkBPz/utils/include -I/tmp/tmp.fhqj6AkBPz/char/include  -g   -DGTEST_HAS_PTHREAD=1 -std=gnu++17 -o CMakeFiles/char.dir/src/main.cpp.o -c /tmp/tmp.fhqj6AkBPz/char/src/main.cpp",
+  "file": "/tmp/tmp.fhqj6AkBPz/char/src/main.cpp"
+},
+{
+  "directory": "/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/chrnon",
+  "command": "/usr/bin/c++   -I/tmp/tmp.fhqj6AkBPz/utils/include -I/tmp/tmp.fhqj6AkBPz/chrnon/include  -g   -DGTEST_HAS_PTHREAD=1 -std=gnu++17 -o CMakeFiles/chrnon.dir/src/main.cpp.o -c /tmp/tmp.fhqj6AkBPz/chrnon/src/main.cpp",
+  "file": "/tmp/tmp.fhqj6AkBPz/chrnon/src/main.cpp"
+},
+{
+  "directory": "/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/class_template",
+  "command": "/usr/bin/c++   -I/tmp/tmp.fhqj6AkBPz/utils/include -I/tmp/tmp.fhqj6AkBPz/class_template/include  -g   -DGTEST_HAS_PTHREAD=1 -std=gnu++17 -o CMakeFiles/class_template.dir/src/main.cpp.o -c /tmp/tmp.fhqj6AkBPz/class_template/src/main.cpp",
+  "file": "/tmp/tmp.fhqj6AkBPz/class_template/src/main.cpp"
+}
+]

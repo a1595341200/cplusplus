@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/vector.dir/src/main.cpp.o  -o vector  -Wl,-rpath,/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/utils:/usr/local/lib ../utils/libutils_debug.so /usr/local/lib/libglog.so.0.7.0 /usr/local/lib/libgmock.a /usr/local/lib/libgtest.a -lpthread 

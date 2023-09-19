@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../utils/include/Log.h
+glog/logging.h
+-
+
+/media/psf/Home/Desktop/work/cplusplus/addressof/src/main.cpp
+Log.h
+-
+gtest/gtest.h
+-
+

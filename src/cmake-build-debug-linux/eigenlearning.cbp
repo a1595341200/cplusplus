@@ -1,0 +1,995 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="eigenlearning"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\addressof\;CMake Files\align\;CMake Files\any\;CMake Files\assert\;CMake Files\atomic\;CMake Files\auto\;CMake Files\backtrace\;CMake Files\boolalpha\;CMake Files\char\;CMake Files\chrnon\;CMake Files\class_template\;CMake Files\utils\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\usr\;CMake Files\..\..\usr\local\;CMake Files\..\..\usr\local\lib\;CMake Files\..\..\usr\local\lib\cmake\;CMake Files\..\..\usr\local\lib\cmake\glog\;CMake Files\..\..\usr\local\lib\cmake\GTest\;CMake Files\eigenlearning\;CMake Files\vector\;CMake Files\ref\;CMake Files\time\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_utils">
+				<Option output="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/utils/test_utils" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/utils"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/utils/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/aarch64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/utils/Makefile&quot;  VERBOSE=1 test_utils"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/utils/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/utils/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/utils/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_utils/fast">
+				<Option output="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/utils/test_utils" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/utils"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/utils/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/aarch64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/utils/Makefile&quot;  VERBOSE=1 test_utils/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/utils/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/utils/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/utils/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="utils">
+				<Option output="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/utils/libutils_debug.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/utils"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/utils/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/aarch64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/utils/Makefile&quot;  VERBOSE=1 utils"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/utils/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/utils/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/utils/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="utils/fast">
+				<Option output="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/utils/libutils_debug.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/utils"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/utils/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/aarch64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/utils/Makefile&quot;  VERBOSE=1 utils/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/utils/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/utils/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/utils/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="eigenlearning">
+				<Option output="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/eigenlearning/eigenlearning" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/eigenlearning"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/utils/include"/>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/eigenlearning/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/aarch64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/eigenlearning/Makefile&quot;  VERBOSE=1 eigenlearning"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/eigenlearning/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/eigenlearning/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/eigenlearning/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="eigenlearning/fast">
+				<Option output="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/eigenlearning/eigenlearning" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/eigenlearning"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/utils/include"/>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/eigenlearning/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/aarch64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/eigenlearning/Makefile&quot;  VERBOSE=1 eigenlearning/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/eigenlearning/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/eigenlearning/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/eigenlearning/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="vector">
+				<Option output="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/vector/vector" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/vector"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/utils/include"/>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/vector/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/aarch64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/vector/Makefile&quot;  VERBOSE=1 vector"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/vector/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/vector/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/vector/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="vector/fast">
+				<Option output="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/vector/vector" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/vector"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/utils/include"/>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/vector/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/aarch64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/vector/Makefile&quot;  VERBOSE=1 vector/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/vector/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/vector/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/vector/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ref">
+				<Option output="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/ref/ref" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/ref"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/utils/include"/>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/ref/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/aarch64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/ref/Makefile&quot;  VERBOSE=1 ref"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/ref/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/ref/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/ref/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ref/fast">
+				<Option output="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/ref/ref" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/ref"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/utils/include"/>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/ref/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/aarch64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/ref/Makefile&quot;  VERBOSE=1 ref/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/ref/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/ref/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/ref/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="addressof">
+				<Option output="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/addressof/addressof" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/addressof"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/utils/include"/>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/addressof/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/aarch64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/addressof/Makefile&quot;  VERBOSE=1 addressof"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/addressof/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/addressof/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/addressof/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="addressof/fast">
+				<Option output="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/addressof/addressof" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/addressof"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/utils/include"/>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/addressof/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/aarch64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/addressof/Makefile&quot;  VERBOSE=1 addressof/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/addressof/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/addressof/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/addressof/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="align">
+				<Option output="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/align/align" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/align"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/utils/include"/>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/align/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/aarch64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/align/Makefile&quot;  VERBOSE=1 align"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/align/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/align/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/align/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="align/fast">
+				<Option output="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/align/align" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/align"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/utils/include"/>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/align/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/aarch64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/align/Makefile&quot;  VERBOSE=1 align/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/align/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/align/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/align/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="any">
+				<Option output="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/any/any" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/any"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/utils/include"/>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/any/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/aarch64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/any/Makefile&quot;  VERBOSE=1 any"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/any/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/any/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/any/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="any/fast">
+				<Option output="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/any/any" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/any"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/utils/include"/>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/any/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/aarch64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/any/Makefile&quot;  VERBOSE=1 any/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/any/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/any/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/any/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="time">
+				<Option output="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/time/time" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/time"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/utils/include"/>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/time/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/aarch64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/time/Makefile&quot;  VERBOSE=1 time"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/time/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/time/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/time/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="time/fast">
+				<Option output="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/time/time" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/time"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/utils/include"/>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/time/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/aarch64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/time/Makefile&quot;  VERBOSE=1 time/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/time/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/time/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/time/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="assert">
+				<Option output="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/assert/assert" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/assert"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/utils/include"/>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/assert/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/aarch64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/assert/Makefile&quot;  VERBOSE=1 assert"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/assert/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/assert/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/assert/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="assert/fast">
+				<Option output="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/assert/assert" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/assert"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/utils/include"/>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/assert/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/aarch64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/assert/Makefile&quot;  VERBOSE=1 assert/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/assert/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/assert/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/assert/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="atomic">
+				<Option output="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/atomic/atomic" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/atomic"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/utils/include"/>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/atomic/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/aarch64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/atomic/Makefile&quot;  VERBOSE=1 atomic"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/atomic/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/atomic/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/atomic/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="atomic/fast">
+				<Option output="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/atomic/atomic" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/atomic"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/utils/include"/>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/atomic/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/aarch64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/atomic/Makefile&quot;  VERBOSE=1 atomic/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/atomic/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/atomic/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/atomic/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="auto">
+				<Option output="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/auto/auto" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/auto"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/utils/include"/>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/auto/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/aarch64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/auto/Makefile&quot;  VERBOSE=1 auto"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/auto/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/auto/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/auto/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="auto/fast">
+				<Option output="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/auto/auto" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/auto"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/utils/include"/>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/auto/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/aarch64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/auto/Makefile&quot;  VERBOSE=1 auto/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/auto/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/auto/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/auto/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="backtrace">
+				<Option output="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/backtrace/backtrace" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/backtrace"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/utils/include"/>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/backtrace/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/aarch64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/backtrace/Makefile&quot;  VERBOSE=1 backtrace"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/backtrace/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/backtrace/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/backtrace/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="backtrace/fast">
+				<Option output="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/backtrace/backtrace" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/backtrace"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/utils/include"/>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/backtrace/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/aarch64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/backtrace/Makefile&quot;  VERBOSE=1 backtrace/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/backtrace/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/backtrace/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/backtrace/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="boolalpha">
+				<Option output="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/boolalpha/boolalpha" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/boolalpha"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/utils/include"/>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/boolalpha/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/aarch64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/boolalpha/Makefile&quot;  VERBOSE=1 boolalpha"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/boolalpha/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/boolalpha/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/boolalpha/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="boolalpha/fast">
+				<Option output="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/boolalpha/boolalpha" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/boolalpha"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/utils/include"/>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/boolalpha/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/aarch64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/boolalpha/Makefile&quot;  VERBOSE=1 boolalpha/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/boolalpha/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/boolalpha/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/boolalpha/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="char">
+				<Option output="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/char/char" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/char"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/utils/include"/>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/char/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/aarch64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/char/Makefile&quot;  VERBOSE=1 char"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/char/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/char/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/char/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="char/fast">
+				<Option output="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/char/char" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/char"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/utils/include"/>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/char/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/aarch64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/char/Makefile&quot;  VERBOSE=1 char/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/char/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/char/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/char/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="chrnon">
+				<Option output="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/chrnon/chrnon" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/chrnon"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/utils/include"/>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/chrnon/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/aarch64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/chrnon/Makefile&quot;  VERBOSE=1 chrnon"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/chrnon/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/chrnon/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/chrnon/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="chrnon/fast">
+				<Option output="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/chrnon/chrnon" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/chrnon"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/utils/include"/>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/chrnon/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/aarch64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/chrnon/Makefile&quot;  VERBOSE=1 chrnon/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/chrnon/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/chrnon/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/chrnon/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="class_template">
+				<Option output="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/class_template/class_template" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/class_template"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/utils/include"/>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/class_template/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/aarch64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/class_template/Makefile&quot;  VERBOSE=1 class_template"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/class_template/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/class_template/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/class_template/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="class_template/fast">
+				<Option output="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/class_template/class_template" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/class_template"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/utils/include"/>
+					<Add directory="/tmp/tmp.fhqj6AkBPz/class_template/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/aarch64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/class_template/Makefile&quot;  VERBOSE=1 class_template/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/class_template/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/class_template/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.fhqj6AkBPz/cmake-build-debug-linux/class_template/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/addressof/src/main.cpp">
+			<Option target="addressof"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/align/src/main.cpp">
+			<Option target="align"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/any/src/main.cpp">
+			<Option target="any"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/assert/src/main.cpp">
+			<Option target="assert"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/atomic/src/main.cpp">
+			<Option target="atomic"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/auto/src/main.cpp">
+			<Option target="auto"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/backtrace/src/main.cpp">
+			<Option target="backtrace"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/boolalpha/src/main.cpp">
+			<Option target="boolalpha"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/char/src/main.cpp">
+			<Option target="char"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/chrnon/src/main.cpp">
+			<Option target="chrnon"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/class_template/src/main.cpp">
+			<Option target="class_template"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/eigenlearning/src/main.cpp">
+			<Option target="eigenlearning"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/ref/src/main.cpp">
+			<Option target="ref"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/time/src/main.cpp">
+			<Option target="time"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/utils/src/Log.cpp">
+			<Option target="test_utils"/>
+			<Option target="utils"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/utils/src/Timer.cpp">
+			<Option target="test_utils"/>
+			<Option target="utils"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/utils/src/Utils.cpp">
+			<Option target="test_utils"/>
+			<Option target="utils"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/utils/test/Log_tests.cpp">
+			<Option target="test_utils"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/utils/test/Utils_tests.cpp">
+			<Option target="test_utils"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/vector/src/main.cpp">
+			<Option target="vector"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/addressof/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\addressof\"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/align/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\align\"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/any/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\any\"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/assert/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\assert\"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/atomic/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\atomic\"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/auto/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\auto\"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/backtrace/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\backtrace\"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/boolalpha/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\boolalpha\"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/char/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\char\"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/chrnon/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\chrnon\"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/class_template/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\class_template\"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/utils/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\utils\"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/../../usr/local/lib/cmake/glog/glog-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\usr\local\lib\cmake\glog\"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/../../usr/local/lib/cmake/glog/glog-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\usr\local\lib\cmake\glog\"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/../../usr/local/lib/cmake/glog/glog-modules.cmake">
+			<Option virtualFolder="CMake Files\..\..\usr\local\lib\cmake\glog\"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/../../usr/local/lib/cmake/glog/glog-targets-noconfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\usr\local\lib\cmake\glog\"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/../../usr/local/lib/cmake/glog/glog-targets.cmake">
+			<Option virtualFolder="CMake Files\..\..\usr\local\lib\cmake\glog\"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/../../usr/local/lib/cmake/GTest/GTestConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\usr\local\lib\cmake\GTest\"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/../../usr/local/lib/cmake/GTest/GTestConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\usr\local\lib\cmake\GTest\"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/../../usr/local/lib/cmake/GTest/GTestTargets-noconfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\usr\local\lib\cmake\GTest\"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/../../usr/local/lib/cmake/GTest/GTestTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\usr\local\lib\cmake\GTest\"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/eigenlearning/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\eigenlearning\"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/vector/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\vector\"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/ref/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ref\"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.fhqj6AkBPz/time/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\time\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
