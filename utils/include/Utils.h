@@ -18,7 +18,7 @@
 void bindThreadToCore(int coreId, std::thread::native_handle_type handle);
 void bindProcessToCore(int coreId);
 template <typename T>
-void lookType(const T &param) {
+void lookType(T &&param) {
   using boost::typeindex::type_id_with_cvr;
   SLOG(INFO) << "T=" << type_id_with_cvr<T>().pretty_name();
   SLOG(INFO) << "param=" << type_id_with_cvr<decltype(param)>().pretty_name();
