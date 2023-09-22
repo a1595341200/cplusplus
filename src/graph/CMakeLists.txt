@@ -1,16 +1,12 @@
 cmake_minimum_required(VERSION 3.10)
 
-set(PROJECT_N utils)
+set(PROJECT_N graph)
 project(${PROJECT_N} VERSION 1.0)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-set(CMAKE_CXX_FLAGS_DEBUG "-O0 -g3")
-find_package(glog REQUIRED)
-
 file(GLOB_RECURSE SRCS ${PROJECT_SOURCE_DIR}/src/*.cpp)
-file(GLOB_RECURSE TEST_SRCS ${PROJECT_SOURCE_DIR}/test/*tests.cpp)
 
 # a macro that gets all of the header containing directories. 
 MACRO(header_directories return_list includes_base_folder extention )
@@ -36,39 +32,8 @@ message("include directories:")
 foreach(dir ${INCLUDES})
         message(STATUS ${dir})
 endforeach()
-# add_executable(${PROJECT_N} ${SRCS})
-include_directories(
-    include
-)
-
-link_libraries(
-    glog::glog
-    GTest::gtest
-    GTest::gmock
-)
-
-add_library(${PROJECT_N} SHARED ${SRCS})
-
-set_target_properties(${PROJECT_N} PROPERTIES
-    DEBUG_POSTFIX "_debug"
-    RELEASE_POSTFIX "_release"
-)
+add_executable(${PROJECT_N} ${SRCS})
 
 target_include_directories(${PROJECT_N} PUBLIC include)
 
-set(UNIT_TEST ON)
-
-if (UNIT_TEST)
-enable_testing()
-find_package(GTest CONFIG REQUIRED)
-add_executable(test_${PROJECT_N} 
-    ${TEST_SRCS}
-    ${SRCS}
-    ${BOOSTSRC}
-)
-
-target_link_libraries(test_${PROJECT_N} PUBLIC
-GTest::gtest
-GTest::gmock
-)
-endif()
+target_link_libraries(${PROJECT_N} utils)
