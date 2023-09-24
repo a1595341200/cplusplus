@@ -71,7 +71,12 @@
         "typeinfo": "cpp",
         "valarray": "cpp",
         "variant": "cpp",
-        "bit": "cpp"
+        "bit": "cpp",
+        "*.txx": "cpp",
+        "hash_set": "cpp",
+        "codecvt": "cpp",
+        "forward_list": "cpp",
+        "scoped_allocator": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
