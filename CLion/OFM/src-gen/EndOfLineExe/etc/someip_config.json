@@ -1,0 +1,93 @@
+
+{
+  "services" : [
+    {
+      "name" : "ToSOCA_InfomationSI",
+      "service_id" : 163,
+      "major_version" : 1,
+      "minor_version" : 0,
+      "methods" : [
+      ],
+      "events" : [
+        {
+          "name" : "OSM2_Bus_ToSOCA_FunctionInfo",
+          "id" : 37707,
+          "field" : false,
+          "proto" : "udp"
+        },
+        {
+          "name" : "OSM2_Bus_ToSOCA_COMInfo",
+          "id" : 37708,
+          "field" : false,
+          "proto" : "udp"
+        }
+      ],
+      "eventgroups" : [
+        {
+          "id" : 32864,
+          "events" : [
+            37707,
+            37708
+          ]
+        }
+      ]
+    }
+  ],
+  "required_service_instances" : [
+    {
+      "service_id" : 163,
+      "instance_id" : 1132,
+      "major_version" : 1,
+      "minor_version" : 4294967295,
+      "service_discovery" : {
+        "initial_delay_min_ns" : 10000000,
+        "initial_delay_max_ns" : 100000000,
+        "initial_repetitions_base_delay_ns" : 200000000,
+        "initial_repetitions_max" : 3,
+        "ttl" : 3,
+        "eventgroups" : [
+          {
+            "id" : 32864,
+            "ttl" : 5,
+            "request_response_delay_min_ns" : 0,
+            "request_response_delay_max_ns" : 0
+          }
+        ]
+      },
+      "required_signal_serialized_pdus" : [
+      ],
+      "port_mapping" : {
+        "name" : "MachineMappingRequiredSomeipToSOCA_InfomationSI",
+        "address" : "179.16.0.10",
+        "network_mask" : "0.0.0.0",
+        "udp_port" : 40050,
+        "communication" : true,
+        "service_discovery" : true
+      }
+    }
+  ],
+  "provided_service_instances" : [
+  ],
+  "network_endpoints" : [
+    {
+      "name" : "NetworkEndpoint",
+      "address" : "179.16.0.10",
+      "mtu" : 1500,
+      "service_discovery" : {
+        "multicast_address" : "224.0.0.17",
+        "port" : 12331
+      },
+      "ports" : [
+        {
+          "proto" : "udp",
+          "port" : 40050,
+          "enable_so_linger" : "false"
+        }
+      ]
+    }
+  ],
+  "generatorVersion" : {
+    "name" : "amsr_someipbinding",
+    "commitId" : "5d8070897bdfaedb620f897381ef230973e3ab64"
+  }
+}

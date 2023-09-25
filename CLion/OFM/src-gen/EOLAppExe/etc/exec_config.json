@@ -1,0 +1,59 @@
+
+{
+  "name" : "EOLAppExe",
+  "reportingBehavior" : "REPORTS-EXECUTION-STATE",
+  "isExecutionManager" : 0,
+  "processes" : [
+    {
+      "name" : "EOLAppProcess",
+      "shortNamePath" : "/JICA/SWC/EOLAppExe/EOLAppProcess",
+      "startupConfigs" : [
+        {
+          "shortNamePath" : "/JICA/SWC/EOLAppExe/EOLAppExeStartupConfigSet/StartupConfig",
+          "schedulingPolicy" : "SCHED_RR",
+          "schedulingPriority" : 20,
+          "options" : [
+            "SOCA",
+            "./etc/1280x720.nv12.yuv"
+          ],
+          "environmentVariables" : [
+            {
+              "key" : "AMSR_PROCESS_CONFIG_DIR",
+              "value" : "./etc"
+            },
+            {
+              "key" : "AMSR_EXECUTABLE_CONFIG_DIR",
+              "value" : "./etc"
+            }
+          ],
+          "executionDependency" : {
+          },
+          "functionGroups" : [
+            {
+              "name" : "MachineFG",
+              "states" : [
+                "Factory"
+              ]
+            }
+          ],
+          "cores" : {
+            "shallRunOn" : [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "generatorVersion" : {
+    "name" : "amsr_em_exec_config",
+    "commitId" : "46318213ad7ac4d9dbeb54ad2e67c431a47a9a9f"
+  }
+}

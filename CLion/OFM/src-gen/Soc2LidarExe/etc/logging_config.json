@@ -1,0 +1,11 @@
+
+{
+  "name" : "Process12",
+  "dlt_id" : "SLD",
+  "log_mode" : [
+    "kConsole",
+    "kFile"
+  ],
+  "log_level" : "kInfo",
+  "log_file_path" : "/mnt/logfs/Soc2LidarExeProcess_LogChannel001.log"
+}

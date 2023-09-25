@@ -1,0 +1,7 @@
+-DROS_BUILD_SHARED_LIBS=1
+-DROS_BUILD_SHARED_LIBS=1
+-DROS_PACKAGE_NAME="dynamicTracking"
+-DROSCONSOLE_BACKEND_LOG4CXX
+-o
+/media/psf/Home/Desktop/work/ros_learning/build/dynamicTracking/src/moc_DynamicTracking.cpp
+/media/psf/Home/Desktop/work/ros_learning/src/dynamicTracking/src/DynamicTracking.h

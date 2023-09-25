@@ -27,8 +27,6 @@ namespace fusion {
 
 class Scene {
  public:
-  Scene();
-  ~Scene();
 
   inline std::vector<TrackPtr>& GetForegroundTracks() {
     return foreground_tracks_;
@@ -46,8 +44,13 @@ class Scene {
     return background_tracks_;
   }
 
-  void AddForegroundTrack(TrackPtr track);
-  void AddBackgroundTrack(TrackPtr track);
+	void AddForegroundTrack(TrackPtr track) {
+		foreground_tracks_.push_back(track);
+	}
+
+	void AddBackgroundTrack(TrackPtr track) {
+		background_tracks_.push_back(track);
+	}
 
  protected:
   std::vector<TrackPtr> foreground_tracks_;

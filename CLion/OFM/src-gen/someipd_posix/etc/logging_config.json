@@ -1,0 +1,11 @@
+
+{
+  "name" : "someipd",
+  "dlt_id" : "SOMD",
+  "log_mode" : [
+    "kConsole",
+    "kFile"
+  ],
+  "log_level" : "kWarn",
+  "log_file_path" : "/mnt/logfs/someipd_posixProcess_LogChannel001.log"
+}

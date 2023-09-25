@@ -1,0 +1,65 @@
+/**********************************************************************************************************************
+ *  COPYRIGHT
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  \verbatim
+ *  Copyright (c) 2023 by Vector Informatik GmbH. All rights reserved.
+ *
+ *                This software is copyright protected and proprietary to Vector Informatik GmbH.
+ *                Vector Informatik GmbH grants to you only those rights as set out in the license conditions.
+ *                All other rights remain with Vector Informatik GmbH.
+ *  \endverbatim
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  FILE DESCRIPTION
+ *  -----------------------------------------------------------------------------------------------------------------*/
+/**        \file  PerceptionExe/src/amsr/someip_protocol/internal/dataprototype_serialization/perceptionsi_laneout/events/serializer_Cam_Bus_LaneEventGroup.cpp
+ *        \brief  SOME/IP protocol serializer implementation for data prototype '/JICA/Service/Interface/PerceptionSI_LaneOut/Cam_Bus_LaneEventGroup
+ *
+ *      \details
+ *
+ *********************************************************************************************************************/
+/**********************************************************************************************************************
+ *  GENERATOR INFORMATION
+ *  -------------------------------------------------------------------------------------------------------------------
+ *    Generator Name: amsr_someipprotocol
+ *         Commit ID: 3fd8aac035abb6fb6709609fe09ab84fd0e635d8
+ *********************************************************************************************************************/
+
+/**********************************************************************************************************************
+ *  INCLUDES
+ *********************************************************************************************************************/
+#include "someip-protocol/internal/serialization/ser_wrapper.h"
+
+#include "amsr/someip_protocol/internal/dataprototype_serialization/perceptionsi_laneout/events/serializer_Cam_Bus_LaneEventGroup.h"
+#include "amsr/someip_protocol/internal/datatype_serialization/LaneEventGroup/serializer_LaneEventGroup.h"
+#include "ara/log/logging.h"
+
+namespace amsr {
+namespace someip_protocol {
+namespace internal {
+namespace dataprototype_serializer {
+namespace perceptionsi_laneout {
+namespace events {
+
+void SerializerCam_Bus_LaneEventGroup::Serialize(serialization::Writer
+&writer, ::LaneEventGroups::LaneEventGroups const &data) {
+  // Serialize byte stream
+  serialization::SomeIpProtocolSerialize<
+      TpPackDataPrototype,
+      // Config of array length field (/CppImplementationDataTypes/LaneEventGroups)
+      serialization::LengthSize<serialization::Tp<TpPackDataPrototype>::kSizeOfArrayLengthField, typename serialization::Tp<TpPackDataPrototype>::ByteOrder>,
+      // Config of array value type (DataTypeStruct, /CppImplementationDataTypes/LaneEventGroup)
+      // Config of struct length field (/CppImplementationDataTypes/LaneEventGroup)
+      serialization::LengthSize<serialization::Tp<TpPackDataPrototype>::kSizeOfStructLengthField, typename serialization::Tp<TpPackDataPrototype>::ByteOrder>
+      
+      // End of config of array value type (DataTypeStruct, /CppImplementationDataTypes/LaneEventGroup)
+
+      >(writer, data);
+}
+
+}  // namespace events
+}  // namespace perceptionsi_laneout
+}  // namespace dataprototype_serializer
+}  // namespace internal
+}  // namespace someip_protocol
+}  // namespace amsr
+

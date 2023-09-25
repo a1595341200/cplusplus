@@ -1,0 +1,4 @@
+<launch>
+    <rosparam file="$(find video)/config/video.yaml" command="load" />
+    <node pkg="video" type="video_node"  name="video" output="screen"></node>
+</launch>

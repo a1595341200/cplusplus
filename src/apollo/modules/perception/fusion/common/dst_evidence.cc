@@ -15,6 +15,8 @@
  *****************************************************************************/
 #include "modules/perception/fusion/common/dst_evidence.h"
 
+#include <dbg.h>
+
 #include <algorithm>
 #include <bitset>
 #include <numeric>
@@ -22,17 +24,18 @@
 #include <boost/format.hpp>
 
 #include "cyber/common/log.h"
-
 namespace apollo {
 namespace perception {
 namespace fusion {
 
-bool DstManager::AddApp(const std::string &app_name,
-                        const std::vector<uint64_t> &fod_subsets,
+bool DstManager::AddApp(const std::string &app_name, const std::vector<uint64_t> &fod_subsets,
                         const std::vector<std::string> &fod_subset_names) {
   if (dst_common_data_.find(app_name) != dst_common_data_.end()) {
     AWARN << boost::format("Dst %s was added!") % app_name;
   }
+  dbg(app_name);
+  dbg(fod_subsets);
+  dbg(fod_subset_names);
   DstCommonData dst_data;
   dst_data.fod_subsets_ = fod_subsets;
   BuildSubsetsIndMap(&dst_data);
@@ -76,8 +79,7 @@ DstCommonDataPtr DstManager::GetAppDataPtr(const std::string &app_name) {
   return nullptr;
 }
 
-size_t DstManager::FodSubsetToInd(const std::string &app_name,
-                                  const uint64_t &fod_subset) {
+size_t DstManager::FodSubsetToInd(const std::string &app_name, const uint64_t &fod_subset) {
   auto iter0 = dst_common_data_.find(app_name);
   ACHECK(iter0 != dst_common_data_.end());
   auto iter = iter0->second.subsets_ind_map_.find(fod_subset);
@@ -85,8 +87,7 @@ size_t DstManager::FodSubsetToInd(const std::string &app_name,
   return iter->second;
 }
 
-uint64_t DstManager::IndToFodSubset(const std::string &app_name,
-                                    const size_t &ind) {
+uint64_t DstManager::IndToFodSubset(const std::string &app_name, const size_t &ind) {
   auto iter = dst_common_data_.find(app_name);
   ACHECK(iter != dst_common_data_.end());
   return iter->second.fod_subsets_[ind];
@@ -105,8 +106,8 @@ void DstManager::FodCheck(DstCommonData *dst_data) {
     fod |= fod_subset;
   }
   dst_data->fod_loc_ = dst_data->fod_subsets_.size();
-  auto find_res = dst_data->subsets_ind_map_.insert(
-      std::make_pair(fod, dst_data->fod_subsets_.size()));
+  auto find_res =
+      dst_data->subsets_ind_map_.insert(std::make_pair(fod, dst_data->fod_subsets_.size()));
   if (find_res.second) {
     dst_data->fod_subsets_.push_back(fod);
   } else {
@@ -127,11 +128,11 @@ void DstManager::ComputeCardinalities(DstCommonData *dst_data) {
   for (auto fod_subset : dst_data->fod_subsets_) {
     dst_data->fod_subset_cardinalities_.push_back(count_set_bits(fod_subset));
   }
+  dbg(dst_data->fod_subset_cardinalities_);
 }
 
 bool DstManager::ComputeRelations(DstCommonData *dst_data) {
-  auto reserve_space = [](std::vector<std::vector<size_t>> &relations,
-                          size_t size) {
+  auto reserve_space = [](std::vector<std::vector<size_t>> &relations, size_t size) {
     relations.clear();
     relations.resize(size);
     for (auto &relation : relations) {
@@ -166,11 +167,13 @@ bool DstManager::ComputeRelations(DstCommonData *dst_data) {
               "intersection");
           return false;
         }
-        dst_data->combination_relations_[find_res->second].push_back(
-            std::make_pair(i, j));
+        dst_data->combination_relations_[find_res->second].push_back(std::make_pair(i, j));
       }
     }
   }
+  dbg(dst_data->subset_relations_);
+  dbg(dst_data->inter_relations_);
+  dbg(dst_data->combination_relations_);
   return true;
 }
 
@@ -180,14 +183,11 @@ void DstManager::BuildNamesMap(const std::vector<std::string> &fod_subset_names,
   dst_data->fod_subset_names_.clear();
   dst_data->fod_subset_names_.resize(dst_data->fod_subsets_.size());
   for (size_t i = 0; i < dst_data->fod_subsets_.size(); ++i) {
-    dst_data->fod_subset_names_[i] =
-        std::bitset<64>(dst_data->fod_subsets_[i]).to_string();
+    dst_data->fod_subset_names_[i] = std::bitset<64>(dst_data->fod_subsets_[i]).to_string();
   }
   // set fod to unknown
   dst_data->fod_subset_names_[dst_data->fod_loc_] = "unknown";
-  for (size_t i = 0;
-       i < std::min(fod_subset_names.size(), dst_data->fod_subsets_.size());
-       ++i) {
+  for (size_t i = 0; i < std::min(fod_subset_names.size(), dst_data->fod_subsets_.size()); ++i) {
     dst_data->fod_subset_names_[i] = fod_subset_names[i];
   }
 }
@@ -225,8 +225,8 @@ double Dst::GetIndBfmass(size_t ind) const {
 bool Dst::SetBbaVec(const std::vector<double> &bba_vec) {
   SelfCheck();
   if (bba_vec.size() != dst_data_ptr_->fod_subsets_.size()) {
-    AERROR << boost::format("input bba_vec size: %d !=  Dst subsets size: %d") %
-                  bba_vec.size() % dst_data_ptr_->fod_subsets_.size();
+    AERROR << boost::format("input bba_vec size: %d !=  Dst subsets size: %d") % bba_vec.size() %
+                  dst_data_ptr_->fod_subsets_.size();
     return false;
   }
   // check belief mass valid
@@ -256,8 +256,8 @@ bool Dst::SetBba(const std::map<uint64_t, double> &bba_map) {
       return false;
     }
     if (belief_mass < 0.0) {
-      AWARN << boost::format("belief mass: %lf is not valid. Dst name: %s") %
-                   belief_mass % app_name_;
+      AWARN << boost::format("belief mass: %lf is not valid. Dst name: %s") % belief_mass %
+                   app_name_;
       return false;
     }
     bba_vec[find_res->second] = belief_mass;
@@ -273,8 +273,7 @@ std::string Dst::PrintBba() const {
   SelfCheck();
   static constexpr size_t total_res_size = 10000;
   static constexpr size_t row_res_size = 1000;
-  static auto print_row = [](const std::string &row_header,
-                             const std::vector<double> &data) {
+  static auto print_row = [](const std::string &row_header, const std::vector<double> &data) {
     std::string row_str = (boost::format("%19s ") % row_header).str();
     row_str.reserve(row_res_size);
     for (auto flt : data) {
@@ -289,16 +288,15 @@ std::string Dst::PrintBba() const {
   // output table header
   std::string header = (boost::format("%20s") % " ").str();
   header.reserve(row_res_size);
-  const std::vector<std::string> &fod_subset_names =
-      dst_data_ptr_->fod_subset_names_;
+  const std::vector<std::string> &fod_subset_names = dst_data_ptr_->fod_subset_names_;
   for (const auto &fod_subset_name : fod_subset_names) {
     header += (boost::format("%20s") % fod_subset_name).str();
   }
   res += header + "\n";
   res += print_row("belief_mass", bba_vec_);
-  // res += print_row("support", support_vec_);
-  // res += print_row("uncertainty", uncertainty_vec_);
-  // res += print_row("probability", probability_vec_);
+  res += print_row("support", support_vec_);
+  res += print_row("uncertainty", uncertainty_vec_);
+  res += print_row("probability", probability_vec_);
   return res;
 }
 
@@ -312,24 +310,22 @@ void Dst::ComputeSptPlsUct() const {
   resize_space(support_vec_, size);
   resize_space(plausibility_vec_, size);
   resize_space(uncertainty_vec_, size);
-  const std::vector<std::vector<size_t>> &subset_relations =
-      dst_data_ptr_->subset_relations_;
-  const std::vector<std::vector<size_t>> &inter_relations =
-      dst_data_ptr_->inter_relations_;
+  const std::vector<std::vector<size_t>> &subset_relations = dst_data_ptr_->subset_relations_;
+  const std::vector<std::vector<size_t>> &inter_relations = dst_data_ptr_->inter_relations_;
   for (size_t i = 0; i < size; ++i) {
     double &spt = support_vec_[i];
     double &pls = plausibility_vec_[i];
     double &uct = uncertainty_vec_[i];
     const auto &subset_inds = subset_relations[i];
     const auto &inter_inds = inter_relations[i];
-    // AINFO << boost::format("inter_size: (%d %d)") % i % inter_inds.size();
+    AINFO << boost::format("inter_size: (%d %d)") % i % inter_inds.size();
     for (auto subset_ind : subset_inds) {
       spt += bba_vec_[subset_ind];
     }
     for (auto inter_ind : inter_inds) {
       pls += bba_vec_[inter_ind];
     }
-    // AINFO << boost::format("pls: (%d %lf)") % i % pls;
+    AINFO << boost::format("pls: (%d %lf)") % i % pls;
     uct = pls - spt;
   }
 }
@@ -340,18 +336,19 @@ void Dst::ComputeProbability() const {
   probability_vec_.clear();
   probability_vec_.resize(bba_vec_.size(), 0.0);
   const auto &combination_relations = dst_data_ptr_->combination_relations_;
-  const std::vector<size_t> &fod_subset_cardinalities =
-      dst_data_ptr_->fod_subset_cardinalities_;
+  const std::vector<size_t> &fod_subset_cardinalities = dst_data_ptr_->fod_subset_cardinalities_;
   for (size_t i = 0; i < combination_relations.size(); ++i) {
     const auto &combination_pairs = combination_relations[i];
     double intersection_card = static_cast<double>(fod_subset_cardinalities[i]);
     for (auto combination_pair : combination_pairs) {
       size_t a_ind = combination_pair.first;
       size_t b_ind = combination_pair.second;
-      probability_vec_[a_ind] +=
-          intersection_card /
-          static_cast<double>(fod_subset_cardinalities[b_ind]) *
-          bba_vec_[b_ind];
+      dbg(intersection_card);
+      dbg(static_cast<double>(fod_subset_cardinalities[b_ind]));
+      dbg(bba_vec_[b_ind]);
+      probability_vec_[a_ind] += intersection_card /
+                                 static_cast<double>(fod_subset_cardinalities[b_ind]) *
+                                 bba_vec_[b_ind];
     }
   }
 }
@@ -365,12 +362,12 @@ void Dst::Normalize() {
   for (auto &belief_mass : bba_vec_) {
     belief_mass /= mass_sum;
   }
+  dbg(mass_sum);
 }
 
 Dst operator+(const Dst &lhs, const Dst &rhs) {
   CHECK_EQ(lhs.app_name_, rhs.app_name_)
-      << boost::format("lhs Dst(%s) is not equal to rhs Dst(%s)") %
-             lhs.app_name_ % rhs.app_name_;
+      << boost::format("lhs Dst(%s) is not equal to rhs Dst(%s)") % lhs.app_name_ % rhs.app_name_;
   lhs.SelfCheck();
   rhs.SelfCheck();
   Dst res(lhs.app_name_);
@@ -378,16 +375,15 @@ Dst operator+(const Dst &lhs, const Dst &rhs) {
   const auto &combination_relations = lhs.dst_data_ptr_->combination_relations_;
   for (size_t i = 0; i < resbba_vec_.size(); ++i) {
     const auto &combination_pairs = combination_relations[i];
-    // AINFO << "pairs size: " << combination_pairs.size();
+    AINFO << "pairs size: " << combination_pairs.size();
     double &belief_mass = resbba_vec_[i];
     belief_mass = 0.0;
     for (auto combination_pair : combination_pairs) {
-      // AINFO << boost::format("(%d %d)") % combination_pair.first
-      //     % combination_pair.second;
-      belief_mass += lhs.GetIndBfmass(combination_pair.first) *
-                     rhs.GetIndBfmass(combination_pair.second);
+      AINFO << boost::format("(%d %d)") % combination_pair.first % combination_pair.second;
+      belief_mass +=
+          lhs.GetIndBfmass(combination_pair.first) * rhs.GetIndBfmass(combination_pair.second);
     }
-    // AINFO << boost::format("belief_mass: %lf") % belief_mass;
+    AINFO << boost::format("belief_mass: %lf") % belief_mass;
   }
   res.Normalize();
   return res;
@@ -398,9 +394,7 @@ Dst operator*(const Dst &dst, double w) {
   Dst res(dst.app_name_);
   // check w
   if (w < 0.0 || w > 1.0) {
-    AERROR << boost::format(
-                  "the weight of bba %lf is not valid, return default bba") %
-                  w;
+    AERROR << boost::format("the weight of bba %lf is not valid, return default bba") % w;
     return res;
   }
   size_t fod_loc = dst.dst_data_ptr_->fod_loc_;

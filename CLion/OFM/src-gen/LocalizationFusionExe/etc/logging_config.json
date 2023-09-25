@@ -1,0 +1,11 @@
+
+{
+  "name" : "Process6",
+  "dlt_id" : "LMF",
+  "log_mode" : [
+    "kConsole",
+    "kFile"
+  ],
+  "log_level" : "kInfo",
+  "log_file_path" : "/mnt/logfs/LocalizationFusionExeProcess_LogChannel001.log"
+}

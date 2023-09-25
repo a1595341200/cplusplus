@@ -1,0 +1,33 @@
+
+[c:S9542"JMove all #include directives to the very top of the file, before any code.(ñı÷y
+jc:S1871Õ"QThe code of this branch is a duplicate; refactor so that all branches are unique.(ÒÌâ–øÿÿÿÿ
+jc:S1871ß"QThe code of this branch is a duplicate; refactor so that all branches are unique.(ÒÌâ–øÿÿÿÿ
+Ac:S5955ò"-Declare the variable "u8Cnt" inside the loop.(ˆ‹ó­
+Bc:S5955·".Declare the variable "u16Cnt" inside the loop.(ôÀ±
+Gc:S5955Ÿ".Declare the variable "u16Cnt" inside the loop.(Ö¾æÉúÿÿÿÿ
+ec:S134±"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(Ä™®øÿÿÿÿ
+Jc:S886Ÿ"2Refactor this loop so that it is less error-prone.(Ö¾æÉúÿÿÿÿ
+mc:S3776ñ"TRefactor this function to reduce its Cognitive Complexity from 38 to the 25 allowed.(îæªÿÿÿÿÿ
+ec:S134"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(¸ÇÊøÿÿÿÿ
+`c:S134ª"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(ÄÂäš
+`c:S134³"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(’Äã
+<c:S1110‘	"#Remove these redundant parentheses.(âî¹üÿÿÿÿ
+mc:S3776Ş"TRefactor this function to reduce its Cognitive Complexity from 47 to the 25 allowed.(Ó·˜øÿÿÿÿ
+Bc:S5955".Declare the variable "u16Cnt" inside the loop.(ôÀ±
+ec:S134»"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(é¿ıÓùÿÿÿÿ
+`c:S134Ê"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(‹•Ü
+`c:S134ñ"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(›–­«
+`c:S134Š"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(‹õ ¹
+7c:S1110à"#Remove these redundant parentheses.(†æ
+€c:S2259Ö"gAccess to field 'f32Acc' results in a dereference of a null pointer (loaded from variable 'pEgoMotion')(ÌÆƒêúÿÿÿÿ
+@c:S1854÷"'Value stored to 'f32Stub' is never read(÷¾¦ÿıÿÿÿÿ
+ˆc:S2259”"tAccess to field 'f32MeasurementLatency' results in a dereference of a null pointer (loaded from variable 'pObjList')(İò®Õ
+0c:S125¸	"Remove the commented out code.(¬ù£C
+6c:S125ó"Remove the commented out code.(±Ï„ğøÿÿÿÿ
+6c:S125ù"Remove the commented out code.(±Ï„ğøÿÿÿÿ
+6c:S125ÿ"Remove the commented out code.(±Ï„ğøÿÿÿÿ
+6c:S125…"Remove the commented out code.(±Ï„ğøÿÿÿÿ
+6c:S125æ"Remove the commented out code.(—•³Ëÿÿÿÿÿ
+6c:S125è"Remove the commented out code.(±œ‹üÿÿÿÿ
+1c:S125€"Remove the commented out code.(×ö¢Ä
+6c:S125‚"Remove the commented out code.(äÀé™ûÿÿÿÿ

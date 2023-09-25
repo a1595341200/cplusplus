@@ -1,0 +1,76 @@
+
+{
+  "services" : [
+    {
+      "name" : "dtc_Provide",
+      "service_id" : 92,
+      "major_version" : 1,
+      "minor_version" : 0,
+      "methods" : [
+        {
+          "name" : "Report",
+          "id" : 20492,
+          "proto" : "udp"
+        }
+      ],
+      "events" : [
+      ],
+      "eventgroups" : [
+      ]
+    }
+  ],
+  "required_service_instances" : [
+  ],
+  "provided_service_instances" : [
+    {
+      "service_id" : 92,
+      "instance_id" : 1079,
+      "major_version" : 1,
+      "minor_version" : 0,
+      "service_discovery" : {
+        "initial_delay_min_ns" : 10000000,
+        "initial_delay_max_ns" : 100000000,
+        "initial_repetitions_base_delay_ns" : 500000000,
+        "initial_repetitions_max" : 3,
+        "cyclic_offer_delay_ns" : 3000000000,
+        "request_response_delay_min_ns" : 1500000000,
+        "request_response_delay_max_ns" : 1500000000,
+        "ttl" : 4,
+        "eventgroups" : [
+        ]
+      },
+      "port_mappings" : [
+        {
+          "name" : "MachineMappingProvidedSomeipdtc_Provide",
+          "address" : "179.16.0.10",
+          "network_mask" : "0.0.0.0",
+          "udp_port" : 40044,
+          "communication" : true,
+          "service_discovery" : true
+        }
+      ]
+    }
+  ],
+  "network_endpoints" : [
+    {
+      "name" : "NetworkEndpoint",
+      "address" : "179.16.0.10",
+      "mtu" : 1500,
+      "service_discovery" : {
+        "multicast_address" : "224.0.0.17",
+        "port" : 12331
+      },
+      "ports" : [
+        {
+          "proto" : "udp",
+          "port" : 40044,
+          "enable_so_linger" : "false"
+        }
+      ]
+    }
+  ],
+  "generatorVersion" : {
+    "name" : "amsr_someipbinding",
+    "commitId" : "5d8070897bdfaedb620f897381ef230973e3ab64"
+  }
+}

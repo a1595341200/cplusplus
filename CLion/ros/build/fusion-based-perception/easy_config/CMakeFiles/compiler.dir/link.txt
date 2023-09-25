@@ -1,0 +1,1 @@
+/usr/bin/c++  -O0 -g3   CMakeFiles/compiler.dir/src/compiler.cpp.o  -o /media/psf/Home/Desktop/work/ros_learning/devel/lib/kit_perception/compiler 

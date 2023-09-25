@@ -1,0 +1,51 @@
+
+{
+  "name" : "UTC0Exe",
+  "reportingBehavior" : "REPORTS-EXECUTION-STATE",
+  "isExecutionManager" : 0,
+  "processes" : [
+    {
+      "name" : "Process13",
+      "shortNamePath" : "/JICA/SWC/UTC0Exe/Process13",
+      "startupConfigs" : [
+        {
+          "shortNamePath" : "/JICA/SWC/UTC0Exe/UTC0ExeStartupConfigSet/StartupConfig",
+          "schedulingPolicy" : "SCHED_RR",
+          "schedulingPriority" : 20,
+          "options" : [
+          ],
+          "environmentVariables" : [
+            {
+              "key" : "AMSR_PROCESS_CONFIG_DIR",
+              "value" : "./etc"
+            },
+            {
+              "key" : "AMSR_EXECUTABLE_CONFIG_DIR",
+              "value" : "./etc"
+            }
+          ],
+          "executionDependency" : {
+            "someipd" : 0
+          },
+          "functionGroups" : [
+            {
+              "name" : "MachineFG",
+              "states" : [
+                "Running"
+              ]
+            }
+          ],
+          "cores" : {
+            "shallRunOn" : [
+              6
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "generatorVersion" : {
+    "name" : "amsr_em_exec_config",
+    "commitId" : "46318213ad7ac4d9dbeb54ad2e67c431a47a9a9f"
+  }
+}

@@ -69,6 +69,7 @@ ENDMACRO()
 #                 VERBATIM
 #                 )
 # using said macro.
+file(GLOB_RECURSE TEST_SRCS ${PROJECT_SOURCE_DIR}/test/*.cc)
 header_directories(INCLUDES ${PROJECT_SOURCE_DIR}/include/ hpp)
 include_directories(
     ${MESSAGE_HDRS}
@@ -91,6 +92,7 @@ add_executable(${PROJECT_N} ${SRCS} ${FUSION}
 /media/psf/Home/Desktop/work/cplusplus/src/apollo/modules/perception/common/graph/connected_component_analysis.cc
 /media/psf/Home/Desktop/work/cplusplus/src/apollo/modules/perception/common/perception_gflags.cc
 /media/psf/Home/Desktop/work/cplusplus/src/apollo/cyber/common/file.cc
+${TEST_SRCS}
 )
 
 target_include_directories(${PROJECT_N} PUBLIC include

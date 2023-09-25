@@ -1,0 +1,43 @@
+
+P	cpp:S1135d"4Complete the task associated to this "todo" comment.(Œ«ş§8†Œ¿€1
+U	cpp:S1135h"4Complete the task associated to this "TODO" comment.(ş¹¥ûÿÿÿÿ8†Œ¿€1
+P	cpp:S1135Ÿ"4Complete the task associated to this "todo" comment.(¯ŠÀ8†Œ¿€1
+P	cpp:S1135È"4Complete the task associated to this "todo" comment.(ÜÔ™88†Œ¿€1
+Q	cpp:S1135†"4Complete the task associated to this "TODO" comment.(Ü·ì”8Œ¿€1
+V	cpp:S1135³"4Complete the task associated to this "todo" comment.(’¨Ó›øÿÿÿÿ8Œ¿€1
+Q	cpp:S1135¾"4Complete the task associated to this "todo" comment.(î¼À¸8Œ¿€1
+	cpp:S5276ı"_implicit conversion from 'double' to 'uint32' (aka 'unsigned int') changes value from 0.04 to 0(ôŠŸ³üÿÿÿÿ8¢¿€1
+C	cpp:S1481î"'unused variable 'typeRaCamObjectVccTmp'(§ø¶8¢¿€1
+\	cpp:S1768ó"?result of comparison of unsigned expression < 0 is always false(åÅ¸8£¿€1
+a	cpp:S1768ƒ"?result of comparison of unsigned expression < 0 is always false(ê½‹ºùÿÿÿÿ8£¿€1
+\	cpp:S1768”"?result of comparison of unsigned expression < 0 is always false(·¬»§8£¿€1
+a	cpp:S1768"?result of comparison of unsigned expression < 0 is always false(«éÕóøÿÿÿÿ8£¿€1
+a	cpp:S1768ª"?result of comparison of unsigned expression < 0 is always false(ƒøÇîüÿÿÿÿ8£¿€1
+\	cpp:S1768¶"?result of comparison of unsigned expression < 0 is always false(Ê¯¼ö8£¿€1
+\	cpp:S1768À"?result of comparison of unsigned expression < 0 is always false(òĞà“8£¿€1
+\	cpp:S1768Ñ"?result of comparison of unsigned expression < 0 is always false(£Ü•‡8£¿€1
+a	cpp:S1768Ş"?result of comparison of unsigned expression < 0 is always false(¬å˜»ùÿÿÿÿ8£¿€1
+a	cpp:S1768è"?result of comparison of unsigned expression < 0 is always false(·Û‹¾ùÿÿÿÿ8£¿€1
+a	cpp:S1768õ"?result of comparison of unsigned expression < 0 is always false(·“Û€úÿÿÿÿ8£¿€1
+o	cpp:S5276ƒ"Mimplicit conversion loses floating-point precision: 'double' to 'const float'(çœ•øùÿÿÿÿ8£¿€1
+=	cpp:S5421"!Global variables should be const.(ëéö8×¿€1
+J	cpp:S5817!")This function should be declared "const".(‰¹ıåüÿÿÿÿ8Ü¿€1
+L	cpp:S1659î"0Define each identifier in a dedicated statement.(§ø¶8‚¿€1
+_	cpp:S5945ç"=Use "std::array" or "std::vector" instead of a C-style array.(ñÇÑÂúÿÿÿÿ8ƒ¿€1
+wcpp:S108—"\Fill this compound statement, remove it, or add a nested comment explaining why it is empty.(ÁÄ¿o8Š¿€1
+F	cpp:S5817›")This function should be declared "const".(àÒ‰8¿€1
+_	cpp:S5945ˆ"=Use "std::array" or "std::vector" instead of a C-style array.(À‚°€ùÿÿÿÿ8¿€1
+Z	cpp:S5945š"=Use "std::array" or "std::vector" instead of a C-style array.(«…‘Å8¿€1
+_	cpp:S5945¥"=Use "std::array" or "std::vector" instead of a C-style array.(Ø’½íúÿÿÿÿ8¿€1
+Z	cpp:S5945°"=Use "std::array" or "std::vector" instead of a C-style array.(§şÂ«8¿€1
+_	cpp:S5945¼"=Use "std::array" or "std::vector" instead of a C-style array.(§Ã¥èøÿÿÿÿ8Ÿ¿€1
+_	cpp:S5945È"=Use "std::array" or "std::vector" instead of a C-style array.(ã˜Àµşÿÿÿÿ8Ÿ¿€1
+Y	cpp:S5945Ø"=Use "std::array" or "std::vector" instead of a C-style array.(Éµ¯_8 ¿€1
+Z	cpp:S5945ä"=Use "std::array" or "std::vector" instead of a C-style array.(½¦ì§8¡¿€1
+_	cpp:S5945ï"=Use "std::array" or "std::vector" instead of a C-style array.(­’ø÷üÿÿÿÿ8¡¿€1
+>cpp:S125;"Remove the commented out code.(¤¢¸ıÿÿÿÿ8Â¿€1
+>cpp:S125W"Remove the commented out code.(ğ¡›Ôÿÿÿÿÿ8Â¿€1
+9cpp:S125y"Remove the commented out code.(Á£¬Œ8Â¿€1
+?cpp:S125ß"Remove the commented out code.(éØ»Úûÿÿÿÿ8Â¿€1
+?cpp:S125‚"Remove the commented out code.(»­¢üÿÿÿÿ8Â¿€1
+?cpp:S125„"Remove the commented out code.(íò¥çúÿÿÿÿ8Â¿€1

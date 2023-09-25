@@ -1,0 +1,40 @@
+/**********************************************************************************************************************
+ *  COPYRIGHT
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  \verbatim
+ *  Copyright (c) 2023 by Vector Informatik GmbH. All rights reserved.
+ *
+ *                This software is copyright protected and proprietary to Vector Informatik GmbH.
+ *                Vector Informatik GmbH grants to you only those rights as set out in the license conditions.
+ *                All other rights remain with Vector Informatik GmbH.
+ *  \endverbatim
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  FILE DESCRIPTION
+ *  -----------------------------------------------------------------------------------------------------------------*/
+/**        \file  LocalizationFusionExe/include/tosoca_locsensorinfosi/tosoca_locsensorinfosi_common.h
+ *        \brief  Header for service 'ToSOCA_LocSensorInfoSI'.
+ *
+ *      \details
+ *
+ *********************************************************************************************************************/
+/**********************************************************************************************************************
+ *  GENERATOR INFORMATION
+ *  -------------------------------------------------------------------------------------------------------------------
+ *    Generator Name: amsr_socal
+ *         Commit ID: 48d01869de8722335d03ff89fbd3fef3e2fe462b
+ *********************************************************************************************************************/
+
+#ifndef LOCALIZATIONFUSIONEXE_INCLUDE_TOSOCA_LOCSENSORINFOSI_TOSOCA_LOCSENSORINFOSI_COMMON_H_
+#define LOCALIZATIONFUSIONEXE_INCLUDE_TOSOCA_LOCSENSORINFOSI_TOSOCA_LOCSENSORINFOSI_COMMON_H_
+
+/*!
+ * \trace SPEC-4980247, SPEC-4980248, SPEC-5951130, SPEC-4980251
+ */
+/**********************************************************************************************************************
+ *  INCLUDES
+ *********************************************************************************************************************/
+#include "LocSensorInfo1VCC/impl_type_locsensorinfo1vcc.h"
+#include "ara/com/types.h"
+#include "tosoca_locsensorinfosi/ToSOCA_LocSensorInfoSI.h"
+
+#endif  // LOCALIZATIONFUSIONEXE_INCLUDE_TOSOCA_LOCSENSORINFOSI_TOSOCA_LOCSENSORINFOSI_COMMON_H_

@@ -1,0 +1,13 @@
+
+bc:S9546"JMove all #include directives to the very top of the file, before any code.(ñı÷y8´¾Êş€1
+Xc:S1199Ë"8Extract this nested code block into a separate function.(ÒÌâ–øÿÿÿÿ8¶¾Êş€1
+Xc:S1199ì"8Extract this nested code block into a separate function.(ÒÌâ–øÿÿÿÿ8¶¾Êş€1
+Xc:S1199”"8Extract this nested code block into a separate function.(ÒÌâ–øÿÿÿÿ8¶¾Êş€1
+Gc:S5955Î",Declare the variable "u16i" inside the loop.(ª¤¦8·¾Êş€1
+Xc:S1199Í"8Extract this nested code block into a separate function.(ÒÌâ–øÿÿÿÿ8·¾Êş€1
+Gc:S5955ÿ",Declare the variable "u16i" inside the loop.(—Ï‚»8¸¾Êş€1
+Xc:S1199¹"8Extract this nested code block into a separate function.(ÒÌâ–øÿÿÿÿ8º¾Êş€1
+Qc:S886Ì"2Refactor this loop so that it is less error-prone.(ıŸ‚êùÿÿÿÿ8º¾Êş€1
+bc:S3519Œ"GOut of bound memory access (access exceeds upper limit of memory block)(šÒûÁ8ÇÓÊş€1
+bc:S3519Â"GOut of bound memory access (access exceeds upper limit of memory block)(Şõİ¢8ÇÓÊş€1
+gc:S3519Ç"GOut of bound memory access (access exceeds upper limit of memory block)(úùòÂøÿÿÿÿ8ÇÓÊş€1

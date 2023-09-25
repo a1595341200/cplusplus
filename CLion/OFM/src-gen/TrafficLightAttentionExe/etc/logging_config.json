@@ -1,0 +1,11 @@
+
+{
+  "name" : "Process3",
+  "dlt_id" : "TLA",
+  "log_mode" : [
+    "kConsole",
+    "kFile"
+  ],
+  "log_level" : "kInfo",
+  "log_file_path" : "/mnt/logfs/TrafficLightAttentionExeProcess_LogChannel001.log"
+}

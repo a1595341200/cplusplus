@@ -1,0 +1,11 @@
+
+{
+  "name" : "TSync_Daemon_Proc",
+  "dlt_id" : "TSYD",
+  "log_mode" : [
+    "kConsole",
+    "kFile"
+  ],
+  "log_level" : "kError",
+  "log_file_path" : "/mnt/logfs/tsyncdProcess_LogChannel001.log"
+}

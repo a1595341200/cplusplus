@@ -1,0 +1,15 @@
+
+bc:S954*"JMove all #include directives to the very top of the file, before any code.(ñı÷y8ô‚ÿ€1
+Fc:S5955>",Declare the variable "u16i" inside the loop.(‘¤¿‡8ô‚ÿ€1
+Nc:S5955l"/Declare the variable "u16Sens" inside the loop.(ÔÎ‚Åûÿÿÿÿ8õ‚ÿ€1
+Wc:S1199k"8Extract this nested code block into a separate function.(ÒÌâ–øÿÿÿÿ8ö‚ÿ€1
+Lc:S5955‹",Declare the variable "u16i" inside the loop.(óÕ‹„øÿÿÿÿ8ö‚ÿ€1
+Lc:S5955Ñ",Declare the variable "u16i" inside the loop.(óÕ‹„øÿÿÿÿ8÷‚ÿ€1
+Xc:S1199Å"8Extract this nested code block into a separate function.(ÒÌâ–øÿÿÿÿ8÷‚ÿ€1
+Hc:S5955•"-Declare the variable "u16it" inside the loop.(ø·Ñº8ø‚ÿ€1
+Xc:S1199"8Extract this nested code block into a separate function.(ÒÌâ–øÿÿÿÿ8ø‚ÿ€1
+Mc:S5955Å"-Declare the variable "u16it" inside the loop.(‹‡…Éüÿÿÿÿ8ù‚ÿ€1
+Xc:S1199¼"8Extract this nested code block into a separate function.(ÒÌâ–øÿÿÿÿ8ù‚ÿ€1
+Xc:S1199á"8Extract this nested code block into a separate function.(ÒÌâ–øÿÿÿÿ8ù‚ÿ€1
+fc:S3519p"GOut of bound memory access (access exceeds upper limit of memory block)(¼Êİšüÿÿÿÿ8äŸ‚ÿ€1
+=c:S125"Remove the commented out code.(èí×üÿÿÿÿ8äŸ‚ÿ€1

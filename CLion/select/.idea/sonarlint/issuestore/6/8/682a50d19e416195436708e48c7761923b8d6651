@@ -1,0 +1,11 @@
+
+@	cpp:S1117,"$declaration shadows a local variable(³²Åß8ŞÄ»Ãƒ1
+4	cpp:S1481O"unused variable 'a'(›¤ùŞúÿÿÿÿ8åºËÃƒ1
+4	cpp:S1481P"unused variable 'p'(´¿Ñøÿÿÿÿ8åºËÃƒ1
+mcpp:S134:"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(£ÀÇùÿÿÿÿ8ôÄ»Ãƒ1
+Y	cpp:S5945"=Use "std::array" or "std::vector" instead of a C-style array.(ªÛ­Ï8öÄ»Ãƒ1
+^	cpp:S5945"=Use "std::array" or "std::vector" instead of a C-style array.(¤Í—ûÿÿÿÿ8ùÄ»Ãƒ1
+K	cpp:S5820"/Convert this integer literal to a bool literal.(”õÑ8ùÄ»Ãƒ1
+S	cpp:S5945$"2Use "std::string" instead of a C-style char array.(²Ššôúÿÿÿÿ8üÄ»Ãƒ1
+G	cpp:S11218",Extract the assignment from this expression.(°Ôè8Å»Ãƒ1
+9cpp:S125Q"Remove the commented out code.(€Ì±8ÃÓ»Ãƒ1

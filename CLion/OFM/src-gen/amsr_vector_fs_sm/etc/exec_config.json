@@ -1,0 +1,64 @@
+
+{
+  "name" : "amsr_vector_fs_sm",
+  "reportingBehavior" : "REPORTS-EXECUTION-STATE",
+  "isExecutionManager" : 0,
+  "processes" : [
+    {
+      "name" : "amsr_sm_process",
+      "shortNamePath" : "/JICA/SWC/amsr_vector_fs_sm/amsr_sm_process",
+      "startupConfigs" : [
+        {
+          "shortNamePath" : "/JICA/SWC/amsr_vector_fs_sm/amsr_vector_fs_smStartupConfigSet/StartupConfig",
+          "schedulingPolicy" : "SCHED_RR",
+          "schedulingPriority" : 20,
+          "options" : [
+            "Option1",
+            "release",
+            "msc"
+          ],
+          "environmentVariables" : [
+            {
+              "key" : "AMSR_PROCESS_CONFIG_DIR",
+              "value" : "./etc"
+            },
+            {
+              "key" : "AMSR_EXECUTABLE_CONFIG_DIR",
+              "value" : "./etc"
+            }
+          ],
+          "executionDependency" : {
+          },
+          "functionGroups" : [
+            {
+              "name" : "MachineFG",
+              "states" : [
+                "Running",
+                "Factory",
+                "Shutdown",
+                "Startup",
+                "bootloader"
+              ]
+            }
+          ],
+          "cores" : {
+            "shallRunOn" : [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "generatorVersion" : {
+    "name" : "amsr_em_exec_config",
+    "commitId" : "46318213ad7ac4d9dbeb54ad2e67c431a47a9a9f"
+  }
+}

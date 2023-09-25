@@ -1,0 +1,4 @@
+
+T	cpp:S5028	"8Replace this macro by "const", "constexpr" or an "enum".(şÏÜì8ıÎÿš1
+Y	cpp:S1199"8Extract this nested code block into a separate function.(ÒÌâ–øÿÿÿÿ8§ÿš1
+Y	cpp:S1199,"8Extract this nested code block into a separate function.(ÒÌâ–øÿÿÿÿ8«ÿš1

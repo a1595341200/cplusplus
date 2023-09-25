@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/opt/ros/noetic/include",
+                "/usr/include/x86_64-linux-gnu/qt5/**",
+                "/usr/include/aarch64-linux-gnu/qt5/**",
+                "/usr/include/OGRE",
+                "devel/include",
+                "/usr/include/opencv4",
+                "src/OFM_3R/include/**"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/clang-10",
+            "cStandard": "c17",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "linux-clang-x64",
+            "configurationProvider": "go2sh.cmake-integration"
+        }
+    ],
+    "version": 4
+}

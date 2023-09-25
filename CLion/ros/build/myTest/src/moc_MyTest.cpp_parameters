@@ -1,0 +1,7 @@
+-DROS_BUILD_SHARED_LIBS=1
+-DROS_BUILD_SHARED_LIBS=1
+-DROS_PACKAGE_NAME="MyTest"
+-DROSCONSOLE_BACKEND_LOG4CXX
+-o
+/media/psf/Home/Desktop/work/ros_learning/build/myTest/src/moc_MyTest.cpp
+/media/psf/Home/Desktop/work/ros_learning/src/myTest/src/MyTest.h

@@ -1,0 +1,11 @@
+
+{
+  "name" : "Process11",
+  "dlt_id" : "PR",
+  "log_mode" : [
+    "kConsole",
+    "kFile"
+  ],
+  "log_level" : "kInfo",
+  "log_file_path" : "/mnt/logfs/PerceptionRearExeProcess_LogChannel001.log"
+}

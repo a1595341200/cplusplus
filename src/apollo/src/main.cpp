@@ -2,7 +2,7 @@
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2023-09-22 20:01:07
  * @LastEditors: yao.xie 1595341200@qq.com
- * @LastEditTime: 2023-09-25 16:49:15
+ * @LastEditTime: 2023-09-26 10:23:51
  * @FilePath: /cplusplus/src/apollo/src/main.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置:
  * https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
@@ -16,8 +16,17 @@
 
 #include <gtest/gtest.h>
 
+#include "modules/perception/base/frame.h"
 #include "modules/perception/common/graph/secure_matrix.h"
-
+#include "modules/perception/common/sensor_manager/sensor_manager.h"
+#include "modules/perception/fusion/base/sensor.h"
+#include "modules/perception/fusion/base/sensor_frame.h"
+#include "modules/perception/fusion/base/sensor_object.h"
+#include "modules/perception/fusion/base/track.h"
+#include "modules/perception/fusion/lib/data_association/hm_data_association/probabilities.h"
+#include "modules/perception/fusion/lib/data_association/hm_data_association/projection_cache.h"
+#include "modules/perception/fusion/lib/data_association/hm_data_association/track_object_distance.h"
+#include "modules/perception/fusion/lib/data_association/hm_data_association/track_object_similarity.h"
 // #include "secure_matrix.h"
 int rows_num_ = 10;
 int cols_num_ = 8;

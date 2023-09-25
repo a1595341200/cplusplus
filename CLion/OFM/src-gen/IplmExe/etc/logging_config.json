@@ -1,0 +1,11 @@
+
+{
+  "name" : "IPLM_Process",
+  "dlt_id" : "IPLM",
+  "log_mode" : [
+    "kConsole",
+    "kFile"
+  ],
+  "log_level" : "kInfo",
+  "log_file_path" : "/mnt/logfs/IplmExeProcess_LogChannel001.log"
+}

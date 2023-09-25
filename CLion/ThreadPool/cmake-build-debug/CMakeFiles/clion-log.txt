@@ -1,0 +1,7 @@
+/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /tmp/tmp.ttCgwO7DPz
+CMake Error at CMakeLists.txt:1 (cmake_minimum_required):
+  CMake 3.21 or higher is required.  You are running version 3.16.3
+
+
+-- Configuring incomplete, errors occurred!
+无法读取 /Users/xieyao/CLionProjects/ThreadPool/cmake-build-debug/CMakeFiles/ThreadPool.dir/DependInfo.cmake

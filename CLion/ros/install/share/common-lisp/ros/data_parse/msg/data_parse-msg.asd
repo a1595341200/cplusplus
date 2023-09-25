@@ -1,0 +1,31 @@
+
+(cl:in-package :asdf)
+
+(defsystem "data_parse-msg"
+  :depends-on (:roslisp-msg-protocol :roslisp-utils :geometry_msgs-msg
+               :std_msgs-msg
+)
+  :components ((:file "_package")
+    (:file "AdjacentLane" :depends-on ("_package_AdjacentLane"))
+    (:file "_package_AdjacentLane" :depends-on ("_package"))
+    (:file "AdjacentLaneFrame" :depends-on ("_package_AdjacentLaneFrame"))
+    (:file "_package_AdjacentLaneFrame" :depends-on ("_package"))
+    (:file "EgoLane" :depends-on ("_package_EgoLane"))
+    (:file "_package_EgoLane" :depends-on ("_package"))
+    (:file "EgoLaneFrame" :depends-on ("_package_EgoLaneFrame"))
+    (:file "_package_EgoLaneFrame" :depends-on ("_package"))
+    (:file "EgoMotion" :depends-on ("_package_EgoMotion"))
+    (:file "_package_EgoMotion" :depends-on ("_package"))
+    (:file "JiCaEgoMotion" :depends-on ("_package_JiCaEgoMotion"))
+    (:file "_package_JiCaEgoMotion" :depends-on ("_package"))
+    (:file "LHParam" :depends-on ("_package_LHParam"))
+    (:file "_package_LHParam" :depends-on ("_package"))
+    (:file "Object" :depends-on ("_package_Object"))
+    (:file "_package_Object" :depends-on ("_package"))
+    (:file "ObjectFrame" :depends-on ("_package_ObjectFrame"))
+    (:file "_package_ObjectFrame" :depends-on ("_package"))
+    (:file "SensorFovData" :depends-on ("_package_SensorFovData"))
+    (:file "_package_SensorFovData" :depends-on ("_package"))
+    (:file "SensorFovList" :depends-on ("_package_SensorFovList"))
+    (:file "_package_SensorFovList" :depends-on ("_package"))
+  ))

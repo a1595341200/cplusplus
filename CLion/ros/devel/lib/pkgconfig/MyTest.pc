@@ -1,0 +1,8 @@
+prefix=/media/psf/Home/Desktop/work/ros_learning/devel
+
+Name: MyTest
+Description: Description of MyTest
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: rviz
