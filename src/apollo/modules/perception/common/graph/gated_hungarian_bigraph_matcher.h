@@ -23,7 +23,6 @@
 #include <vector>
 
 #include "cyber/common/log.h"
-
 #include "modules/perception/common/graph/connected_component_analysis.h"
 #include "modules/perception/common/graph/hungarian_optimizer.h"
 
@@ -49,20 +48,22 @@ class GatedHungarianMatcher {
    * and update it completely is STRONG RECOMMENDED!! P.S. resizing SecureMat
    * would not alloc new memory, if the resizing size is smaller than the
    * size reserved. */
-  const SecureMat<T>& global_costs() const { return global_costs_; }
-  SecureMat<T>* mutable_global_costs() { return &global_costs_; }
+  const SecureMat<T>& global_costs() const {
+    return global_costs_;
+  }
+  SecureMat<T>* mutable_global_costs() {
+    return &global_costs_;
+  }
 
   void Match(T cost_thresh, OptimizeFlag opt_flag,
              std::vector<std::pair<size_t, size_t>>* assignments,
-             std::vector<size_t>* unassigned_rows,
-             std::vector<size_t>* unassigned_cols);
+             std::vector<size_t>* unassigned_rows, std::vector<size_t>* unassigned_cols);
 
   void Match(T cost_thresh, T bound_value, OptimizeFlag opt_flag,
              std::vector<std::pair<size_t, size_t>>* assignments,
-             std::vector<size_t>* unassigned_rows,
-             std::vector<size_t>* unassigned_cols);
+             std::vector<size_t>* unassigned_rows, std::vector<size_t>* unassigned_cols);
 
- private:
+ public:
   /* Step 1:
    * a. get number of rows & cols
    * b. determine function of comparison */
@@ -71,9 +72,8 @@ class GatedHungarianMatcher {
   /* Step 2:
    * to acclerate matching process, split input cost graph into several
    * small sub-parts. */
-  void ComputeConnectedComponents(
-      std::vector<std::vector<size_t>>* row_components,
-      std::vector<std::vector<size_t>>* col_components) const;
+  void ComputeConnectedComponents(std::vector<std::vector<size_t>>* row_components,
+                                  std::vector<std::vector<size_t>>* col_components) const;
 
   /* Step 3:
    * optimize single connected component, which is part of the global one */
@@ -94,8 +94,7 @@ class GatedHungarianMatcher {
   void UpdateGatingLocalCostsMat(const std::vector<size_t>& row_component,
                                  const std::vector<size_t>& col_component);
 
-  void OptimizeAdapter(
-      std::vector<std::pair<size_t, size_t>>* local_assignments);
+  void OptimizeAdapter(std::vector<std::pair<size_t, size_t>>* local_assignments);
 
   /* Hungarian optimizer */
   HungarianOptimizer<T> optimizer_;
@@ -121,21 +120,18 @@ class GatedHungarianMatcher {
 };  // class GatedHungarianMatcher
 
 template <typename T>
-void GatedHungarianMatcher<T>::Match(
-    T cost_thresh, OptimizeFlag opt_flag,
-    std::vector<std::pair<size_t, size_t>>* assignments,
-    std::vector<size_t>* unassigned_rows,
-    std::vector<size_t>* unassigned_cols) {
-  Match(cost_thresh, cost_thresh, opt_flag, assignments, unassigned_rows,
-        unassigned_cols);
+void GatedHungarianMatcher<T>::Match(T cost_thresh, OptimizeFlag opt_flag,
+                                     std::vector<std::pair<size_t, size_t>>* assignments,
+                                     std::vector<size_t>* unassigned_rows,
+                                     std::vector<size_t>* unassigned_cols) {
+  Match(cost_thresh, cost_thresh, opt_flag, assignments, unassigned_rows, unassigned_cols);
 }
 
 template <typename T>
-void GatedHungarianMatcher<T>::Match(
-    T cost_thresh, T bound_value, OptimizeFlag opt_flag,
-    std::vector<std::pair<size_t, size_t>>* assignments,
-    std::vector<size_t>* unassigned_rows,
-    std::vector<size_t>* unassigned_cols) {
+void GatedHungarianMatcher<T>::Match(T cost_thresh, T bound_value, OptimizeFlag opt_flag,
+                                     std::vector<std::pair<size_t, size_t>>* assignments,
+                                     std::vector<size_t>* unassigned_rows,
+                                     std::vector<size_t>* unassigned_cols) {
   CHECK_NOTNULL(assignments);
   CHECK_NOTNULL(unassigned_rows);
   CHECK_NOTNULL(unassigned_cols);
@@ -222,8 +218,7 @@ void GatedHungarianMatcher<T>::ComputeConnectedComponents(
 
 template <typename T>
 void GatedHungarianMatcher<T>::OptimizeConnectedComponent(
-    const std::vector<size_t>& row_component,
-    const std::vector<size_t>& col_component) {
+    const std::vector<size_t>& row_component, const std::vector<size_t>& col_component) {
   size_t local_rows_num = row_component.size();
   size_t local_cols_num = col_component.size();
 
@@ -261,9 +256,8 @@ void GatedHungarianMatcher<T>::OptimizeConnectedComponent(
 }
 
 template <typename T>
-void GatedHungarianMatcher<T>::GenerateUnassignedData(
-    std::vector<size_t>* unassigned_rows,
-    std::vector<size_t>* unassigned_cols) const {
+void GatedHungarianMatcher<T>::GenerateUnassignedData(std::vector<size_t>* unassigned_rows,
+                                                      std::vector<size_t>* unassigned_cols) const {
   CHECK_NOTNULL(unassigned_rows);
   CHECK_NOTNULL(unassigned_cols);
 
@@ -289,9 +283,8 @@ void GatedHungarianMatcher<T>::GenerateUnassignedData(
 }
 
 template <typename T>
-void GatedHungarianMatcher<T>::UpdateGatingLocalCostsMat(
-    const std::vector<size_t>& row_component,
-    const std::vector<size_t>& col_component) {
+void GatedHungarianMatcher<T>::UpdateGatingLocalCostsMat(const std::vector<size_t>& row_component,
+                                                         const std::vector<size_t>& col_component) {
   /* set the invalid cost to bound value */
   SecureMat<T>* local_costs = optimizer_.costs();
   local_costs->Resize(row_component.size(), col_component.size());

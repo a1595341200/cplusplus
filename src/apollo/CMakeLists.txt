@@ -97,7 +97,7 @@ target_include_directories(${PROJECT_N} PUBLIC include
 "${PROJECT_SOURCE_DIR}/"
 )
 target_link_libraries(${PROJECT_N} utils absl_strings absl_log_entry
-gflags::gflags
-Protobuf::Protobuf
+gflags
+protobuf
 absl::string_view
 )
