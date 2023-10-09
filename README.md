@@ -1,8 +1,8 @@
 <!--
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2023-09-12 17:51:54
- * @LastEditors: yao.xie 1595341200@qq.com
- * @LastEditTime: 2023-09-18 17:37:27
+ * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
+ * @LastEditTime: 2023-10-09 09:52:13
  * @FilePath: /cplusplus/README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -56,7 +56,7 @@ cmake -S . -B build -G "Unix Makefiles"
 # 该命令的含义是：执行build目录下的构建系统，生成构建目标。
 cmake --build build
 # 安装
-cmake --build build --target install
+sudo cmake --build build --target install
 ```
 ### 1.3.2. 使用
 ```

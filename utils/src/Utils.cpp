@@ -2,19 +2,22 @@
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2023-09-12 18:26:13
  * @LastEditors: yao.xie 1595341200@qq.com
- * @LastEditTime: 2023-09-15 09:43:53
+ * @LastEditTime: 2023-10-09 11:46:48
  * @FilePath: /utils/src/Utils.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置
  * 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 #define TAG "Utils"
-#include "Log.h"
 #include <sched.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <thread>
 #include <unistd.h>
+
+#include <iomanip>
+#include <thread>
+
+#include "Log.h"
 
 void bindThreadToCore(int coreId, std::thread::native_handle_type handle) {
   // 设置CPU亲和性
@@ -43,4 +46,23 @@ void bindProcessToCore(int coreId) {
     SLOG(INFO) << "Set CPU affinity failue, ERROR: " << strerror(errno);
     return;
   }
+}
+
+std::string getCurrentSysTime() {
+  auto current_time = std::chrono::system_clock::now();
+  auto tt = std::chrono::system_clock::to_time_t(current_time);
+
+  struct tm *ptm = localtime(&tt);
+  char date[60] = {0};
+  sprintf(date, "%d-%02d-%02d-%02d:%02d:%02d", (int)ptm->tm_year + 1900, (int)ptm->tm_mon + 1,
+          (int)ptm->tm_mday, (int)ptm->tm_hour, (int)ptm->tm_min, (int)ptm->tm_sec);
+
+  auto ms =
+      std::chrono::duration_cast<std::chrono::milliseconds>(current_time.time_since_epoch()) % 1000;
+
+  std::ostringstream sys_time;
+
+  sys_time << "[" << std::string(date) << "." << std::setw(3) << std::setfill('0') << ms.count()
+           << "]";
+  return sys_time.str();
 }

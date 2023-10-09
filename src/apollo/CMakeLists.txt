@@ -97,6 +97,7 @@ ${TEST_SRCS}
 
 target_include_directories(${PROJECT_N} PUBLIC include
 "${PROJECT_SOURCE_DIR}/"
+"${PROJECT_SOURCE_DIR}/../../external/eigen-3.4.0/"
 )
 target_link_libraries(${PROJECT_N} utils absl_strings absl_log_entry
 gflags

@@ -241,7 +241,8 @@ double ComputeRadarCameraLocSimilarity(const Eigen::Vector3d& radar_ct,
                                        const Eigen::Matrix4d& world2camera_pose,
                                        const LocSimilarityParams& params) {
   dbg(radar_ct);
-  dbg(world2camera_pose);
+  // dbg(world2camera_pose);
+  std::cout << "world2camera_pose\n" << world2camera_pose << std::endl;
 
   Eigen::Vector3d camera_ct = camera->GetBaseObject()->center;
   Eigen::Vector3d camera_ct_c = (world2camera_pose * camera_ct.homogeneous()).head(3);
