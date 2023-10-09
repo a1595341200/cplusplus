@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC -O0 -g3  -shared -Wl,-soname,libutils_debug.so -o libutils_debug.so CMakeFiles/utils.dir/src/Log.cpp.o CMakeFiles/utils.dir/src/Timer.cpp.o CMakeFiles/utils.dir/src/Utils.cpp.o  -Wl,-rpath,/usr/local/lib /usr/local/lib/libglog.so.0.7.0 /usr/local/lib/libgtest.a /usr/local/lib/libgmock.a /usr/local/lib/libgtest.a -lpthread 
