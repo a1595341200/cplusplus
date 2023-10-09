@@ -2,7 +2,7 @@
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2023-09-12 17:51:54
  * @LastEditors: yao.xie 1595341200@qq.com
- * @LastEditTime: 2023-10-09 23:15:46
+ * @LastEditTime: 2023-10-09 23:58:42
  * @FilePath: /cplusplus/README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -22,6 +22,7 @@
   - [1.8. benchmark](#18-benchmark)
     - [1.8.1. 安装](#181-安装)
     - [1.8.2. 使用](#182-使用)
+  - [spdlog](#spdlog)
 
 # 1. cplusplus
 ## 1.1. 设置DEBUG与release前缀
@@ -118,3 +119,8 @@ $ cmake --build "build" --config Release
 ```
 ### 1.8.2. 使用
 
+## spdlog
+```
+    find_package(spdlog CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE spdlog::spdlog)
+```
