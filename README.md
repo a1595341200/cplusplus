@@ -2,7 +2,7 @@
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2023-09-12 17:51:54
  * @LastEditors: yao.xie 1595341200@qq.com
- * @LastEditTime: 2023-10-09 23:58:42
+ * @LastEditTime: 2023-10-10 00:22:40
  * @FilePath: /cplusplus/README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -22,7 +22,12 @@
   - [1.8. benchmark](#18-benchmark)
     - [1.8.1. 安装](#181-安装)
     - [1.8.2. 使用](#182-使用)
-  - [spdlog](#spdlog)
+  - [1.9. spdlog](#19-spdlog)
+  - [1.10. pcapplusplus](#110-pcapplusplus)
+    - [1.10.1. 使用](#1101-使用)
+  - [1.11. 终端代理](#111-终端代理)
+  - [1.12. tinyxml2](#112-tinyxml2)
+    - [1.12.1. 使用](#1121-使用)
 
 # 1. cplusplus
 ## 1.1. 设置DEBUG与release前缀
@@ -119,8 +124,26 @@ $ cmake --build "build" --config Release
 ```
 ### 1.8.2. 使用
 
-## spdlog
+## 1.9. spdlog
 ```
     find_package(spdlog CONFIG REQUIRED)
     target_link_libraries(main PRIVATE spdlog::spdlog)
+```
+## 1.10. pcapplusplus
+### 1.10.1. 使用
+```
+  find_package(unofficial-pcapplusplus CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE unofficial::pcapplusplus::pcappp unofficial::pcapplusplus::commonpp unofficial::pcapplusplus::packetpp)
+```
+## 1.11. 终端代理
+```
+export HTTP_PROXY="192.168.123.106:4780"
+
+export HTTPS_PROXY="192.168.123.106:4780"
+```
+## 1.12. tinyxml2
+### 1.12.1. 使用
+```
+  find_package(tinyxml2 CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE tinyxml2::tinyxml2)
 ```
