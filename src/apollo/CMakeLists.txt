@@ -84,14 +84,14 @@ foreach(dir ${INCLUDES})
         message(STATUS ${dir})
 endforeach()
 add_executable(${PROJECT_N} ${SRCS} ${FUSION}
-/media/psf/Home/Desktop/work/cplusplus/src/apollo/modules/perception/fusion/base/scene.cc
-/media/psf/Home/Desktop/work/cplusplus/src/apollo/modules/perception/lib/config_manager/config_manager.cc
-/media/psf/Home/Desktop/work/cplusplus/src/apollo/cyber/binary.cc
-/media/psf/Home/Desktop/work/cplusplus/src/apollo/modules/perception/common/sensor_manager/sensor_manager.cc
-/media/psf/Home/Desktop/work/cplusplus/src/apollo/modules/perception/base/object.cc
-/media/psf/Home/Desktop/work/cplusplus/src/apollo/modules/perception/common/graph/connected_component_analysis.cc
-/media/psf/Home/Desktop/work/cplusplus/src/apollo/modules/perception/common/perception_gflags.cc
-/media/psf/Home/Desktop/work/cplusplus/src/apollo/cyber/common/file.cc
+${PROJECT_SOURCE_DIR}/modules/perception/fusion/base/scene.cc
+${PROJECT_SOURCE_DIR}/modules/perception/lib/config_manager/config_manager.cc
+${PROJECT_SOURCE_DIR}/cyber/binary.cc
+${PROJECT_SOURCE_DIR}/modules/perception/common/sensor_manager/sensor_manager.cc
+${PROJECT_SOURCE_DIR}/modules/perception/base/object.cc
+${PROJECT_SOURCE_DIR}/modules/perception/common/graph/connected_component_analysis.cc
+${PROJECT_SOURCE_DIR}/modules/perception/common/perception_gflags.cc
+${PROJECT_SOURCE_DIR}/cyber/common/file.cc
 ${TEST_SRCS}
 )
 
