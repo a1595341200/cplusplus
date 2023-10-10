@@ -2,7 +2,7 @@
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2023-09-12 17:51:54
  * @LastEditors: yao.xie 1595341200@qq.com
- * @LastEditTime: 2023-10-10 00:22:40
+ * @LastEditTime: 2023-10-10 22:14:30
  * @FilePath: /cplusplus/README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -28,6 +28,7 @@
   - [1.11. 终端代理](#111-终端代理)
   - [1.12. tinyxml2](#112-tinyxml2)
     - [1.12.1. 使用](#1121-使用)
+  - [pythontutor](#pythontutor)
 
 # 1. cplusplus
 ## 1.1. 设置DEBUG与release前缀
@@ -137,9 +138,8 @@ $ cmake --build "build" --config Release
 ```
 ## 1.11. 终端代理
 ```
-export HTTP_PROXY="192.168.123.106:4780"
-
-export HTTPS_PROXY="192.168.123.106:4780"
+export HTTP_PROXY="192.168.123.106:7890"
+export HTTPS_PROXY="192.168.123.106:7890"
 ```
 ## 1.12. tinyxml2
 ### 1.12.1. 使用
@@ -147,3 +147,6 @@ export HTTPS_PROXY="192.168.123.106:4780"
   find_package(tinyxml2 CONFIG REQUIRED)
   target_link_libraries(main PRIVATE tinyxml2::tinyxml2)
 ```
+## pythontutor
+学习网站
+https://pythontutor.com/cpp.html#mode=edit
