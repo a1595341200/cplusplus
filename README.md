@@ -1,8 +1,8 @@
 <!--
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2023-09-12 17:51:54
- * @LastEditors: yao.xie 1595341200@qq.com
- * @LastEditTime: 2023-10-10 00:22:40
+ * @LastEditors: 谢瑶 
+ * @LastEditTime: 2023-10-10 11:50:11
  * @FilePath: /cplusplus/README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -28,6 +28,9 @@
   - [1.11. 终端代理](#111-终端代理)
   - [1.12. tinyxml2](#112-tinyxml2)
     - [1.12.1. 使用](#1121-使用)
+  - [1.13. QT5](#113-qt5)
+  - [1.14. cmake 区分平台](#114-cmake-区分平台)
+  - [1.15. C++区分平台](#115-c区分平台)
 
 # 1. cplusplus
 ## 1.1. 设置DEBUG与release前缀
@@ -147,3 +150,18 @@ export HTTPS_PROXY="192.168.123.106:4780"
   find_package(tinyxml2 CONFIG REQUIRED)
   target_link_libraries(main PRIVATE tinyxml2::tinyxml2)
 ```
+
+## 1.13. QT5
+## 1.14. cmake 区分平台
+```
+if (CMAKE_HOST_WIN32)
+    set(WINDOWS 1)
+elseif (CMAKE_HOST_APPLE)
+    set(MACOS 1)
+elseif (CMAKE_HOST_UNIX)
+    set(LINUX 1)
+endif ()
+
+```
+## 1.15. C++区分平台
+https://blog.csdn.net/ouyang_peng/article/details/124703411
