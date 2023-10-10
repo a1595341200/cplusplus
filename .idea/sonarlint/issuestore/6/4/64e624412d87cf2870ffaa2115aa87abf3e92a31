@@ -1,0 +1,15 @@
+
+;	cpp:S1103
+"&Remove the misleading "/*" characters.(îŠïÔ
+2cpp:S125"Remove the commented out code.(…—ßØ
+2cpp:S125"Remove the commented out code.(í Ôó
+7cpp:S125!"Remove the commented out code.(°®ìØûÿÿÿÿ
+2cpp:S125'"Remove the commented out code.(Ã„İ˜
+2cpp:S125)"Remove the commented out code.(½ğá
+2cpp:S1251"Remove the commented out code.(ÑŸ½–
+7cpp:S1259"Remove the commented out code.(ÈÚÿåıÿÿÿÿ
+2cpp:S125@"Remove the commented out code.(®ßÈ
+7cpp:S125H"Remove the commented out code.(Å™‚¢ÿÿÿÿÿ
+7cpp:S125L"Remove the commented out code.(Å™‚¢ÿÿÿÿÿ
+7cpp:S125T"Remove the commented out code.(€Ïº®ıÿÿÿÿ
+7cpp:S125["Remove the commented out code.(‹ú”Şúÿÿÿÿ
