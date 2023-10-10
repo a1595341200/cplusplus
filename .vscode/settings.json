@@ -95,7 +95,9 @@
         "splines": "cpp",
         "dense": "cpp",
         "*.ipp": "cpp",
-        "__locale": "cpp"
+        "__locale": "cpp",
+        "filesystem": "cpp",
+        "charconv": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
