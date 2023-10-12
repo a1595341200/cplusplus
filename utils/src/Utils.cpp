@@ -1,8 +1,8 @@
 /*
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2023-09-12 18:26:13
- * @LastEditors: yao.xie 1595341200@qq.com
- * @LastEditTime: 2023-10-10 23:04:10
+ * @LastEditors: 谢瑶
+ * @LastEditTime: 2023-10-12 09:43:12
  * @FilePath: /utils/src/Utils.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置
  * 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
@@ -14,10 +14,12 @@
 #include <string.h>
 #include <unistd.h>
 
+#include <filesystem>
 #include <iomanip>
 #include <thread>
 
 #include "Log.h"
+namespace Utils {
 
 void bindThreadToCore(int coreId, std::thread::native_handle_type handle) {
 #if __APPLE__
@@ -81,7 +83,21 @@ std::string getCurrentSysTime() {
       std::chrono::duration_cast<std::chrono::milliseconds>(current_time.time_since_epoch()) % 1000;
 
   std::ostringstream sys_time;
-  //不足三位默认填0, 不加std::setfill 默认填空格
+  // 不足三位默认填0, 不加std::setfill 默认填空格
   sys_time << "[" << date << "." << std::setw(3) << std::setfill('0') << ms.count() << "]";
   return sys_time.str();
 }
+
+std::vector<std::string> getFils(std::string_view dirPath, std::string_view extension) {
+  std::filesystem::path path(dirPath);
+  std::vector<std::string> res;
+  for (auto &file : std::filesystem::directory_iterator(path)) {
+    if (file.path().extension() == extension) {
+      SLOG(INFO) << "file: " << file.path();
+      res.emplace_back(file.path().string());
+    }
+  }
+  return res;
+}
+
+}  // namespace Utils
