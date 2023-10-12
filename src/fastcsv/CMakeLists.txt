@@ -1,11 +1,10 @@
 cmake_minimum_required(VERSION 3.10)
 
-set(PROJECT_N benchmark_learning)
+set(PROJECT_N fastcsv)
 project(${PROJECT_N} VERSION 1.0)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
-find_package(benchmark CONFIG REQUIRED)
 
 file(GLOB_RECURSE SRCS ${PROJECT_SOURCE_DIR}/src/*.cpp)
 
@@ -35,10 +34,9 @@ foreach(dir ${INCLUDES})
 endforeach()
 add_executable(${PROJECT_N} ${SRCS})
 
-target_include_directories(${PROJECT_N} PUBLIC 
+target_include_directories(${PROJECT_N} PRIVATE 
     include
+    ${CMAKE_SOURCE_DIR}/external/fast-cpp-csv-parser
 )
 
-target_link_libraries(${PROJECT_N} 
-    benchmark::benchmark
-)
+target_link_libraries(${PROJECT_N} PRIVATE utils)

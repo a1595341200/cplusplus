@@ -1,0 +1,97 @@
+
+T	cpp:S1117L":declaration shadows a field of 'io::error::with_file_name'(‘å—Àÿÿÿÿÿ
+O	cpp:S1117]":declaration shadows a field of 'io::error::with_file_line'(à°£Ù
+P	cpp:S1117e"6declaration shadows a field of 'io::error::with_errno'(éë“ÿÿÿÿÿ
+o	cpp:S5276"Timplicit conversion loses integer precision: 'size_t' (aka 'unsigned long') to 'int'(šñ­…ûÿÿÿÿ
+d	cpp:S5276"Oimplicit conversion loses integer precision: 'streamsize' (aka 'long') to 'int'(øíñt
+W	cpp:S5276®"Aimplicit conversion loses integer precision: 'long long' to 'int'(ıİàÏ
+:	cpp:S1117Å"$declaration shadows a local variable(ØŒ Ç
+E	cpp:S1117”"/declaration shadows a field of 'io::LineReader'(Ùü’ë
+J	cpp:S1117˜"/declaration shadows a field of 'io::LineReader'(‘å—Àÿÿÿÿÿ
+E	cpp:S1117£"/declaration shadows a field of 'io::LineReader'(Ü«øÕ
+R	cpp:S1117æ"<declaration shadows a field of 'io::error::with_column_name'(Øœ÷ 
+Z	cpp:S1117ù"?declaration shadows a field of 'io::error::with_column_content'(¾­„‘ıÿÿÿÿ
+L	cpp:S5945C"2Use "std::string" instead of a C-style char array.(—ÜÈ…ıÿÿÿÿ
+G	cpp:S5945W"2Use "std::string" instead of a C-style char array.(©Š¡
+z	cpp:S3230["eDo not assign data members in a constructor. Initialize member "file_line" in an initialization list.(‘ïıİ
+|	cpp:S3230c"gDo not assign data members in a constructor. Initialize member "errno_value" in an initialization list.(¾­°¯
+I	cpp:S3628n"4Convert this string literal to a raw string literal.(„ÿŞĞ
+q	cpp:S3490ƒ"VUse "=default" instead of the default implementation of this special member functions.(Ø›õËúÿÿÿÿ
+ù	cpp:S3624ˆ"âExplicitly define or delete the missing copy constructor and copy assignment operator so that they will not be implicitly provided. Additionally, you may consider defining the move assignment operator and the move constructor.(‚­÷İ
+_	cpp:S4963ˆ"IRemove this class' destructor so that the class follows the rule of Zero.(‚­÷İ
+5	cpp:S4962Œ"Use the "nullptr" literal.(¿€ï¾øÿÿÿÿ
+M	cpp:S3471"2Annotate this function with "override" or "final".(šñ­…ûÿÿÿÿ
+H	cpp:S3471‘"2Annotate this function with "override" or "final".(Ÿ§ˆ±
+M	cpp:S3471›"2Annotate this function with "override" or "final".(œæÎéúÿÿÿÿ
+q	cpp:S3490 "VUse "=default" instead of the default implementation of this special member functions.(ÙĞé­ûÿÿÿÿ
+M	cpp:S3471 "2Annotate this function with "override" or "final".(ÙĞé­ûÿÿÿÿ
+M	cpp:S3471«"2Annotate this function with "override" or "final".(åş¡ãúÿÿÿÿ
+q	cpp:S3490µ"VUse "=default" instead of the default implementation of this special member functions.(ú°š…úÿÿÿÿ
+M	cpp:S3471µ"2Annotate this function with "override" or "final".(ú°š…úÿÿÿÿ
+d	cpp:S4963½"IRemove this class' destructor so that the class follows the rule of Zero.(‹Á£øÿÿÿÿ
+}	cpp:S6012À"gAvoid explicitly specifying the template arguments by relying on the class template argument deduction.(ØŒ Ç
+F	cpp:S3608Ä"0Explicitly capture the required scope variables.(«ò¥’
+U	cpp:S5019Ä"?Explicitly capture all local variables required in this lambda.(«ò¥’
+8	cpp:S2738Ô"""catch" a specific exception type.(¯ÒÄ¹
+}	cpp:S6012Å"gAvoid explicitly specifying the template arguments by relying on the class template argument deduction.(ØŒ Ç
+K	cpp:S3608È"0Explicitly capture the required scope variables.(ë±Ú†ÿÿÿÿÿ
+Z	cpp:S5019È"?Explicitly capture all local variables required in this lambda.(ë±Ú†ÿÿÿÿÿ
+}	cpp:S6012Ş"gAvoid explicitly specifying the template arguments by relying on the class template argument deduction.(ØŒ Ç
+}	cpp:S6012æ"gAvoid explicitly specifying the template arguments by relying on the class template argument deduction.(ØŒ Ç
+F	cpp:S3608è"0Explicitly capture the required scope variables.(ä“ª—
+U	cpp:S5019è"?Explicitly capture all local variables required in this lambda.(ä“ª—
+S	cpp:S1199ñ"8Extract this nested code block into a separate function.(ÒÌâ–øÿÿÿÿ
+}	cpp:S6012ò"gAvoid explicitly specifying the template arguments by relying on the class template argument deduction.(ØŒ Ç
+G	cpp:S5945¤"2Use "std::string" instead of a C-style char array.(Ü¤Œ
+H	cpp:S5945®"2Use "std::string" instead of a C-style char array.(ÁîÊó
+0	cpp:S4962µ"Use the "nullptr" literal.(‰Ê˜
+Q	cpp:S5950½"6Use "std::make_unique" to construct "std::unique_ptr".(Ñ¥«õüÿÿÿÿ
+H	cpp:S5945Ä"2Use "std::string" instead of a C-style char array.(Äâºš
+L	cpp:S5950Ä"6Use "std::make_unique" to construct "std::unique_ptr".(Äâºš
+L	cpp:S5950ñ"6Use "std::make_unique" to construct "std::unique_ptr".(¢ë÷˜
+L	cpp:S5950ø"6Use "std::make_unique" to construct "std::unique_ptr".(¢ë÷˜
+L	cpp:S5950ş"6Use "std::make_unique" to construct "std::unique_ptr".(¼ÏËé
+L	cpp:S5950„"6Use "std::make_unique" to construct "std::unique_ptr".(¼ÏËé
+L	cpp:S5950Š"6Use "std::make_unique" to construct "std::unique_ptr".(¼ÏËé
+L	cpp:S5950"6Use "std::make_unique" to construct "std::unique_ptr".(¼ÏËé
+M	cpp:S5945ï"2Use "std::string" instead of a C-style char array.(¶Ëíıÿÿÿÿ
+H	cpp:S5945ƒ"2Use "std::string" instead of a C-style char array.(ØÖÏö
+o	cpp:S1186Ë"YAdd a nested comment explaining why this method is empty, or complete the implementation.(›éŠ€
+gcpp:S134Ö"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(ä¯¯¿øÿÿÿÿ
+gcpp:S134è"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(äá®àıÿÿÿÿ
+L	cpp:S1066ã"1Merge this "if" statement with the enclosing one.(Åõ‹ıÿÿÿÿ
+Lcpp:S886ç"2Refactor this loop so that it is less error-prone.(Ë¼ºışÿÿÿÿ
+s	cpp:S5350ç"XMake the type of this variable a pointer-to-const. The current type of "in" is "char *".(Ë¼ºışÿÿÿÿ
+t	cpp:S1186€"YAdd a nested comment explaining why this method is empty, or complete the implementation.(—ÑöÈùÿÿÿÿ
+t	cpp:S1186‚"YAdd a nested comment explaining why this method is empty, or complete the implementation.(£Ë¸ãÿÿÿÿÿ
+K	cpp:S1659ª"0Define each identifier in a dedicated statement.(Ã‹×¿ûÿÿÿÿ
+gcpp:S134É"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(»ƒşÿÿÿÿ
+X	cpp:S5945¾"=Use "std::array" or "std::vector" instead of a C-style array.(ÿ–Ì»úÿÿÿÿ
+K	cpp:S1659Á"0Define each identifier in a dedicated statement.(Ã‹×¿ûÿÿÿÿ
+0	cpp:S4962Ğ"Use the "nullptr" literal.(¡¶›¯
+tcpp:S995è"ZMake the type of this parameter a pointer-to-const. The current type of "col" is "char *".(š™‚Êùÿÿÿÿ
+ocpp:S995ñ"ZMake the type of this parameter a pointer-to-const. The current type of "col" is "char *".(ú£Ğ§
+tcpp:S995õ"ZMake the type of this parameter a pointer-to-const. The current type of "col" is "char *".(×»ìÇùÿÿÿÿ
+bcpp:S134¥"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(Ã¼ë–
+o	cpp:S3776Ä"TRefactor this function to reduce its Cognitive Complexity from 29 to the 25 allowed.(ïòò‘şÿÿÿÿ
+bcpp:S134ï"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(”ˆ°´
+ocpp:S995‚"ZMake the type of this parameter a pointer-to-const. The current type of "col" is "char *".(Ôœİö
+tcpp:S995…"ZMake the type of this parameter a pointer-to-const. The current type of "col" is "char *".(ƒÅÿ¼øÿÿÿÿ
+tcpp:S995ˆ"ZMake the type of this parameter a pointer-to-const. The current type of "col" is "char *".(Ú±Åáıÿÿÿÿ
+tcpp:S995Œ"ZMake the type of this parameter a pointer-to-const. The current type of "col" is "char *".(ª±ûûÿÿÿÿ
+t	cpp:S3624"^Explicitly define or delete the missing destructor so that it will not be implicitly provided.(‘ëİ
+m	cpp:S4963"WRemove this class' copy assignment operator so that the class follows the rule of Zero.(‘ëİ
+S	cpp:S5945¢"=Use "std::array" or "std::vector" instead of a C-style array.(şÁˆó
+S	cpp:S5945£"=Use "std::array" or "std::vector" instead of a C-style array.(¯×÷Œ
+N	cpp:S1238¨"8Pass expensive to copy object "s" by reference to const.(€²ª´
+Z	cpp:S5417ª"?"std::forward" should only be called on a forwarding reference.(Ìâı³üÿÿÿÿ
+o	cpp:S1186­"YAdd a nested comment explaining why this method is empty, or complete the implementation.(¤‘€©
+?	cpp:S5817­")This function should be declared "const".(¤‘€©
+€	cpp:S6458µ"jEnsure this forwarding constructor has constraints that prevent copying / moving objects of the same type.(ÛÂÚ¡
+Z	cpp:S5417Ç"?"std::forward" should only be called on a forwarding reference.(Ìâı³üÿÿÿÿ
+Z	cpp:S5417İ"?"std::forward" should only be called on a forwarding reference.(Ìâı³üÿÿÿÿ
+t	cpp:S1186û"YAdd a nested comment explaining why this method is empty, or complete the implementation.(õããîøÿÿÿÿ
+D	cpp:S5817û")This function should be declared "const".(õããîøÿÿÿÿ
+P	cpp:S1141	"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+P	cpp:S1141–	"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+Q	cpp:S5314Î";Call to blocking function 'read' inside of critical section(œ‘ß±

@@ -33,3 +33,4 @@ endif ()
 # add_subdirectory(tcpserver)
 
 add_subdirectory(benchmark_learning)
+add_subdirectory(fastcsv)
