@@ -5,6 +5,7 @@ project(${PROJECT_N} VERSION 1.0)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
+list(APPEND CMAKE_PREFIX_PATH /home/user/vcpkg-2023.08.09/installed/arm64-linux/share/benchmark)
 find_package(benchmark CONFIG REQUIRED)
 
 file(GLOB_RECURSE SRCS ${PROJECT_SOURCE_DIR}/src/*.cpp)
