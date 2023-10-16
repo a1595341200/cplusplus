@@ -2,7 +2,7 @@
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2023-10-16 18:52:21
  * @LastEditors: yao.xie 1595341200@qq.com
- * @LastEditTime: 2023-10-16 18:57:32
+ * @LastEditTime: 2023-10-16 23:38:09
  * @FilePath: /cplusplus/src/udplearning/client/include/UdpClient.h
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置:
  * https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
@@ -20,7 +20,6 @@
 
 #include "Shared_Queue.h"
 #include "common.h"
-#include "ikcp.h"
 
 enum class SendDataType : uint8_t {
   FrontRadarObjs = 0,
@@ -45,22 +44,21 @@ enum class SendDataType : uint8_t {
 
 class UDPClient : public std::enable_shared_from_this<UDPClient> {
  public:
-  UDPClient(std::string &ip, int port);
+  UDPClient(const std::string &ip, int port);
   ~UDPClient();
 
   void Run();
 
   void Stop();
+  void join();
   void SendUDPMessage(const std::string &msg);
 
  protected:
-  static int UdpServerOutputData(const char *buf, int len, ikcpcb *kcp, void *user);
   void SetEnv();
   void KcpInputLoop();
 
  private:
-  void InitKCP();
-  void InitSocket(std::string &ip, int port);
+  void InitSocket(const std::string &ip, int port);
 
   template <typename Msg>
   void packMsg(Msg const &msg, std::vector<char> &buffer, int type) {
@@ -80,12 +78,13 @@ class UDPClient : public std::enable_shared_from_this<UDPClient> {
   }
 
  private:
+  bool parseHead(const char *buf, int size, Common::CmdHead &head);
+
   bool exit_{false};
-  ikcpcb *pkcp{nullptr};
-  struct sockaddr_in addr;
+  struct sockaddr_in mDstAddr;
   // 广播地址
-  struct sockaddr_in broad_cast_addr;
-  int socket_fd_{-1};
+  struct sockaddr_in mBroadCastAddr;
+  int mSocket{-1};
   bool is_connected_{false};
   std::thread kcp_loop_;
   SendDataType data_type_;

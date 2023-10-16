@@ -117,8 +117,8 @@ void UdpServer::BroadcastLoop() {
   // sprintf(buffer, cmd, platform_.c_str());
   AINFO << "cmd " << buffer;
   while (!exit_.load()) {
-    int n = sendto(socket_fd_, buffer, strlen(buffer), 0, (struct sockaddr *)&broad_cast_addr_,
-                   sizeof(struct sockaddr_in));
+    sendto(socket_fd_, buffer, strlen(buffer), 0, (struct sockaddr *)&broad_cast_addr_,
+           sizeof(struct sockaddr_in));
     std::this_thread::sleep_for(std::chrono::seconds(1));
   }
 }

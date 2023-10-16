@@ -6,8 +6,9 @@ project(${PROJECT_N} VERSION 1.0)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-file(GLOB_RECURSE SRCS ${PROJECT_SOURCE_DIR}/src/*.cpp)
+set(CMAKE_CXX_FLAGS "-g3")
 
+file(GLOB_RECURSE SRCS ${PROJECT_SOURCE_DIR}/src/*.cpp ${PROJECT_SOURCE_DIR}/src/*.c)
 # a macro that gets all of the header containing directories. 
 MACRO(header_directories return_list includes_base_folder extention )
     FILE(GLOB_RECURSE new_list ${includes_base_folder}/*.${extention})
@@ -35,4 +36,6 @@ endforeach()
 add_executable(${PROJECT_N} ${SRCS})
 
 target_include_directories(${PROJECT_N} PUBLIC include)
-target_link_libraries(${PROJECT_N} PUBLIC utils)
+target_link_libraries(${PROJECT_N} PUBLIC 
+    utils
+)

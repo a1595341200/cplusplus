@@ -2,7 +2,7 @@
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2023-09-12 17:51:54
  * @LastEditors: yao.xie 1595341200@qq.com
- * @LastEditTime: 2023-10-10 22:19:41
+ * @LastEditTime: 2023-10-16 23:54:12
  * @FilePath: /cplusplus/README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -34,6 +34,7 @@
   - [1.16. cmake版本升级](#116-cmake版本升级)
   - [1.17. cmake 添加库路径](#117-cmake-添加库路径)
   - [pythontutor](#pythontutor)
+  - [backward-cpp](#backward-cpp)
 
 # 1. cplusplus
 ## 1.1. 设置DEBUG与release前缀
@@ -193,3 +194,9 @@ list(APPEND CMAKE_PREFIX_PATH /opt/def/lib)
 学习网站
 https://pythontutor.com/cpp.html#mode=edit
 
+## backward-cpp
+```
+add_subdirectory(external/backward-cpp)
+add_library(${PROJECT_N} SHARED ${SRCS}  ${BACKWARD_ENABLE})
+add_backward(${PROJECT_N})
+```

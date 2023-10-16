@@ -5,14 +5,17 @@ project(${PROJECT_N} VERSION 1.0)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
-
 set(CMAKE_CXX_FLAGS_DEBUG "-O0 -g3")
+
+list(APPEND CMAKE_PREFIX_PATH ${CMAKE_SOURCE_DIR}/external/backward-cpp)
+
 find_package(glog REQUIRED)
 find_package(Protobuf REQUIRED)
 find_package(Boost REQUIRED COMPONENTS system filesystem thread)
+find_package(Backward REQUIRED)
+
 file(GLOB_RECURSE SRCS ${PROJECT_SOURCE_DIR}/src/*.cpp)
 file(GLOB_RECURSE TEST_SRCS ${PROJECT_SOURCE_DIR}/test/*tests.cpp)
-
 # a macro that gets all of the header containing directories. 
 MACRO(header_directories return_list includes_base_folder extention )
     FILE(GLOB_RECURSE new_list ${includes_base_folder}/*.${extention})
@@ -49,9 +52,10 @@ link_libraries(
     ${Protobuf_LIBRARIES}
     ${Boost_LIBRARIES}
     dl
+    Backward::Backward
 )
 
-add_library(${PROJECT_N} SHARED ${SRCS})
+add_library(${PROJECT_N} SHARED ${SRCS}  ${BACKWARD_ENABLE})
 
 set_target_properties(${PROJECT_N} PROPERTIES
     DEBUG_POSTFIX "_debug"
@@ -78,5 +82,6 @@ GTest::gmock
 ${Protobuf_LIBRARIES}
 ${Boost_LIBRARIES}
 dl
+Backward::Backward
 )
 endif()

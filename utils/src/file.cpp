@@ -47,7 +47,7 @@
 #elif defined(__APPLE__)
 #include <mach-o/dyld.h>
 #endif
-#include "log.h"
+#include "Log.h"
 #include "macro.h"
 // #include "perception_camera_flags.h"
 

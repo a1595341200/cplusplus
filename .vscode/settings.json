@@ -116,7 +116,9 @@
         "queue": "cpp",
         "span": "cpp",
         "stack": "cpp",
-        "*.inc": "cpp"
+        "*.inc": "cpp",
+        "*.expression": "cpp",
+        "slist": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
