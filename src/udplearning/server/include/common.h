@@ -3,7 +3,7 @@
  * @Author: yao.xie
  * @Date: 2023-03-27 15:10:26
  * @LastEditors: yao.xie 1595341200@qq.com
- * @LastEditTime: 2023-10-16 18:34:08
+ * @LastEditTime: 2023-10-17 09:50:30
  */
 
 #ifndef COMMON_H
@@ -15,6 +15,7 @@
 #include <unistd.h>
 
 #include <cstring>
+#include <string>
 
 enum class SendDataType : uint8_t {
   FrontRadarObjs = 0,
@@ -123,4 +124,12 @@ static void ParseClientAddr(sockaddr_in cliaddr, std::string &ip_str, int &port)
   inet_ntop(AF_INET, &in, ip, sizeof(ip));
   ip_str = std::string(ip);
 }
+namespace Common {
+#pragma pack(push, 1)
+struct CmdHead {
+  char cmd[64];
+  char platform[64];
+};
+#pragma pack(pop)
+};     // namespace Common
 #endif /* COMMON_H */

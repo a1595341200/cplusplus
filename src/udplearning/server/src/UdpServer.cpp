@@ -5,11 +5,12 @@
 #include <chrono>
 
 #include "Log.h"
+#include "common.h"
 #include "macro.h"
 
 // import PORT not need fix, only need to fix ip
 #define BROADCAST_PORT 60000
-#define BROADCAST_IP "198.18.255.255"
+#define BROADCAST_IP "10.211.55.255"
 // 开启测试功能： 读取 bag 包，将车道线信息转为 MarkerArray, 可在 rviz 中查看效果
 // #define TEST_LANE_PUB_FROM_BAG
 #define SERVER_PORT 46325
@@ -30,6 +31,7 @@ UdpServer::UdpServer() {
   // epoll_fd_ = -1;
   // event_list_.resize(POLL_EVENT_MAX);
 }
+
 UdpServer::~UdpServer() {
   exit_ = true;
   AERROR << "~UdpServer";
@@ -39,6 +41,7 @@ UdpServer::~UdpServer() {
     socket_fd_ = -1;
   }
 }
+
 bool UdpServer::Init() {
   parse_task_queue_.reset(new ConcurrentTaskQueue(8, "parse queue"));
   // 工作在网络模式
@@ -46,8 +49,8 @@ bool UdpServer::Init() {
     AINFO << "Init Socker Error";
     return false;
   }
-  kcp_thread_ = std::thread(std::bind(&UdpServer::KcpMessageLoop, this));
-  broad_cast_thread_ = std::thread(std::bind(&UdpServer::BroadcastLoop, this));
+  mRecvThread = std::thread(std::bind(&UdpServer::KcpMessageLoop, this));
+  mBroadCastThread = std::thread(std::bind(&UdpServer::BroadcastLoop, this));
   return true;
 }
 
@@ -81,12 +84,12 @@ bool UdpServer::InitSocket() {
     return false;
   }
 
-  memset(&server_addr_, 0, sizeof(server_addr_));
-  server_addr_.sin_family = AF_INET;
-  server_addr_.sin_addr.s_addr = htonl(INADDR_ANY);  // INADDR_ANY
-  server_addr_.sin_port = htons(SERVER_PORT);
+  memset(&mServerAddr, 0, sizeof(mServerAddr));
+  mServerAddr.sin_family = AF_INET;
+  mServerAddr.sin_addr.s_addr = htonl(INADDR_ANY);  // INADDR_ANY
+  mServerAddr.sin_port = htons(SERVER_PORT);
   //绑定本地端口
-  if (::bind(socket_fd_, (struct sockaddr *)&(server_addr_), sizeof(struct sockaddr_in)) < 0) {
+  if (::bind(socket_fd_, (struct sockaddr *)&(mServerAddr), sizeof(struct sockaddr_in)) < 0) {
     AERROR << "bind socket Error: " << SERVER_PORT << "---" << strerror(errno);
     return false;
   }
@@ -105,19 +108,21 @@ void UdpServer::Stop() {
     AINFO << "close socekt";
   }
   std::this_thread::sleep_for(std::chrono::seconds(2));
-  // pcap_server_.stop();
-  if (kcp_thread_.joinable())
-    kcp_thread_.join();
-  if (broad_cast_thread_.joinable())
-    broad_cast_thread_.join();
+  if (mRecvThread.joinable())
+    mRecvThread.join();
+  if (mBroadCastThread.joinable())
+    mBroadCastThread.join();
 }
+
 void UdpServer::BroadcastLoop() {
-  static const char *cmd = "{\"cmd\":\"start\",\"app\":\"%s\"}";
-  char buffer[1024] = {0};
-  // sprintf(buffer, cmd, platform_.c_str());
-  AINFO << "cmd " << buffer;
+  Common::CmdHead head;
+  strncpy(head.cmd, "start", 5);
+  head.cmd[5] = '\0';
+  strncpy(head.platform, "OFM", 3);
+  head.platform[3] = '\0';
   while (!exit_.load()) {
-    sendto(socket_fd_, buffer, strlen(buffer), 0, (struct sockaddr *)&broad_cast_addr_,
+    AINFO << "cmd " << head.cmd;
+    sendto(socket_fd_, &head, sizeof(head), 0, (struct sockaddr *)&broad_cast_addr_,
            sizeof(struct sockaddr_in));
     std::this_thread::sleep_for(std::chrono::seconds(1));
   }
@@ -130,6 +135,7 @@ void UdpServer::KcpMessageLoop() {
     socklen_t len = sizeof(cliaddr);
     memset(&cliaddr, 0, sizeof(cliaddr));
     int n = recvfrom(socket_fd_, buffer, FRAME_SIZE, 0, (struct sockaddr *)&cliaddr, &len);
+    SLOG(INFO) << buffer;
     if (n < 0) {
       if (EAGAIN != errno && EINTR != errno) {
         AINFO << "call recv from error: " << errno << " error msg: " << strerror(errno)
@@ -143,7 +149,7 @@ void UdpServer::KcpMessageLoop() {
       std::string ip;
       int port;
       ParseClientAddr(cliaddr, ip, port);
-
+      SLOG(INFO) << "receive from " << ip << ":" << port << " data length " << n;
       std::string key = ip + ":" + std::to_string(port);
       if (client_maps_.count(key) == 0) {
         // allocate data type
@@ -211,4 +217,8 @@ void UdpServer::ParseExtraMsgCallback(UdpClient *client, void *data, SendDataTyp
     default:
       break;
   }
+}
+
+void UdpServer::join() {
+  mRecvThread.join();
 }

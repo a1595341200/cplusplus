@@ -73,12 +73,12 @@ void UDPClient::InitSocket(const std::string &ip, int port) {
     SLOG(INFO) << "set port reuse error: " << strerror(errno);
     return;
   }
-  // 配置广播地址
-  memset(&mDstAddr, 0, sizeof(mDstAddr));
-  mDstAddr.sin_family = AF_INET;
-  mDstAddr.sin_addr.s_addr = INADDR_ANY;  // INADDR_ANY
-  mDstAddr.sin_port = htons(BROADCAST_PORT);
-  if (::bind(mSocket, (struct sockaddr *)&(mDstAddr), sizeof(struct sockaddr_in)) < 0) {
+  // 配置广播地址 clinet需要绑定广播端口
+  memset(&mBroadCastAddr, 0, sizeof(mBroadCastAddr));
+  mBroadCastAddr.sin_family = AF_INET;
+  mBroadCastAddr.sin_addr.s_addr = INADDR_ANY;  // INADDR_ANY
+  mBroadCastAddr.sin_port = htons(BROADCAST_PORT);
+  if (::bind(mSocket, (struct sockaddr *)&(mBroadCastAddr), sizeof(struct sockaddr_in)) < 0) {
     SLOG(INFO) << "bind socket Error: " << strerror(errno) << std::endl;
     return;
   }
@@ -92,7 +92,7 @@ void UDPClient::SendUDPMessage(const std::string &msg) {
   }
   std::vector<char> cur_buf;
   packMsg("frntRdrObjList_4D", cur_buf, (int)SendDataType::FrontRadarObjs);
-  int n = ::sendto(mSocket, cur_buf.data(), cur_buf.size(), 0, (struct sockaddr *)&mDstAddr,
+  int n = ::sendto(mSocket, msg.data(), msg.size(), 0, (struct sockaddr *)&mDstAddr,
                    sizeof(struct sockaddr_in));
 }
 
@@ -116,7 +116,7 @@ void UDPClient::KcpInputLoop() {
   while (!exit_) {
     char buf[1024] = {0};
     unsigned int len = sizeof(struct sockaddr_in);
-    int n = ::recvfrom(mSocket, buf, 1024, 0, nullptr, nullptr);
+    int n = ::recvfrom(mSocket, buf, 1024, 0, (sockaddr *)&mBroadCastAddr, &len);
     // 收到的消息
     if (n > 0) {
       SLOG(INFO) << "receive message: " << buf;
@@ -124,8 +124,9 @@ void UDPClient::KcpInputLoop() {
       parseHead(buf, n, head);
       // 先判断是否是广播的消息
       if (!strncmp(head.cmd, "start", 5) &&
-          (!strncmp(head.cmd, "OFM", 3) || !strncmp(head.cmd, "All", 3))) {
+          (!strncmp(head.platform, "OFM", 3) || !strncmp(head.platform, "All", 3))) {
         is_connected_ = true;
+        SendUDPMessage("111111");
       } else {
         is_connected_ = false;
       }
