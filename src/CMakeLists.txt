@@ -34,4 +34,5 @@ endif ()
 
 add_subdirectory(benchmark_learning)
 add_subdirectory(fastcsv)
-add_subdirectory(udplearning)
+add_subdirectory(udpbroadcast)
+add_subdirectory(udpmulticast)
