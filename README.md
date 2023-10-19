@@ -2,7 +2,7 @@
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2023-09-12 17:51:54
  * @LastEditors: yao.xie 1595341200@qq.com
- * @LastEditTime: 2023-10-16 23:54:12
+ * @LastEditTime: 2023-10-19 15:36:32
  * @FilePath: /cplusplus/README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -15,6 +15,7 @@
     - [1.3.2. 使用](#132-使用)
     - [1.3.3. DLOG 只在Debug模式下生效](#133-dlog-只在debug模式下生效)
   - [1.4. eigen](#14-eigen)
+    - [1.4.1. 模块与头文件](#141-模块与头文件)
   - [1.5. vector](#15-vector)
   - [1.6. ref](#16-ref)
   - [1.7. opencv](#17-opencv)
@@ -33,8 +34,8 @@
   - [1.15. C++区分平台](#115-c区分平台)
   - [1.16. cmake版本升级](#116-cmake版本升级)
   - [1.17. cmake 添加库路径](#117-cmake-添加库路径)
-  - [pythontutor](#pythontutor)
-  - [backward-cpp](#backward-cpp)
+  - [1.18. pythontutor](#118-pythontutor)
+  - [1.19. backward-cpp](#119-backward-cpp)
 
 # 1. cplusplus
 ## 1.1. 设置DEBUG与release前缀
@@ -101,6 +102,21 @@ sudo cmake --build build --target install
 ```
 ### 1.3.3. DLOG 只在Debug模式下生效
 ## 1.4. eigen
+### 1.4.1. 模块与头文件
+https://zhuanlan.zhihu.com/p/462494086
+|模块	|头文件	|内容|
+|---|---|---|
+|Core       | #include <Eigen/Core>       |矩阵和数组 (向量) 类 (Matrix, Array)，基于线性代数还有数组操作|
+|Geometry|	| #include <Eigen/Geometry>   |变换，平移，缩放，2D 旋转和 3D 旋转 (包括四元数和角轴)|
+|LU	        | #include <Eigen/LU>         |使用求解器进行求逆，行列式，LU 分解操作|
+|Cholesky|	| #include <Eigen/Cholesky>   |使用求解器进行 LLT, LT, Cholesky 分解|
+|Householder|	#include <Eigen/Householder>|Householder 变换；被用作几个线性代数模块|
+|SVD        |	#include <Eigen/SVD>        |SVD 分解与最小二乘求解器|
+|QR         |	#include <Eigen/QR>	        |QR 分解|
+|Eigenvalues|	#include <EIgen/Eigenvalues>|特征值，特征向量分解|
+|Sparse     |	#include <Eigen/Sparse>     |稀疏矩阵存储以及相关的基本线性代数|
+|Dense      |	#include <Eigen/Dense>	    |包括 Core, Geometry, LU, Cholesky, SVD, QR, Eigenvalues 的头文件|
+|Eigen      |	#include <Eigen/Eigen>	    |包括 Dense 和 Sparse 的头文件|
 ## 1.5. vector
 不允许存取引用
 ## 1.6. ref
@@ -190,11 +206,11 @@ cmake --version
 ```
 list(APPEND CMAKE_PREFIX_PATH /opt/def/lib)
 ```
-## pythontutor
+## 1.18. pythontutor
 学习网站
 https://pythontutor.com/cpp.html#mode=edit
 
-## backward-cpp
+## 1.19. backward-cpp
 ```
 add_subdirectory(external/backward-cpp)
 add_library(${PROJECT_N} SHARED ${SRCS}  ${BACKWARD_ENABLE})

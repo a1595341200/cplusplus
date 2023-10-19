@@ -2,16 +2,19 @@
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2023-09-13 13:08:56
  * @LastEditors: yao.xie 1595341200@qq.com
- * @LastEditTime: 2023-09-13 13:31:49
+ * @LastEditTime: 2023-10-19 11:32:31
  * @FilePath: /cplusplus/vector/src/main.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置
  * 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 #define TAG "vector"
 #include <Log.h>
-#include <gtest/gtest.h>
+#include <Utils.h>
+
 #include <iostream>
 #include <vector>
+
+#include <gtest/gtest.h>
 
 TEST(vector, resize) {
   std::vector<int> v = {1, 2, 3, 4, 5};
@@ -32,6 +35,12 @@ TEST(vector, reserve) {
   for (int i = 0; i < v.size(); i++) {
     SLOG(INFO) << v[i];
   }
+}
+
+TEST(vector, sizeof) {
+  std::vector<int> v(1000, 1);
+  SLOG(INFO) << "capacity(v)= " << v.capacity();
+  SLOG(INFO) << "real size(v) " << Utils::getVectorSize(v);
 }
 
 int main(int argc, char *argv[]) {

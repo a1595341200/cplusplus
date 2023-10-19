@@ -43,6 +43,21 @@ TEST(opencv, matsub) {
   SLOG(INFO) << mat1 - mat2;
 }
 
+TEST(opencv, cvRound) {
+	int a = cvRound(3.6);
+
+	SLOG(INFO) << a;
+}
+
+TEST(opencv, rect) {
+	//x,y 左上角坐标
+	auto rect = cv::Rect(0,0,10,10);
+
+	SLOG(INFO) << rect;
+	SLOG(INFO) << rect.width;
+	SLOG(INFO) << (rect.width >> 1);
+}
+
 int main(int argc, char *argv[]) {
   testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();

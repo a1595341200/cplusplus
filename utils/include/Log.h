@@ -2,7 +2,7 @@
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2023-08-29 17:41:50
  * @LastEditors: yao.xie 1595341200@qq.com
- * @LastEditTime: 2023-10-16 17:29:27
+ * @LastEditTime: 2023-10-19 10:54:00
  * @FilePath: /ros_learning/src/qtlog/include/Log.h
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置
  * 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
@@ -13,8 +13,9 @@
 #ifndef LOG_H
 #define LOG_H
 
-#include <glog/logging.h>
+#include <algorithm>
 
+#include <glog/logging.h>
 #define SLOG(level) LOG_##level
 #define LOG_DEBUG DLOG(INFO) << TAG << " : "
 #define LOG_INFO LOG(INFO) << TAG << " : "
@@ -132,4 +133,10 @@ class Log {
     return;                   \
   }
 #endif
+template <typename T>
+void debugVector(const std::string &name, const std::vector<T> &vec) {
+  std::for_each(vec.begin(), vec.end(), [&name](const T &val) {
+    SLOG(DEBUG) << name << "\n" << val;
+  });
+}
 #endif /* LOG_H */
