@@ -36,6 +36,13 @@
   - [1.17. cmake 添加库路径](#117-cmake-添加库路径)
   - [1.18. pythontutor](#118-pythontutor)
   - [1.19. backward-cpp](#119-backward-cpp)
+  - [1.20. boost](#120-boost)
+    - [1.20.1. boost tcp](#1201-boost-tcp)
+    - [1.20.2. boost udp](#1202-boost-udp)
+  - [1.21. abseil](#121-abseil)
+  - [1.22. nlohmann-json](#122-nlohmann-json)
+  - [1.23. find\_package.](#123-find_package)
+  - [1.24. linux多线程gdb](#124-linux多线程gdb)
 
 # 1. cplusplus
 ## 1.1. 设置DEBUG与release前缀
@@ -166,9 +173,9 @@ target_link_libraries(main PRIVATE benchmark::benchmark benchmark::benchmark_mai
 ```
 ## 1.11. 终端代理
 ```sh
-export HTTP_PROXY="192.168.123.106:4780"
+export HTTP_PROXY=" 192.168.123.106:7890"
 
-export HTTPS_PROXY="192.168.123.106:4780"
+export HTTPS_PROXY=" 192.168.123.106:7890"
 ```
 ## 1.12. tinyxml2
 ### 1.12.1. 使用
@@ -212,7 +219,64 @@ https://pythontutor.com/cpp.html#mode=edit
 
 ## 1.19. backward-cpp
 ```
-add_subdirectory(external/backward-cpp)
-add_library(${PROJECT_N} SHARED ${SRCS}  ${BACKWARD_ENABLE})
-add_backward(${PROJECT_N})
+apt-get install binutils-dev
 ```
+
+```cmake
+find_package(Backward REQUIRED)
+
+target_link_libraries(${PROJECT_N}
+PUBLIC Backward::Backward
+)
+```
+
+```c++
+#include "backward-cpp/backward.hpp"
+namespace backward {
+backward::SignalHandling sh;
+}
+```
+
+## 1.20. boost
+### 1.20.1. boost tcp
+### 1.20.2. boost udp
+## 1.21. abseil
+```
+    # this is heuristically generated, and may not be correct
+    find_package(absl CONFIG REQUIRED)
+    # note: 173 additional targets are not displayed.
+    target_link_libraries(main PRIVATE absl::any absl::log absl::base absl::bits)
+```
+## 1.22. nlohmann-json
+
+```
+The package nlohmann-json provides CMake targets:
+
+    find_package(nlohmann_json CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE nlohmann_json::nlohmann_json)
+
+The package nlohmann-json can be configured to not provide implicit conversions via a custom triplet file:
+
+    set(nlohmann-json_IMPLICIT_CONVERSIONS OFF)
+
+For more information, see the docs here:
+
+    https://json.nlohmann.me/api/macros/json_use_implicit_conversions/
+```
+## 1.23. find_package.
+```cmake
+cmake_minimum_required(VERSION 3.10.2)
+project(find_package_test)
+find_package(mylib
+    CONFIG
+    REQUIRED
+    COMPONENTS test
+    PATHS ./mylib/mylib
+)
+​
+if(mylib_FOUND)
+    message("Find mylib: ${mylib_INCLUDE_DIR}; ${mylib_LIBRARY};")
+endif()
+```
+## 1.24. linux多线程gdb
+https://mp.weixin.qq.com/s/Pnm7wzDAkfrwFYSsHHNocQ

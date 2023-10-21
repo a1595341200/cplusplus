@@ -9,6 +9,12 @@ include_directories(
     ${CMAKE_SOURCE_DIR}/utils/include
     ${CMAKE_SOURCE_DIR}/external
 )
+set(VCPKG "/home/user/vcpkg-2023.08.09/installed/x64-linux/")
+
+LIST(APPEND CMAKE_PREFIX_PATH 
+    ${VCPKG}/share
+)
+
 add_subdirectory(utils)
 add_subdirectory(multi-objective-fusion)
 add_subdirectory(src)

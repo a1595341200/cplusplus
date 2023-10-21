@@ -103,8 +103,9 @@ void OFM_CsvLog_Internal::LogFrntRdrObjList4D(const FrntRdrObjList_4D &frntRdrOb
             ss << ssHead;
         }
 
-        ss << getCurrentSysTime() << "," << std::to_string(frntRdrObjList_4D.Status.HostSpeed)
-           << "," << std::to_string(frntRdrObjList_4D.Status.HostYawRate) << ","
+        ss << Utils::getCurrentSysTime() << ","
+           << std::to_string(frntRdrObjList_4D.Status.HostSpeed) << ","
+           << std::to_string(frntRdrObjList_4D.Status.HostYawRate) << ","
            << std::to_string(frntRdrObjList_4D.Status.StsRdrNrDetn) << ","
            << std::to_string(frntRdrObjList_4D.Status.StsRdrNrObj) << ","
            << std::to_string(frntRdrObjList_4D.Status.StsBlkd0bin) << ","
@@ -233,7 +234,7 @@ void OFM_CsvLog_Internal::LogFrntCamObjList(const FrntCamObjList &frntCamObjList
         if ((end - beg) < 5) {
             ss << ssHead;
         }
-        ss << getCurrentSysTime() << ",";
+        ss << Utils::getCurrentSysTime() << ",";
         for (size_t index = 0; index < 11; index++) {
             ss << std::to_string(frntCamObjList.Objects[index].Angle) << ","
                << std::to_string(frntCamObjList.Objects[index].AngleStdDev) << ","
@@ -491,7 +492,7 @@ void OFM_CsvLog_Internal::LogEgoMotion(const JkObjFusn_EgoMotionType &egoMotion)
         if ((end - beg) < 5) {
             ss << ssHead;
         }
-        ss << getCurrentSysTime() << "," << std::to_string(egoMotion.bIsValid) << ","
+        ss << Utils::getCurrentSysTime() << "," << std::to_string(egoMotion.bIsValid) << ","
            << std::to_string(egoMotion.f32Speed) << "," << std::to_string(egoMotion.f32Acc) << ","
            << std::to_string(egoMotion.f32YawRate) << "," << std::to_string(egoMotion.f32Age)
            << std::endl;
@@ -502,7 +503,7 @@ void OFM_CsvLog_Internal::LogEgoMotion(const JkObjFusn_EgoMotionType &egoMotion)
 template <class T>
 void OFM_CsvLog_Internal::LogData(T mFusedTargets, std::ofstream &ss, const size_t obj_start,
                                   const size_t obj_end) {
-    ss << getCurrentSysTime() << ",";
+    ss << Utils::getCurrentSysTime() << ",";
     for (size_t index = obj_start; index < obj_end; index++) {
         ss << std::to_string(mFusedTargets[index].ObjEstimn2VccGroup_ref.PosnLgt_ref) << ","
            << std::to_string(mFusedTargets[index].ObjEstimn2VccGroup_ref.PosnLat_ref) << ","
@@ -608,7 +609,7 @@ void doWrite(std::ofstream &ss, const AroundCamObjList &frntCamObjList) {
         if ((end - beg) < 5) {
             ss << ssHead;
         }
-        ss << getCurrentSysTime() << ",";
+        ss << Utils::getCurrentSysTime() << ",";
         ss << std::to_string(frntCamObjList.Status.Blockage) << ",";
         ss << std::to_string(frntCamObjList.Status.Calibration) << ",";
         ss << std::to_string(frntCamObjList.Status.Fault) << ",";

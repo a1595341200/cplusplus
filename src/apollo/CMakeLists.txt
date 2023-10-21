@@ -5,7 +5,8 @@ project(${PROJECT_N} VERSION 1.0)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
-find_package(absl REQUIRED)
+find_package(absl CONFIG REQUIRED)
+
 find_package(gflags REQUIRED)
 find_package(Protobuf REQUIRED)
 file(GLOB_RECURSE SRCS ${PROJECT_SOURCE_DIR}/src/*.cpp)
@@ -84,22 +85,25 @@ foreach(dir ${INCLUDES})
         message(STATUS ${dir})
 endforeach()
 add_executable(${PROJECT_N} ${SRCS} ${FUSION}
-${PROJECT_SOURCE_DIR}/modules/perception/fusion/base/scene.cc
-${PROJECT_SOURCE_DIR}/modules/perception/lib/config_manager/config_manager.cc
-${PROJECT_SOURCE_DIR}/cyber/binary.cc
-${PROJECT_SOURCE_DIR}/modules/perception/common/sensor_manager/sensor_manager.cc
-${PROJECT_SOURCE_DIR}/modules/perception/base/object.cc
-${PROJECT_SOURCE_DIR}/modules/perception/common/graph/connected_component_analysis.cc
-${PROJECT_SOURCE_DIR}/modules/perception/common/perception_gflags.cc
-${PROJECT_SOURCE_DIR}/cyber/common/file.cc
-${TEST_SRCS}
+    ${PROJECT_SOURCE_DIR}/modules/perception/fusion/base/scene.cc
+    ${PROJECT_SOURCE_DIR}/modules/perception/lib/config_manager/config_manager.cc
+    ${PROJECT_SOURCE_DIR}/cyber/binary.cc
+    ${PROJECT_SOURCE_DIR}/modules/perception/common/sensor_manager/sensor_manager.cc
+    ${PROJECT_SOURCE_DIR}/modules/perception/base/object.cc
+    ${PROJECT_SOURCE_DIR}/modules/perception/common/graph/connected_component_analysis.cc
+    ${PROJECT_SOURCE_DIR}/modules/perception/common/perception_gflags.cc
+    ${PROJECT_SOURCE_DIR}/cyber/common/file.cc
+    ${TEST_SRCS}
 )
 
 target_include_directories(${PROJECT_N} PUBLIC include
-"${PROJECT_SOURCE_DIR}/"
+    "${PROJECT_SOURCE_DIR}/"
 )
-target_link_libraries(${PROJECT_N} utils absl_strings absl_log_entry
-gflags
-protobuf
-absl::string_view
+target_link_libraries(${PROJECT_N} PUBLIC
+    utils 
+    absl::strings 
+    absl::log_entry
+    gflags
+    protobuf
+    absl::string_view
 )
