@@ -17,13 +17,15 @@
 // file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 //
 
-#include <boost/asio.hpp>
-#include <boost/asio/impl/src.hpp>
+#include <Log.h>
+
 #include <iostream>
 
+#include <boost/asio.hpp>
+#include <boost/asio/impl/src.hpp>
+
 void print(const boost::system::error_code &e) {
-  std::cout << "Hello, world! " << e.message() << " : " << e.value()
-            << std::endl;
+  SLOG(INFO) << "Hello, world! " << e.message() << " : " << e.value();
 }
 
 int main() {

@@ -1,13 +1,13 @@
 cmake_minimum_required(VERSION 3.10)
 
-set(PROJECT_N type_index)
+set(PROJECT_N uuid)
 project(${PROJECT_N} VERSION 1.0)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(CMAKE_EXPORT_COMPILE_COMMANDS True)
 file(GLOB_RECURSE SRCS ${PROJECT_SOURCE_DIR}/src/*.cpp)
-find_package(Boost REQUIRED system)
+
 # a macro that gets all of the header containing directories. 
 MACRO(header_directories return_list includes_base_folder extention )
     FILE(GLOB_RECURSE new_list ${includes_base_folder}/*.${extention})
@@ -32,9 +32,13 @@ message("include directories:")
 foreach(dir ${INCLUDES})
         message(STATUS ${dir})
 endforeach()
-add_executable(1 src/1.cpp)
-add_executable(2 src/2.cpp)
-add_executable(3 src/3.cpp)
-add_executable(4 src/4.cpp)
-add_executable(5 src/5.cpp)
-add_executable(6 src/6.cpp)
+
+macro(BUILD curdir)
+  file(GLOB children ${curdir}/*.cpp)
+  foreach(child ${children})
+  get_filename_component(FILENAME ${child} NAME_WE)
+  add_executable(${FILENAME} ${child})
+  endforeach()
+endmacro()
+
+BUILD(src)

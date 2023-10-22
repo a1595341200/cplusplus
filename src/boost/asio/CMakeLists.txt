@@ -13,6 +13,7 @@ macro(BUILD curdir)
   foreach(child ${children})
   get_filename_component(FILENAME ${child} NAME_WE)
   add_executable(${FILENAME} ${child})
+  target_link_libraries(${FILENAME} utils)
   endforeach()
 endmacro()
 

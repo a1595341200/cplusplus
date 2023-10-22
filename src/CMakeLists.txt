@@ -37,3 +37,5 @@ add_subdirectory(fastcsv)
 add_subdirectory(udpbroadcast)
 add_subdirectory(udpmulticast)
 add_subdirectory(filesystem)
+
+add_subdirectory(boost)
