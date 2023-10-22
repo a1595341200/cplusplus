@@ -43,6 +43,7 @@
   - [1.22. nlohmann-json](#122-nlohmann-json)
   - [1.23. find\_package.](#123-find_package)
   - [1.24. linux多线程gdb](#124-linux多线程gdb)
+  - [1.25. 配置ssh免密](#125-配置ssh免密)
 
 # 1. cplusplus
 ## 1.1. 设置DEBUG与release前缀
@@ -280,3 +281,8 @@ endif()
 ```
 ## 1.24. linux多线程gdb
 https://mp.weixin.qq.com/s/Pnm7wzDAkfrwFYSsHHNocQ
+## 1.25. 配置ssh免密
+```sh
+touch authorized_keys
+echo xxxx >> ~/.ssh/authorized_keys
+```
