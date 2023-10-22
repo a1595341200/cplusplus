@@ -1,9 +1,0 @@
-<library path="lib/libdynamicTracking">
-  <class name="dynamicTracking"
-         type="DynamicTracking"
-         base_class_type="rviz::Display">
-    <description>
-      myTest
-    </description>
-  </class>
-</library>

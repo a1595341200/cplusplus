@@ -1,8 +1,0 @@
-prefix=/media/psf/Home/Desktop/work/ros_learning/devel
-
-Name: data_parse
-Description: Description of data_parse
-Version: 0.0.0
-Cflags: -I/media/psf/Home/Desktop/work/ros_learning/devel/include
-Libs: -L${prefix}/lib 
-Requires: message_generation message_runtime roscpp std_msgs geometry_msgs

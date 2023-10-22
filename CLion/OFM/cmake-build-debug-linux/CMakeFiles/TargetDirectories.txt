@@ -1,3 +1,0 @@
-/home/xieyao/OFM/cmake-build-debug-linux/CMakeFiles/ObjectFusionModelExe.dir
-/home/xieyao/OFM/cmake-build-debug-linux/CMakeFiles/edit_cache.dir
-/home/xieyao/OFM/cmake-build-debug-linux/CMakeFiles/rebuild_cache.dir

@@ -1,8 +1,0 @@
-prefix=/media/psf/Home/Desktop/work/ros_learning/install
-
-Name: OFM_3R
-Description: Description of OFM_3R
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: roscpp rospy std_msgs

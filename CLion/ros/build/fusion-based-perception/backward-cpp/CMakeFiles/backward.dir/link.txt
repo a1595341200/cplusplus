@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC -O0 -g3 -Wall -Wextra -pedantic-errors -g  -shared -Wl,-soname,libbackward.so -o /media/psf/Home/Desktop/work/ros_learning/devel/lib/libbackward.so CMakeFiles/backward.dir/backward.cpp.o 

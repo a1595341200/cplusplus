@@ -1,3 +1,0 @@
-/Users/xieyao/CLionProjects/test/cmake-build-mac/CMakeFiles/rebuild_cache.dir
-/Users/xieyao/CLionProjects/test/cmake-build-mac/CMakeFiles/edit_cache.dir
-/Users/xieyao/CLionProjects/test/cmake-build-mac/CMakeFiles/test.dir

@@ -1,8 +1,0 @@
-
-T	cpp:S1172
-"3Remove the unused parameter "p" or make it unnamed.(ÚÎµ¶üÿÿÿÿ8ª¶¬Üÿ0
-xcpp:S995
-"XMake the type of this parameter a pointer-to-const. The current type of "p" is "void *".(ÚÎµ¶üÿÿÿÿ8ª¶¬Üÿ0
-K	cpp:S1709"/Add the "explicit" keyword to this constructor.(ÊÄ¿8¬¶¬Üÿ0
-Z	cpp:S5008
-"9Replace this use of "void *" with a more meaningful type.(ÚÎµ¶üÿÿÿÿ8±¶¬Üÿ0

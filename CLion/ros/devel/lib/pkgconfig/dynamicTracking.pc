@@ -1,8 +1,0 @@
-prefix=/media/psf/Home/Desktop/work/ros_learning/devel
-
-Name: dynamicTracking
-Description: Description of dynamicTracking
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: rviz
