@@ -13,7 +13,7 @@ int main(int argc, char* argv[]) {
     tcp::socket socket(io);
 
     //(2)通过connect函数连接服务器，打开socket连接。
-    tcp::endpoint end_point(boost::asio::ip::address::from_string("127.0.0.1"), 3200);
+    tcp::endpoint end_point(boost::asio::ip::address_v4::from_string("127.0.0.1"), 3200);
     socket.connect(end_point);
 
     for (;;) {

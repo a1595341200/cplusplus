@@ -44,6 +44,9 @@
   - [1.23. find\_package.](#123-find_package)
   - [1.24. linux多线程gdb](#124-linux多线程gdb)
   - [1.25. 配置ssh免密](#125-配置ssh免密)
+  - [1.26. for\_each 并行](#126-for_each-并行)
+  - [1.27. tbb](#127-tbb)
+  - [1.28. vcpkg cmake 配置](#128-vcpkg-cmake-配置)
 
 # 1. cplusplus
 ## 1.1. 设置DEBUG与release前缀
@@ -285,4 +288,18 @@ https://mp.weixin.qq.com/s/Pnm7wzDAkfrwFYSsHHNocQ
 ```sh
 touch authorized_keys
 echo xxxx >> ~/.ssh/authorized_keys
+```
+## 1.26. for_each 并行
+https://blog.csdn.net/weixin_43165135/article/details/125526408
+
+## 1.27. tbb
+```cmake
+# this is heuristically generated, and may not be correct
+find_package(TBB CONFIG REQUIRED)
+target_link_libraries(main PRIVATE TBB::tbb TBB::tbbmalloc)
+```
+## 1.28. vcpkg cmake 配置
+```
+在project之前使用
+SET(CMAKE_TOOLCHAIN_FILE "D:\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake")
 ```
