@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/media/psf/移动硬盘/boost学习/asio/src/9.cpp
+boost/array.hpp
+-
+boost/asio.hpp
+-
+boost/asio/impl/src.hpp
+-
+iostream
+-
+

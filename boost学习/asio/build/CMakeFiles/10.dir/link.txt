@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/10.dir/src/10.cpp.o  -o 10  -lpthread 

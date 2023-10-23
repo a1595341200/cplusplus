@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/2.dir/src/2.cpp.o  -o 2  /usr/lib/aarch64-linux-gnu/libboost_serialization.so.1.71.0 

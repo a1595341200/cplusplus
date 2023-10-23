@@ -15,10 +15,10 @@ set(CMAKE_CXX_FLAGS "-O0 -g")
 #add_definitions(-D ASIO_HAS_STD_STRING_VIEW)
 ## include directories
 set(INCLUDE_DIRECTORIES
-    Code/core/include
-    Code/adapter/include
-    src-gen/ObjectFusionModelExe/include
-    ./
+    ${CMAKE_CURRENT_SOURCE_DIR}/Code/core/include
+    ${CMAKE_CURRENT_SOURCE_DIR}/Code/adapter/include
+    ${CMAKE_CURRENT_SOURCE_DIR}/src-gen/ObjectFusionModelExe/include
+    ${CMAKE_CURRENT_SOURCE_DIR}/
 )
 
 

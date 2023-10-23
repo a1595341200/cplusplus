@@ -1,6 +1,13 @@
-#ifndef _TIMER_H_
-#define _TIMER_H_
-
+/*
+ * @Author: yao.xie 1595341200@qq.com
+ * @Date: 2023-10-23 11:24:06
+ * @LastEditors: yao.xie 1595341200@qq.com
+ * @LastEditTime: 2023-10-23 11:28:20
+ * @FilePath: /cplusplus/src/OFM/Code/adapter/include/timer.h
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置:
+ * https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
+#pragma once
 #include <atomic>
 #include <chrono>
 #include <condition_variable>
@@ -11,15 +18,15 @@
 #include <string>
 #include <thread>
 
-//namespace localizationfusion {
-
 class Timer {
  public:
   Timer() : expired_(true), try_to_expire_(false) {}
 
   Timer(const Timer& timer);
 
-  ~Timer() { stop(); }
+  ~Timer() {
+    stop();
+  }
 
   void start(std::chrono::milliseconds interval, std::function<void()> task);
 
@@ -32,10 +39,5 @@ class Timer {
   std::condition_variable expired_cond_;
 };
 
-
-// get current system time 
+// get current system time
 std::string getCurrentSysTime();
-
-//}  // namespace localizationfusion
-
-#endif  // _LFM_TIMER_HPP_

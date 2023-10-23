@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/media/psf/移动硬盘/boost学习/serialization/src/7.cpp
+boost/archive/text_iarchive.hpp
+-
+boost/archive/text_oarchive.hpp
+-
+boost/serialization/list.hpp
+-
+boost/serialization/string.hpp
+-
+boost/serialization/version.hpp
+-
+iostream
+-
+

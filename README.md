@@ -2,7 +2,7 @@
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2023-09-12 17:51:54
  * @LastEditors: yao.xie 1595341200@qq.com
- * @LastEditTime: 2023-10-19 15:36:32
+ * @LastEditTime: 2023-10-23 13:22:30
  * @FilePath: /cplusplus/README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -47,6 +47,9 @@
   - [1.26. for\_each 并行](#126-for_each-并行)
   - [1.27. tbb](#127-tbb)
   - [1.28. vcpkg cmake 配置](#128-vcpkg-cmake-配置)
+  - [1.29. std::packaged\_task](#129-stdpackaged_task)
+  - [1.30. std::shared\_future](#130-stdshared_future)
+  - [1.31. notify\_all](#131-notify_all)
 
 # 1. cplusplus
 ## 1.1. 设置DEBUG与release前缀
@@ -303,3 +306,30 @@ target_link_libraries(main PRIVATE TBB::tbb TBB::tbbmalloc)
 在project之前使用
 SET(CMAKE_TOOLCHAIN_FILE "D:\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake")
 ```
+## 1.29. std::packaged_task
+类模板 std::packaged_task 包装任何可调用 (Callable) 目标（函数、 lambda 表达式、 bind 表达式或其他函数对象），使得能异步调用它。其返回值或所抛异常被存储于能通过 std::future 对象访问的共享状态中。
+正如 std::function ， std::packaged_task 是多态、具分配器的容器：可在堆上或以提供的分配器分配存储的可调用对象。
+构造新的 std::packaged_task 对象。
+1) 构造无任务且无共享状态的 std::packaged_task 对象。
+2) 构造拥有共享状态和任务副本的 std::packaged_task 对象，以 std::forward<F>(f) 初始化副本。若 std::decay<F>::type 与 std::packaged_task<R(ArgTypes...)> 是同一类型，则此构造函数不参与重载决议。
+3) 构造拥有共享状态和任务副本的 std::packaged_task 对象，以 std::forward<F>(f) 初始化副本。用提供的分配器分配存储任务所需的内存。 若 std::decay<F>::type 与 std::packaged_task<R(ArgTypes...)> 是同一类型，则此构造函数不参与重载决议。
+4) 复制构造函数被删除， std::packaged_task 仅可移动。
+5) 以 rhs 之前所占有的共享状态和任务构造 std::packaged_task ，令 rhs 留在无共享状态且拥有被移动后的任务的状态。
+参数
+f	-	要执行的可调用目标（函数、成员函数、 lambda 表达式、函数对象）
+a	-	存储任务时所用的分配器
+rhs	-	要移动的 std::packaged_task
+异常
+2) f 的复制/移动构造函数所抛的任何异常，而若内存分配失败则可能为 std::bad_alloc 。
+3) f 的复制/移动构造函数，而若内存分配失败则有分配器的 allocate 函数所抛的任何异常
+## 1.30. std::shared_future
+类模板 std::shared_future 提供访问异步操作结果的机制，类似 std::future ，除了允许多个线程等候同一共享状态。不同于仅可移动的 std::future （故只有一个实例能指代任何特定的异步结果），std::shared_future 可复制而且多个 shared_future 对象能指代同一共享状态。
+若每个线程通过其自身的 shared_future 对象副本访问，则从多个线程访问同一共享状态是安全的。
+## 1.31. notify_all
+notify_one()与notify_all()常用来唤醒阻塞的线程。
+
+notify_one()：因为只唤醒等待队列中的第一个线程；不存在锁争用，所以能够立即获得锁。其余的线程不会被唤醒，需要等待再次调用notify_one()或者notify_all()。
+
+notify_all()：会唤醒所有等待队列中阻塞的线程，存在锁争用，只有一个线程能够获得锁。那其余未获取锁的线程接着会怎么样？会阻塞？还是继续尝试获得锁？
+
+                             答案是会继续尝试获得锁(类似于轮询)，而不会再次阻塞。当持有锁的线程释放锁时，这些线程中的一个会获得锁。而其余的会接着尝试获得锁。

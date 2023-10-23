@@ -1,0 +1,7 @@
+/media/psf/移动硬盘/boost学习/uuid/build/CMakeFiles/rebuild_cache.dir
+/media/psf/移动硬盘/boost学习/uuid/build/CMakeFiles/edit_cache.dir
+/media/psf/移动硬盘/boost学习/uuid/build/CMakeFiles/4.dir
+/media/psf/移动硬盘/boost学习/uuid/build/CMakeFiles/2.dir
+/media/psf/移动硬盘/boost学习/uuid/build/CMakeFiles/5.dir
+/media/psf/移动硬盘/boost学习/uuid/build/CMakeFiles/3.dir
+/media/psf/移动硬盘/boost学习/uuid/build/CMakeFiles/1.dir
