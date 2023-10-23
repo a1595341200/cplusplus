@@ -1,5 +1,11 @@
 cmake_minimum_required(VERSION 3.10)
-SET(CMAKE_TOOLCHAIN_FILE "/home/user/vcpkg-2023.08.09/scripts/buildsystems/vcpkg.cmake")
+
+if (CMAKE_HOST_WIN32)
+elseif (CMAKE_HOST_APPLE)
+elseif (CMAKE_HOST_UNIX)
+    SET(CMAKE_TOOLCHAIN_FILE "/home/user/vcpkg-2023.08.09/scripts/buildsystems/vcpkg.cmake")
+endif ()
+
 set(PROJECT_N cplusplus)
 project(${PROJECT_N} VERSION 1.0)
 

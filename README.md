@@ -280,7 +280,7 @@ find_package(mylib
     COMPONENTS test
     PATHS ./mylib/mylib
 )
-​
+
 if(mylib_FOUND)
     message("Find mylib: ${mylib_INCLUDE_DIR}; ${mylib_LIBRARY};")
 endif()
