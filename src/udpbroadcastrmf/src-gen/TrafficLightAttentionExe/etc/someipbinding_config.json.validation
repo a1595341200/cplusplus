@@ -1,0 +1,16 @@
+
+{
+  "format_version" : "1.00.00",
+  "target" : "/JICA/SWC/TrafficLightAttentionExe/Process3",
+  "files" : [
+    {
+      "filename" : "someipbinding_config.json",
+      "checksum" : [
+        6787080799219072160
+      ],
+      "algorithm" : "CRC64",
+      "block_length" : 4194304
+    }
+  ]
+}
+;®ny¬¹Lw

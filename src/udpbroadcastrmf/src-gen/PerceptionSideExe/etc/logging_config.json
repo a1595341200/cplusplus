@@ -1,0 +1,19 @@
+
+{
+  "version" : "1.00.00",
+  "app" : {
+    "name" : "Process10",
+    "id" : "PS",
+    "descr" : "PerceptionSide application",
+    "version" : "1.0.0+0001",
+    "level" : "error"
+  },
+  "sinks" : {
+    "console" : {
+      "enabled" : true
+    },
+    "file" : {
+      "file-path" : "/mnt/logfs/PerceptionSideExeProcess_LogChannel001.log"
+    }
+  }
+}

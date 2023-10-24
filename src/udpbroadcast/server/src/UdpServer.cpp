@@ -8,11 +8,8 @@
 #include "common.h"
 #include "macro.h"
 
-// import PORT not need fix, only need to fix ip
 #define BROADCAST_PORT 60000
-#define BROADCAST_IP "10.211.55.255"
-// 开启测试功能： 读取 bag 包，将车道线信息转为 MarkerArray, 可在 rviz 中查看效果
-// #define TEST_LANE_PUB_FROM_BAG
+#define BROADCAST_IP "192.168.255.255"
 #define SERVER_PORT 46325
 
 static bool SetNonBlocking(int fd) {
@@ -181,8 +178,6 @@ void UdpServer::ParseMsgCallback(UdpClient *client, void *data, SendDataType typ
     } break;
     case SendDataType::EgoMotion: {
     } break;
-    case SendDataType::FrontRadarObjs: {
-    } break;
     case SendDataType::ObjFustionResult: {
     } break;
     case SendDataType::SideMsgInfo: {
@@ -201,8 +196,6 @@ void UdpServer::ParseExtraMsgCallback(UdpClient *client, void *data, SendDataTyp
     case SendDataType::FrontCameraObjs: {
     } break;
     case SendDataType::FrontUnfilterObjs: {
-    } break;
-    case SendDataType::FrontRadarObjs: {
     } break;
     case SendDataType::FrontLaneInfo: {
     } break;

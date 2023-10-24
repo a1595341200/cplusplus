@@ -1,0 +1,19 @@
+
+{
+  "version" : "1.00.00",
+  "app" : {
+    "name" : "amsr_sm_process",
+    "id" : "SMG",
+    "descr" : "State Management",
+    "version" : "",
+    "level" : "verbose"
+  },
+  "sinks" : {
+    "console" : {
+      "enabled" : true
+    },
+    "file" : {
+      "file-path" : "/mnt/logfs/amsr_vector_fs_smProcess_LogChannel001.log"
+    }
+  }
+}

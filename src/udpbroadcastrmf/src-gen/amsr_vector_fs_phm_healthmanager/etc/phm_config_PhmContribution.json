@@ -1,0 +1,152 @@
+
+{
+  "max_number_of_supervised_applications" : 15,
+  "watchdog_alive_notification_cycle_time" : 20,
+  "disable_watchdog_client" : false,
+  "relevant_function_groups" : [
+    "MachineFG"
+  ],
+  "supervised_entities" : [
+    {
+      "supervised_entity_id" : 1
+    },
+    {
+      "supervised_entity_id" : 3
+    },
+    {
+      "supervised_entity_id" : 2
+    },
+    {
+      "supervised_entity_id" : 5
+    },
+    {
+      "supervised_entity_id" : 4
+    }
+  ],
+  "checkpoints" : [
+    {
+      "checkpoint_id" : 0,
+      "checkpoint_ref" : 0,
+      "supervised_entity_ref" : 1,
+      "execution_error" : 1
+    },
+    {
+      "checkpoint_id" : 1,
+      "checkpoint_ref" : 0,
+      "supervised_entity_ref" : 3,
+      "execution_error" : 1
+    },
+    {
+      "checkpoint_id" : 2,
+      "checkpoint_ref" : 0,
+      "supervised_entity_ref" : 2,
+      "execution_error" : 1
+    },
+    {
+      "checkpoint_id" : 3,
+      "checkpoint_ref" : 0,
+      "supervised_entity_ref" : 5,
+      "execution_error" : 1
+    },
+    {
+      "checkpoint_id" : 4,
+      "checkpoint_ref" : 0,
+      "supervised_entity_ref" : 4,
+      "execution_error" : 1
+    }
+  ],
+  "local_supervisions" : [
+    {
+      "local_supervision_id" : 0,
+      "shortname_path" : "/JICA/SWC/amsr_vector_fs_phm_healthmanager/PhmContribution/AliveLocalSupervision",
+      "failed_supervision_cycles_tolerance" : 1,
+      "supervisions" : [
+        {
+          "supervision_type" : "alive",
+          "supervision_id" : 0,
+          "max_startup_delay" : 10000,
+          "alive_reference_cycle" : 500,
+          "expected_alive_indications" : 40,
+          "min_margin" : 7,
+          "max_margin" : 3,
+          "checkpoint_ref" : 0,
+          "execution_error" : 1,
+          "function_group_name" : "MachineFG"
+        },
+        {
+          "supervision_type" : "alive",
+          "supervision_id" : 1,
+          "max_startup_delay" : 10000,
+          "alive_reference_cycle" : 500,
+          "expected_alive_indications" : 40,
+          "min_margin" : 7,
+          "max_margin" : 3,
+          "checkpoint_ref" : 2,
+          "execution_error" : 1,
+          "function_group_name" : "MachineFG"
+        },
+        {
+          "supervision_type" : "alive",
+          "supervision_id" : 2,
+          "max_startup_delay" : 10000,
+          "alive_reference_cycle" : 500,
+          "expected_alive_indications" : 40,
+          "min_margin" : 7,
+          "max_margin" : 3,
+          "checkpoint_ref" : 1,
+          "execution_error" : 1,
+          "function_group_name" : "MachineFG"
+        },
+        {
+          "supervision_type" : "alive",
+          "supervision_id" : 3,
+          "max_startup_delay" : 10000,
+          "alive_reference_cycle" : 500,
+          "expected_alive_indications" : 17,
+          "min_margin" : 5,
+          "max_margin" : 3,
+          "checkpoint_ref" : 4,
+          "execution_error" : 1,
+          "function_group_name" : "MachineFG"
+        },
+        {
+          "supervision_type" : "alive",
+          "supervision_id" : 4,
+          "max_startup_delay" : 10000,
+          "alive_reference_cycle" : 500,
+          "expected_alive_indications" : 40,
+          "min_margin" : 7,
+          "max_margin" : 3,
+          "checkpoint_ref" : 3,
+          "execution_error" : 1,
+          "function_group_name" : "MachineFG"
+        }
+      ],
+      "function_group" : "MachineFG",
+      "function_group_state_groups" : [
+        [
+          "Running"
+        ]
+      ]
+    }
+  ],
+  "global_supervisions" : [
+    {
+      "global_supervision_id" : 0,
+      "expired_supervision_cycles_tolerance" : 0,
+      "supervision_cycle" : 20,
+      "supervision_triggers_watchdog_recovery_action" : false,
+      "recovery_notification_timeout" : 800,
+      "recovery_action_refs" : [
+        {
+          "recovery_action_ref" : "amsr_vector_fs_sm/SmRootSwComponentType/AliveRecoveryActionPort"
+        }
+      ],
+      "local_supervision_refs" : [
+        {
+          "local_supervision_ref" : 0
+        }
+      ]
+    }
+  ]
+}

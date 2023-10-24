@@ -1,0 +1,30 @@
+
+{
+  "version" : "1.00.00",
+  "general" : {
+    "ecu_id" : "ECU0"
+  },
+  "ipc" : {
+    "log_port" : 33
+  },
+  "channels" : {
+    "udp0" : {
+      "buffer" : {
+        "max_num" : 1000,
+        "strategy" : "drop_new"
+      },
+      "connections" : {
+        "default" : {
+          "type" : "dlt",
+          "udp" : {
+            "remote" : [
+              "198.18.32.100",
+              49361
+            ],
+            "segment_size" : 1500
+          }
+        }
+      }
+    }
+  }
+}

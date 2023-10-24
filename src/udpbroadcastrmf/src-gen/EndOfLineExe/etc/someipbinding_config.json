@@ -1,0 +1,62 @@
+
+{
+  "services" : [
+    {
+      "service_id" : 155,
+      "shortname_path" : "/JICA/Service/Interface/EndOfLineSI_Out",
+      "major_version" : 1,
+      "minor_version" : 0,
+      "events" : [
+        {
+          "id" : 37682,
+          "shortname" : "EOL_Bus_CamCalibStatus"
+        }
+      ],
+      "fields" : [
+      ],
+      "methods" : [
+      ],
+      "provided_service_instances" : [
+        {
+          "instance_id" : 1126,
+          "instance_specifier" : [
+            "EndOfLineExe/EndOfLine/EndOfLine_EndOfLineSI_Out_P"
+          ]
+        }
+      ]
+    },
+    {
+      "service_id" : 163,
+      "shortname_path" : "/JICA/Service/Interface/ToSOCA_InfomationSI",
+      "major_version" : 1,
+      "minor_version" : 0,
+      "events" : [
+        {
+          "id" : 37708,
+          "shortname" : "OSM2_Bus_ToSOCA_COMInfo"
+        },
+        {
+          "id" : 37707,
+          "shortname" : "OSM2_Bus_ToSOCA_FunctionInfo"
+        }
+      ],
+      "fields" : [
+      ],
+      "methods" : [
+      ],
+      "required_service_instances" : [
+        {
+          "instance_id" : 1132,
+          "instance_specifier" : [
+            "EndOfLineExe/EndOfLine/EndOfLine_ToSOCA_InfomationSI_R"
+          ],
+          "minor_version" : 4294967295
+        }
+      ]
+    }
+  ],
+  "generatorVersion" : {
+    "name" : "amsr_someipbinding",
+    "commitId" : "34a78d6264927917d6838a378b15b039fd1cad4a"
+  }
+}

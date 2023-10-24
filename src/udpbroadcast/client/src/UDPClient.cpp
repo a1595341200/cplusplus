@@ -91,7 +91,7 @@ void UDPClient::SendUDPMessage(const std::string &msg) {
     return;
   }
   std::vector<char> cur_buf;
-  packMsg("frntRdrObjList_4D", cur_buf, (int)SendDataType::FrontRadarObjs);
+  packMsg("frntRdrObjList_4D", cur_buf, (int)SendDataType::FrontCameraObjs);
   int n = ::sendto(mSocket, msg.data(), msg.size(), 0, (struct sockaddr *)&mDstAddr,
                    sizeof(struct sockaddr_in));
 }
@@ -126,7 +126,6 @@ void UDPClient::KcpInputLoop() {
       if (!strncmp(head.cmd, "start", 5) &&
           (!strncmp(head.platform, "OFM", 3) || !strncmp(head.platform, "All", 3))) {
         is_connected_ = true;
-        SendUDPMessage("111111");
       } else {
         is_connected_ = false;
       }

@@ -1,0 +1,16 @@
+
+{
+  "format_version" : "1.00.00",
+  "target" : "/JICA/SWC/TrafficSignInformationExe/Process4",
+  "files" : [
+    {
+      "filename" : "socal_config.json",
+      "checksum" : [
+        8101817887281433093
+      ],
+      "algorithm" : "CRC64",
+      "block_length" : 4194304
+    }
+  ]
+}
+Jï¾ªE\

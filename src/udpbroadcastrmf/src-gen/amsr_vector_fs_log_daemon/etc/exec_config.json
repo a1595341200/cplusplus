@@ -1,0 +1,60 @@
+
+{
+  "name" : "amsr_vector_fs_log_daemon",
+  "reportingBehavior" : "REPORTS-EXECUTION-STATE",
+  "executableType" : "NOT_DAEMON",
+  "processes" : [
+    {
+      "name" : "logd",
+      "shortNamePath" : "/JICA/SWC/amsr_vector_fs_log_daemon/logd",
+      "startupConfigs" : [
+        {
+          "shortNamePath" : "/JICA/SWC/amsr_vector_fs_log_daemon/amsr_vector_fs_log_daemonStartupConfigSet/StartupConfig",
+          "schedulingPolicy" : "SCHED_FIFO",
+          "schedulingPriority" : 20,
+          "options" : [
+          ],
+          "environmentVariables" : [
+            {
+              "key" : "SOCK",
+              "value" : "/gmac1"
+            },
+            {
+              "key" : "AMSR_PROCESS_CONFIG_DIR",
+              "value" : "./etc"
+            },
+            {
+              "key" : "AMSR_EXECUTABLE_CONFIG_DIR",
+              "value" : "./etc"
+            }
+          ],
+          "executionDependency" : {
+          },
+          "functionGroups" : [
+            {
+              "name" : "MachineFG",
+              "states" : [
+                "Running",
+                "Factory",
+                "Startup",
+                "bootloader"
+              ]
+            }
+          ],
+          "cores" : {
+            "shallRunOn" : [
+              4,
+              5,
+              6,
+              7
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "generatorVersion" : {
+    "name" : "amsr_em_exec_config",
+    "commitId" : "9c2c268bbe15726964bac7ee8071218f92848d4f"
+  }
+}

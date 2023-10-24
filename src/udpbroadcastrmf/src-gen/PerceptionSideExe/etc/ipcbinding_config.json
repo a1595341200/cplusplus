@@ -1,0 +1,49 @@
+
+{
+  "services" : [
+    {
+      "service_id" : 118,
+      "shortname_path" : "/JICA/Service/Interface/PerceptionSideSI_Out",
+      "major_version" : 1,
+      "minor_version" : 0,
+      "events" : [
+        {
+          "id" : 4494,
+          "shortname" : "FRCam_Bus_VisnObj"
+        },
+        {
+          "id" : 4493,
+          "shortname" : "FLCam_Bus_VisnObj"
+        },
+        {
+          "id" : 4495,
+          "shortname" : "RLCam_Bus_VisnObj"
+        },
+        {
+          "id" : 4496,
+          "shortname" : "RRCam_Bus_VisnObj"
+        },
+        {
+          "id" : 4973,
+          "shortname" : "PerceptionSide_Bus_CameraStatus"
+        }
+      ],
+      "provided_service_instances" : [
+        {
+          "instance_id" : 1097,
+          "instance_specifier" : [
+            "PerceptionSideExe/PerceptionSide/PerceptionSide_PerceptionSideSI_Out_P"
+          ],
+          "domain" : 35,
+          "port" : 35,
+          "ttl" : 2,
+          "expected_client_integrity_level" : "QM"
+        }
+      ]
+    }
+  ],
+  "generatorVersion" : {
+    "name" : "amsr_ipcbinding",
+    "commitId" : "9519b950801d42a5bc7a25dd6db848903642b9ba"
+  }
+}

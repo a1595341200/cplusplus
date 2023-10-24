@@ -18,7 +18,8 @@
 #include <string>
 
 enum class SendDataType : uint8_t {
-  FrontRadarObjs = 0,
+  NOAInfo = 0,
+
   FrontCameraObjs = 1,
   SideCameraObjs = 2,
   EgoMotion = 3,

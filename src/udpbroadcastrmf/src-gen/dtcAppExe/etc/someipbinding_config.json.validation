@@ -1,0 +1,16 @@
+
+{
+  "format_version" : "1.00.00",
+  "target" : "/JICA/SWC/dtcAppExe/dtcProcess",
+  "files" : [
+    {
+      "filename" : "someipbinding_config.json",
+      "checksum" : [
+        4582324739994459687
+      ],
+      "algorithm" : "CRC64",
+      "block_length" : 4194304
+    }
+  ]
+}
+xêeŒòA

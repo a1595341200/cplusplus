@@ -1,0 +1,89 @@
+
+{
+  "services" : [
+    {
+      "service_id" : 33,
+      "shortname_path" : "/JICA/Service/Interface/ObjectFusionModelSI_Out",
+      "major_version" : 1,
+      "minor_version" : 0,
+      "events" : [
+        {
+          "id" : 5014,
+          "shortname" : "OFM_Bus_FusedTargets01"
+        },
+        {
+          "id" : 5015,
+          "shortname" : "OFM_Bus_FusedTargets02"
+        },
+        {
+          "id" : 5016,
+          "shortname" : "OFM_Bus_FusedTargets03"
+        },
+        {
+          "id" : 5017,
+          "shortname" : "OFM_Bus_FusedTargets04"
+        },
+        {
+          "id" : 4377,
+          "shortname" : "OFM_St_SOCFusedSts"
+        },
+        {
+          "id" : 4942,
+          "shortname" : "OFM_Bus_FourDRadarStatus"
+        },
+        {
+          "id" : 4985,
+          "shortname" : "OFM_Bus_LaneInfo"
+        }
+      ],
+      "required_service_instances" : [
+        {
+          "instance_id" : 1080,
+          "instance_specifier" : [
+            "TargetPredictExe/TargetPredict/TargetPredict_ObjectFusionModelSI_Out_R"
+          ],
+          "minor_version" : 4294967295,
+          "expected_server_integrity_level" : "QM"
+        }
+      ]
+    },
+    {
+      "service_id" : 49,
+      "shortname_path" : "/JICA/Service/Interface/RoadModelFusionSI_Out",
+      "major_version" : 1,
+      "minor_version" : 0,
+      "events" : [
+        {
+          "id" : 4953,
+          "shortname" : "RMF_Bus_RMFInfo"
+        },
+        {
+          "id" : 4954,
+          "shortname" : "RMF_Bus_MapInfo"
+        },
+        {
+          "id" : 4919,
+          "shortname" : "RMF_Bus_VectorMapInfo"
+        },
+        {
+          "id" : 4920,
+          "shortname" : "RMF_Bus_Position"
+        }
+      ],
+      "required_service_instances" : [
+        {
+          "instance_id" : 1127,
+          "instance_specifier" : [
+            "TargetPredictExe/TargetPredict/TargetPredict_RoadModelFusionSI_Out_R"
+          ],
+          "minor_version" : 4294967295,
+          "expected_server_integrity_level" : "QM"
+        }
+      ]
+    }
+  ],
+  "generatorVersion" : {
+    "name" : "amsr_ipcbinding",
+    "commitId" : "9519b950801d42a5bc7a25dd6db848903642b9ba"
+  }
+}

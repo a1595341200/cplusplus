@@ -1,0 +1,19 @@
+
+{
+  "version" : "1.00.00",
+  "app" : {
+    "name" : "Process7",
+    "id" : "EHR",
+    "descr" : "EHR application",
+    "version" : "1.0.0+0001",
+    "level" : "error"
+  },
+  "sinks" : {
+    "console" : {
+      "enabled" : true
+    },
+    "file" : {
+      "file-path" : "/mnt/logfs/EHRExeProcess_LogChannel001.log"
+    }
+  }
+}

@@ -25,16 +25,17 @@ UdpClient::UdpClient(const UdpClient *client) {
 }
 
 UdpClient::~UdpClient() {}
+
 void UdpClient::ReceiveMessage(const std::vector<char> &buffer) {
   if (buffer.size() < 7) {
     return;
   }
 
-  SendDataType data_type_ = SendDataType::EgoMotion;
+  SendDataType data_type{};
 
-  switch (data_type_) {
-    case SendDataType::SideCameraObjs: {
-      uint64_t cur_seq = GetSeqNumber((int)data_type_);
+  switch (data_type) {
+    case SendDataType::NOAInfo: {
+      uint64_t cur_seq = GetSeqNumber((int)data_type);
       break;
     }
     case SendDataType::FrontCameraObjs: {
@@ -44,9 +45,6 @@ void UdpClient::ReceiveMessage(const std::vector<char> &buffer) {
       break;
     }
     case SendDataType::EgoMotion: {
-      break;
-    }
-    case SendDataType::FrontRadarObjs: {
       break;
     }
     case SendDataType::ObjFustionResult: {

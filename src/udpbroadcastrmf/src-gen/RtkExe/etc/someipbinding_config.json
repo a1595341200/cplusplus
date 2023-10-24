@@ -1,0 +1,70 @@
+
+{
+  "services" : [
+    {
+      "service_id" : 18,
+      "shortname_path" : "/JICA/Service/Interface/Rtk_Provide",
+      "major_version" : 1,
+      "minor_version" : 0,
+      "events" : [
+        {
+          "id" : 37655,
+          "shortname" : "ErrorCode"
+        },
+        {
+          "id" : 37031,
+          "shortname" : "GgaData_provide"
+        }
+      ],
+      "fields" : [
+      ],
+      "methods" : [
+      ],
+      "provided_service_instances" : [
+        {
+          "instance_id" : 1037,
+          "instance_specifier" : [
+            "RtkExe/Rtk/RtkProvide"
+          ]
+        }
+      ]
+    },
+    {
+      "service_id" : 19,
+      "shortname_path" : "/JICA/Service/Interface/Rtk_Receive",
+      "major_version" : 1,
+      "minor_version" : 0,
+      "events" : [
+        {
+          "id" : 37779,
+          "shortname" : "AgnssData_receive"
+        },
+        {
+          "id" : 37033,
+          "shortname" : "GgaData_receive"
+        },
+        {
+          "id" : 37751,
+          "shortname" : "VIN"
+        }
+      ],
+      "fields" : [
+      ],
+      "methods" : [
+      ],
+      "required_service_instances" : [
+        {
+          "instance_id" : 1038,
+          "instance_specifier" : [
+            "RtkExe/Rtk/RtkReceive"
+          ],
+          "minor_version" : 4294967295
+        }
+      ]
+    }
+  ],
+  "generatorVersion" : {
+    "name" : "amsr_someipbinding",
+    "commitId" : "34a78d6264927917d6838a378b15b039fd1cad4a"
+  }
+}

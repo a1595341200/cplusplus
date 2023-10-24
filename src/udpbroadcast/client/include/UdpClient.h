@@ -12,6 +12,7 @@
 #include <arpa/inet.h>
 
 #include <condition_variable>
+#include <deque>
 #include <iostream>
 #include <memory>
 #include <mutex>
@@ -22,7 +23,8 @@
 #include "common.h"
 
 enum class SendDataType : uint8_t {
-  FrontRadarObjs = 0,
+  NOAInfo = 0,
+
   FrontCameraObjs = 1,
   SideCameraObjs = 2,
   EgoMotion = 3,
@@ -30,12 +32,9 @@ enum class SendDataType : uint8_t {
   FrontLaneInfo = 5,
   SideMsgInfo = 6,
   SideRawImage = 7,
-  // 控制命令
   SendControlCmd = 8,
   FusionLaneInfo = 9,
-  // 融合模块发出的侧向车道线信息
   SideLaneInfo = 10,
-  // TSI 数据
   TSISignalInfo = 11,
   FrontUnfilterObjs = 12,
   RearCameraObjs = 13,
@@ -77,7 +76,6 @@ class UDPClient : public std::enable_shared_from_this<UDPClient> {
     buffer[total_len - 1] = 0xEF;
   }
 
- private:
   bool parseHead(const char *buf, int size, Common::CmdHead &head);
 
   bool exit_{false};

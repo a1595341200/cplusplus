@@ -1,0 +1,16 @@
+
+{
+  "version" : "1.00.00",
+  "app" : {
+    "name" : "logd",
+    "id" : "LOGD",
+    "descr" : "Log daemon process",
+    "version" : "",
+    "level" : "warn"
+  },
+  "sinks" : {
+    "console" : {
+      "enabled" : true
+    }
+  }
+}

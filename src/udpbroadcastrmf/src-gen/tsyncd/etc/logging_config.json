@@ -1,0 +1,19 @@
+
+{
+  "version" : "1.00.00",
+  "app" : {
+    "name" : "TSync_Daemon_Proc",
+    "id" : "TSYD",
+    "descr" : "Time Synchronization Daemon",
+    "version" : "",
+    "level" : "error"
+  },
+  "sinks" : {
+    "console" : {
+      "enabled" : true
+    },
+    "file" : {
+      "file-path" : "/mnt/logfs/tsyncdProcess_LogChannel001.log"
+    }
+  }
+}

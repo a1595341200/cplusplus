@@ -1,0 +1,16 @@
+
+{
+  "format_version" : "1.00.00",
+  "target" : "/JICA/SWC/ObjectFusionModelExe/Process1",
+  "files" : [
+    {
+      "filename" : "ipcbinding_config.json",
+      "checksum" : [
+        4926752654256521598
+      ],
+      "algorithm" : "CRC64",
+      "block_length" : 4194304
+    }
+  ]
+}
+N¾&¹žCO

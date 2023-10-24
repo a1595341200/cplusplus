@@ -1,0 +1,215 @@
+
+{
+  "services" : [
+    {
+      "service_id" : 33,
+      "shortname_path" : "/JICA/Service/Interface/ObjectFusionModelSI_Out",
+      "major_version" : 1,
+      "minor_version" : 0,
+      "events" : [
+        {
+          "id" : 5014,
+          "shortname" : "OFM_Bus_FusedTargets01"
+        },
+        {
+          "id" : 5015,
+          "shortname" : "OFM_Bus_FusedTargets02"
+        },
+        {
+          "id" : 5016,
+          "shortname" : "OFM_Bus_FusedTargets03"
+        },
+        {
+          "id" : 5017,
+          "shortname" : "OFM_Bus_FusedTargets04"
+        },
+        {
+          "id" : 4377,
+          "shortname" : "OFM_St_SOCFusedSts"
+        },
+        {
+          "id" : 4942,
+          "shortname" : "OFM_Bus_FourDRadarStatus"
+        },
+        {
+          "id" : 4985,
+          "shortname" : "OFM_Bus_LaneInfo"
+        }
+      ],
+      "provided_service_instances" : [
+        {
+          "instance_id" : 1080,
+          "instance_specifier" : [
+            "ObjectFusionModelExe/ObjectFusionModel/ObjectFusionModel_ObjectFusionModelSI_Out_P"
+          ],
+          "domain" : 23,
+          "port" : 23,
+          "ttl" : 2,
+          "expected_client_integrity_level" : "QM"
+        }
+      ]
+    },
+    {
+      "service_id" : 175,
+      "shortname_path" : "/JICA/Service/Interface/PerceptionRearSI_Out",
+      "major_version" : 1,
+      "minor_version" : 0,
+      "events" : [
+        {
+          "id" : 4977,
+          "shortname" : "PerceptionRear_Bus_LaneInfo"
+        },
+        {
+          "id" : 4978,
+          "shortname" : "PerceptionRear_Bus_CameraStatus"
+        },
+        {
+          "id" : 4979,
+          "shortname" : "PerceptionRear_Bus_VisnObj"
+        }
+      ],
+      "required_service_instances" : [
+        {
+          "instance_id" : 1141,
+          "instance_specifier" : [
+            "ObjectFusionModelExe/ObjectFusionModel/ObjectFusionModel_PerceptionRearSI_Out_R"
+          ],
+          "minor_version" : 4294967295,
+          "expected_server_integrity_level" : "QM"
+        }
+      ]
+    },
+    {
+      "service_id" : 37,
+      "shortname_path" : "/JICA/Service/Interface/PerceptionSI_Out",
+      "major_version" : 1,
+      "minor_version" : 0,
+      "events" : [
+        {
+          "id" : 4947,
+          "shortname" : "Perception_Bus_LaneInfo"
+        },
+        {
+          "id" : 4948,
+          "shortname" : "Perception_Bus_FrntCamInfo"
+        },
+        {
+          "id" : 4950,
+          "shortname" : "FrntCam_Bus_TrafficInfo"
+        },
+        {
+          "id" : 4616,
+          "shortname" : "FrntCam_Bus_TrfcLi"
+        },
+        {
+          "id" : 4982,
+          "shortname" : "FrntCam_Bus_LineSignGroup"
+        },
+        {
+          "id" : 4620,
+          "shortname" : "FrntCam_Bus_ExtInfo"
+        }
+      ],
+      "required_service_instances" : [
+        {
+          "instance_id" : 1060,
+          "instance_specifier" : [
+            "ObjectFusionModelExe/ObjectFusionModel/ObjectFusionModel_PerceptionSI_Out_R"
+          ],
+          "minor_version" : 4294967295,
+          "expected_server_integrity_level" : "QM"
+        }
+      ]
+    },
+    {
+      "service_id" : 94,
+      "shortname_path" : "/JICA/Service/Interface/PerceptionSI_VisnObjOut",
+      "major_version" : 1,
+      "minor_version" : 0,
+      "events" : [
+        {
+          "id" : 4492,
+          "shortname" : "FrntCam_Bus_VisnObj"
+        },
+        {
+          "id" : 5012,
+          "shortname" : "FrntCam_Bus_UnfilteredObj"
+        }
+      ],
+      "required_service_instances" : [
+        {
+          "instance_id" : 1084,
+          "instance_specifier" : [
+            "ObjectFusionModelExe/ObjectFusionModel/ObjectFusionModel_PerceptionSI_VisnObjOut_R"
+          ],
+          "minor_version" : 4294967295,
+          "expected_server_integrity_level" : "QM"
+        }
+      ]
+    },
+    {
+      "service_id" : 118,
+      "shortname_path" : "/JICA/Service/Interface/PerceptionSideSI_Out",
+      "major_version" : 1,
+      "minor_version" : 0,
+      "events" : [
+        {
+          "id" : 4494,
+          "shortname" : "FRCam_Bus_VisnObj"
+        },
+        {
+          "id" : 4493,
+          "shortname" : "FLCam_Bus_VisnObj"
+        },
+        {
+          "id" : 4495,
+          "shortname" : "RLCam_Bus_VisnObj"
+        },
+        {
+          "id" : 4496,
+          "shortname" : "RRCam_Bus_VisnObj"
+        },
+        {
+          "id" : 4973,
+          "shortname" : "PerceptionSide_Bus_CameraStatus"
+        }
+      ],
+      "required_service_instances" : [
+        {
+          "instance_id" : 1097,
+          "instance_specifier" : [
+            "ObjectFusionModelExe/ObjectFusionModel/ObjectFusionModel_PerceptionSideSI_Out_R"
+          ],
+          "minor_version" : 4294967295,
+          "expected_server_integrity_level" : "QM"
+        }
+      ]
+    },
+    {
+      "service_id" : 61,
+      "shortname_path" : "/JICA/Service/Interface/RadarAdaptorSI_Out",
+      "major_version" : 1,
+      "minor_version" : 0,
+      "events" : [
+        {
+          "id" : 4967,
+          "shortname" : "FourDRadarObjStsGAPGrp_FourDRadarObjStsGrp"
+        }
+      ],
+      "required_service_instances" : [
+        {
+          "instance_id" : 1063,
+          "instance_specifier" : [
+            "ObjectFusionModelExe/ObjectFusionModel/ObjectFusionModel_RadarAdaptorSI_Out_R"
+          ],
+          "minor_version" : 4294967295,
+          "expected_server_integrity_level" : "QM"
+        }
+      ]
+    }
+  ],
+  "generatorVersion" : {
+    "name" : "amsr_ipcbinding",
+    "commitId" : "9519b950801d42a5bc7a25dd6db848903642b9ba"
+  }
+}

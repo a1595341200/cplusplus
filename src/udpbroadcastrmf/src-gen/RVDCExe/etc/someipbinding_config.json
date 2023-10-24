@@ -1,0 +1,112 @@
+
+{
+  "services" : [
+    {
+      "service_id" : 207,
+      "shortname_path" : "/JICA/Service/Interface/MCU_Data_Info",
+      "major_version" : 1,
+      "minor_version" : 0,
+      "events" : [
+        {
+          "id" : 37760,
+          "shortname" : "Ids"
+        },
+        {
+          "id" : 37761,
+          "shortname" : "Mcu_Reset_Info1"
+        },
+        {
+          "id" : 37762,
+          "shortname" : "Mcu_Reset_Info2"
+        },
+        {
+          "id" : 37763,
+          "shortname" : "Mcu_Reset_Info3"
+        },
+        {
+          "id" : 37764,
+          "shortname" : "Mcu_Reset_Info4"
+        }
+      ],
+      "fields" : [
+      ],
+      "methods" : [
+      ],
+      "required_service_instances" : [
+        {
+          "instance_id" : 1143,
+          "instance_specifier" : [
+            "RVDCExe/RVDC/McuDataReceive"
+          ],
+          "minor_version" : 4294967295
+        }
+      ]
+    },
+    {
+      "service_id" : 19,
+      "shortname_path" : "/JICA/Service/Interface/Rtk_Receive",
+      "major_version" : 1,
+      "minor_version" : 0,
+      "events" : [
+        {
+          "id" : 37779,
+          "shortname" : "AgnssData_receive"
+        },
+        {
+          "id" : 37033,
+          "shortname" : "GgaData_receive"
+        },
+        {
+          "id" : 37751,
+          "shortname" : "VIN"
+        }
+      ],
+      "fields" : [
+      ],
+      "methods" : [
+      ],
+      "required_service_instances" : [
+        {
+          "instance_id" : 1038,
+          "instance_specifier" : [
+            "RVDCExe/RVDC/VINReceive"
+          ],
+          "minor_version" : 4294967295
+        }
+      ]
+    },
+    {
+      "service_id" : 163,
+      "shortname_path" : "/JICA/Service/Interface/ToSOCA_InfomationSI",
+      "major_version" : 1,
+      "minor_version" : 0,
+      "events" : [
+        {
+          "id" : 37708,
+          "shortname" : "OSM2_Bus_ToSOCA_COMInfo"
+        },
+        {
+          "id" : 37707,
+          "shortname" : "OSM2_Bus_ToSOCA_FunctionInfo"
+        }
+      ],
+      "fields" : [
+      ],
+      "methods" : [
+      ],
+      "required_service_instances" : [
+        {
+          "instance_id" : 1132,
+          "instance_specifier" : [
+            "RVDCExe/RVDC/DriveModeReceive"
+          ],
+          "minor_version" : 4294967295
+        }
+      ]
+    }
+  ],
+  "generatorVersion" : {
+    "name" : "amsr_someipbinding",
+    "commitId" : "34a78d6264927917d6838a378b15b039fd1cad4a"
+  }
+}

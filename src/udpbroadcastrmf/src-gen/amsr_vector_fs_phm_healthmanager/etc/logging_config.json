@@ -1,0 +1,19 @@
+
+{
+  "version" : "1.00.00",
+  "app" : {
+    "name" : "amsr_phm_process",
+    "id" : "PHM",
+    "descr" : "phm Daemon",
+    "version" : "1.0.0+0001",
+    "level" : "info"
+  },
+  "sinks" : {
+    "console" : {
+      "enabled" : true
+    },
+    "file" : {
+      "file-path" : "/mnt/logfs/amsr_vector_fs_phm_healthmanagerProcess_LogChannel001.log"
+    }
+  }
+}
