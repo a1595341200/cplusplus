@@ -1,0 +1,105 @@
+
+{
+  "services" : [
+    {
+      "service_id" : 102,
+      "shortname_path" : "/JICA/Service/Interface/PerceptionSI_FreeSpaceOut",
+      "major_version" : 1,
+      "minor_version" : 0,
+      "events" : [
+        {
+          "id" : 4755,
+          "shortname" : "FusedCam_Bus_FreeSpace"
+        }
+      ],
+      "provided_service_instances" : [
+        {
+          "instance_id" : 1087,
+          "instance_specifier" : [
+            "PerceptionExe/Perception/Perception_PerceptionSI_FreeSpaceOut_P"
+          ],
+          "domain" : 27,
+          "port" : 27,
+          "ttl" : 2,
+          "expected_client_integrity_level" : "QM"
+        }
+      ]
+    },
+    {
+      "service_id" : 37,
+      "shortname_path" : "/JICA/Service/Interface/PerceptionSI_Out",
+      "major_version" : 1,
+      "minor_version" : 0,
+      "events" : [
+        {
+          "id" : 4947,
+          "shortname" : "Perception_Bus_LaneInfo"
+        },
+        {
+          "id" : 4948,
+          "shortname" : "Perception_Bus_FrntCamInfo"
+        },
+        {
+          "id" : 4950,
+          "shortname" : "FrntCam_Bus_TrafficInfo"
+        },
+        {
+          "id" : 4616,
+          "shortname" : "FrntCam_Bus_TrfcLi"
+        },
+        {
+          "id" : 4982,
+          "shortname" : "FrntCam_Bus_LineSignGroup"
+        },
+        {
+          "id" : 4620,
+          "shortname" : "FrntCam_Bus_ExtInfo"
+        }
+      ],
+      "provided_service_instances" : [
+        {
+          "instance_id" : 1060,
+          "instance_specifier" : [
+            "PerceptionExe/Perception/Perception_PerceptionSI_Out_P"
+          ],
+          "domain" : 5,
+          "port" : 5,
+          "ttl" : 2,
+          "expected_client_integrity_level" : "QM"
+        }
+      ]
+    },
+    {
+      "service_id" : 94,
+      "shortname_path" : "/JICA/Service/Interface/PerceptionSI_VisnObjOut",
+      "major_version" : 1,
+      "minor_version" : 0,
+      "events" : [
+        {
+          "id" : 4492,
+          "shortname" : "FrntCam_Bus_VisnObj"
+        },
+        {
+          "id" : 5012,
+          "shortname" : "FrntCam_Bus_UnfilteredObj"
+        }
+      ],
+      "provided_service_instances" : [
+        {
+          "instance_id" : 1084,
+          "instance_specifier" : [
+            "PerceptionExe/Perception/Perception_PerceptionSI_VisnObjOut_P"
+          ],
+          "domain" : 24,
+          "port" : 24,
+          "ttl" : 2,
+          "expected_client_integrity_level" : "QM"
+        }
+      ]
+    }
+  ],
+  "generatorVersion" : {
+    "name" : "amsr_ipcbinding",
+    "commitId" : "9519b950801d42a5bc7a25dd6db848903642b9ba"
+  }
+}

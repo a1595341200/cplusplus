@@ -1,0 +1,16 @@
+
+{
+  "format_version" : "1.00.00",
+  "target" : "/JICA/SWC/TrafficSignInformationExe/Process4",
+  "files" : [
+    {
+      "filename" : "ipcbinding_config.json",
+      "checksum" : [
+        13689198579179120809
+      ],
+      "algorithm" : "CRC64",
+      "block_length" : 4194304
+    }
+  ]
+}
+·-—R![ίχ

@@ -1,0 +1,31 @@
+
+{
+  "services" : [
+    {
+      "service_id" : 223,
+      "shortname_path" : "/JICA/Service/Interface/EDRSI_Out",
+      "major_version" : 1,
+      "minor_version" : 0,
+      "events" : [
+        {
+          "id" : 5024,
+          "shortname" : "EDR_Bus_EDRInfo"
+        }
+      ],
+      "required_service_instances" : [
+        {
+          "instance_id" : 1153,
+          "instance_specifier" : [
+            "RVDCExe/RVDC/RVDC_EDRSI_Out_R"
+          ],
+          "minor_version" : 4294967295,
+          "expected_server_integrity_level" : "QM"
+        }
+      ]
+    }
+  ],
+  "generatorVersion" : {
+    "name" : "amsr_ipcbinding",
+    "commitId" : "9519b950801d42a5bc7a25dd6db848903642b9ba"
+  }
+}

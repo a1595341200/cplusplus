@@ -1,0 +1,17 @@
+
+{
+  "format_version" : "1.00.00",
+  "target" : "/JICA/SWC/PerceptionExe/Process2",
+  "files" : [
+    {
+      "filename" : "someipbinding_config.json",
+      "checksum" : [
+        1007133805203721129
+      ],
+      "algorithm" : "CRC64",
+      "block_length" : 4194304
+    }
+  ]
+}
+‡ûà
+î2G

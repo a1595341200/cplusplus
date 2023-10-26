@@ -1,0 +1,16 @@
+
+{
+  "format_version" : "1.00.00",
+  "target" : "amsr_em_daemon",
+  "files" : [
+    {
+      "filename" : "exec_config.json",
+      "checksum" : [
+        12249852178868942337
+      ],
+      "algorithm" : "CRC64",
+      "block_length" : 4194304
+    }
+  ]
+}
+Iâh|“{†

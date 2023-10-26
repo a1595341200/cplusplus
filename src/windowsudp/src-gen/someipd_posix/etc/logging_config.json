@@ -1,0 +1,19 @@
+
+{
+  "version" : "1.00.00",
+  "app" : {
+    "name" : "someipd",
+    "id" : "SOMD",
+    "descr" : "someipd posix",
+    "version" : "",
+    "level" : "warn"
+  },
+  "sinks" : {
+    "console" : {
+      "enabled" : true
+    },
+    "file" : {
+      "file-path" : "/mnt/logfs/someipd_posixProcess_LogChannel001.log"
+    }
+  }
+}

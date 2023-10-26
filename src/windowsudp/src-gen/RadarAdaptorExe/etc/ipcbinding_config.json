@@ -1,0 +1,33 @@
+
+{
+  "services" : [
+    {
+      "service_id" : 61,
+      "shortname_path" : "/JICA/Service/Interface/RadarAdaptorSI_Out",
+      "major_version" : 1,
+      "minor_version" : 0,
+      "events" : [
+        {
+          "id" : 4967,
+          "shortname" : "FourDRadarObjStsGAPGrp_FourDRadarObjStsGrp"
+        }
+      ],
+      "provided_service_instances" : [
+        {
+          "instance_id" : 1063,
+          "instance_specifier" : [
+            "RadarAdaptorExe/RadarAdaptor/RadarAdaptor_RadarAdaptorSI_Out_P"
+          ],
+          "domain" : 7,
+          "port" : 7,
+          "ttl" : 2,
+          "expected_client_integrity_level" : "QM"
+        }
+      ]
+    }
+  ],
+  "generatorVersion" : {
+    "name" : "amsr_ipcbinding",
+    "commitId" : "9519b950801d42a5bc7a25dd6db848903642b9ba"
+  }
+}

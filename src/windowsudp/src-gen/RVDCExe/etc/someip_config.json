@@ -1,0 +1,255 @@
+
+{
+  "services" : [
+    {
+      "name" : "MCU_Data_Info",
+      "service_id" : 207,
+      "major_version" : 1,
+      "minor_version" : 0,
+      "methods" : [
+      ],
+      "events" : [
+        {
+          "name" : "Ids",
+          "id" : 37760,
+          "field" : false,
+          "proto" : "udp"
+        },
+        {
+          "name" : "Mcu_Reset_Info1",
+          "id" : 37761,
+          "field" : false,
+          "proto" : "udp"
+        },
+        {
+          "name" : "Mcu_Reset_Info2",
+          "id" : 37762,
+          "field" : false,
+          "proto" : "udp"
+        },
+        {
+          "name" : "Mcu_Reset_Info3",
+          "id" : 37763,
+          "field" : false,
+          "proto" : "udp"
+        },
+        {
+          "name" : "Mcu_Reset_Info4",
+          "id" : 37764,
+          "field" : false,
+          "proto" : "udp"
+        }
+      ],
+      "eventgroups" : [
+        {
+          "id" : 32919,
+          "events" : [
+            37760,
+            37761,
+            37762,
+            37763,
+            37764
+          ]
+        }
+      ]
+    },
+    {
+      "name" : "Rtk_Receive",
+      "service_id" : 19,
+      "major_version" : 1,
+      "minor_version" : 0,
+      "methods" : [
+      ],
+      "events" : [
+        {
+          "name" : "GgaData_receive",
+          "id" : 37033,
+          "field" : false,
+          "proto" : "udp"
+        },
+        {
+          "name" : "VIN",
+          "id" : 37751,
+          "field" : false,
+          "proto" : "udp"
+        },
+        {
+          "name" : "AgnssData_receive",
+          "id" : 37779,
+          "field" : false,
+          "proto" : "udp"
+        }
+      ],
+      "eventgroups" : [
+        {
+          "id" : 32789,
+          "events" : [
+            37751,
+            37779,
+            37033
+          ]
+        }
+      ]
+    },
+    {
+      "name" : "ToSOCA_InfomationSI",
+      "service_id" : 163,
+      "major_version" : 1,
+      "minor_version" : 0,
+      "methods" : [
+      ],
+      "events" : [
+        {
+          "name" : "OSM2_Bus_ToSOCA_FunctionInfo",
+          "id" : 37707,
+          "field" : false,
+          "proto" : "udp"
+        },
+        {
+          "name" : "OSM2_Bus_ToSOCA_COMInfo",
+          "id" : 37708,
+          "field" : false,
+          "proto" : "udp"
+        }
+      ],
+      "eventgroups" : [
+        {
+          "id" : 32864,
+          "events" : [
+            37707,
+            37708
+          ]
+        }
+      ]
+    }
+  ],
+  "required_service_instances" : [
+    {
+      "service_id" : 207,
+      "instance_id" : 1143,
+      "major_version" : 1,
+      "minor_version" : 4294967295,
+      "service_discovery" : {
+        "initial_delay_min_ns" : 10000000,
+        "initial_delay_max_ns" : 100000000,
+        "initial_repetitions_base_delay_ns" : 200000000,
+        "initial_repetitions_max" : 3,
+        "ttl" : 3,
+        "eventgroups" : [
+          {
+            "id" : 32919,
+            "ttl" : 5,
+            "request_response_delay_min_ns" : 0,
+            "request_response_delay_max_ns" : 0
+          }
+        ]
+      },
+      "required_signal_serialized_pdus" : [
+      ],
+      "port_mapping" : {
+        "name" : "MachineMappingRequiredSomeipMCU_Data_Info",
+        "address" : "179.16.0.10",
+        "network_mask" : "0.0.0.0",
+        "udp_port" : 40058,
+        "communication" : true,
+        "service_discovery" : true
+      }
+    },
+    {
+      "service_id" : 19,
+      "instance_id" : 1038,
+      "major_version" : 1,
+      "minor_version" : 4294967295,
+      "service_discovery" : {
+        "initial_delay_min_ns" : 10000000,
+        "initial_delay_max_ns" : 100000000,
+        "initial_repetitions_base_delay_ns" : 200000000,
+        "initial_repetitions_max" : 3,
+        "ttl" : 3,
+        "eventgroups" : [
+          {
+            "id" : 32789,
+            "ttl" : 5,
+            "request_response_delay_min_ns" : 0,
+            "request_response_delay_max_ns" : 0
+          }
+        ]
+      },
+      "required_signal_serialized_pdus" : [
+      ],
+      "port_mapping" : {
+        "name" : "MachineMappingRequiredSomeipRtk_Receive",
+        "address" : "179.16.0.10",
+        "network_mask" : "0.0.0.0",
+        "udp_port" : 40023,
+        "communication" : true,
+        "service_discovery" : true
+      }
+    },
+    {
+      "service_id" : 163,
+      "instance_id" : 1132,
+      "major_version" : 1,
+      "minor_version" : 4294967295,
+      "service_discovery" : {
+        "initial_delay_min_ns" : 10000000,
+        "initial_delay_max_ns" : 100000000,
+        "initial_repetitions_base_delay_ns" : 200000000,
+        "initial_repetitions_max" : 3,
+        "ttl" : 3,
+        "eventgroups" : [
+          {
+            "id" : 32864,
+            "ttl" : 5,
+            "request_response_delay_min_ns" : 0,
+            "request_response_delay_max_ns" : 0
+          }
+        ]
+      },
+      "required_signal_serialized_pdus" : [
+      ],
+      "port_mapping" : {
+        "name" : "MachineMappingRequiredSomeipToSOCA_InfomationSI",
+        "address" : "179.16.0.10",
+        "network_mask" : "0.0.0.0",
+        "udp_port" : 40050,
+        "communication" : true,
+        "service_discovery" : true
+      }
+    }
+  ],
+  "provided_service_instances" : [
+  ],
+  "network_endpoints" : [
+    {
+      "name" : "NetworkEndpoint",
+      "address" : "179.16.0.10",
+      "mtu" : 1500,
+      "service_discovery" : {
+        "multicast_address" : "224.0.0.17",
+        "port" : 12331
+      },
+      "ports" : [
+        {
+          "proto" : "udp",
+          "port" : 40058,
+          "enable_so_linger" : "false"
+        },
+        {
+          "proto" : "udp",
+          "port" : 40023,
+          "enable_so_linger" : "false"
+        },
+        {
+          "proto" : "udp",
+          "port" : 40050,
+          "enable_so_linger" : "false"
+        }
+      ]
+    }
+  ],
+  "generatorVersion" : {
+    "name" : "amsr_someipbinding",
+    "commitId" : "34a78d6264927917d6838a378b15b039fd1cad4a"
+  }
+}

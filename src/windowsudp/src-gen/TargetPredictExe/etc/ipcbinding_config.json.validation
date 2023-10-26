@@ -1,0 +1,16 @@
+
+{
+  "format_version" : "1.00.00",
+  "target" : "/JICA/SWC/TargetPredictExe/Process13",
+  "files" : [
+    {
+      "filename" : "ipcbinding_config.json",
+      "checksum" : [
+        12548805627513296908
+      ],
+      "algorithm" : "CRC64",
+      "block_length" : 4194304
+    }
+  ]
+}
+¹Ã¾F!Lš

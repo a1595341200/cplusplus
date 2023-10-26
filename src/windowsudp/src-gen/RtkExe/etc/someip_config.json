@@ -1,0 +1,168 @@
+
+{
+  "services" : [
+    {
+      "name" : "Rtk_Provide",
+      "service_id" : 18,
+      "major_version" : 1,
+      "minor_version" : 0,
+      "methods" : [
+      ],
+      "events" : [
+        {
+          "name" : "GgaData_provide",
+          "id" : 37031,
+          "field" : false,
+          "proto" : "udp"
+        },
+        {
+          "name" : "ErrorCode",
+          "id" : 37655,
+          "field" : false,
+          "proto" : "udp"
+        }
+      ],
+      "eventgroups" : [
+        {
+          "id" : 32788,
+          "events" : [
+            37031,
+            37655
+          ]
+        }
+      ]
+    },
+    {
+      "name" : "Rtk_Receive",
+      "service_id" : 19,
+      "major_version" : 1,
+      "minor_version" : 0,
+      "methods" : [
+      ],
+      "events" : [
+        {
+          "name" : "GgaData_receive",
+          "id" : 37033,
+          "field" : false,
+          "proto" : "udp"
+        },
+        {
+          "name" : "VIN",
+          "id" : 37751,
+          "field" : false,
+          "proto" : "udp"
+        },
+        {
+          "name" : "AgnssData_receive",
+          "id" : 37779,
+          "field" : false,
+          "proto" : "udp"
+        }
+      ],
+      "eventgroups" : [
+        {
+          "id" : 32789,
+          "events" : [
+            37751,
+            37779,
+            37033
+          ]
+        }
+      ]
+    }
+  ],
+  "required_service_instances" : [
+    {
+      "service_id" : 19,
+      "instance_id" : 1038,
+      "major_version" : 1,
+      "minor_version" : 4294967295,
+      "service_discovery" : {
+        "initial_delay_min_ns" : 10000000,
+        "initial_delay_max_ns" : 100000000,
+        "initial_repetitions_base_delay_ns" : 200000000,
+        "initial_repetitions_max" : 3,
+        "ttl" : 3,
+        "eventgroups" : [
+          {
+            "id" : 32789,
+            "ttl" : 5,
+            "request_response_delay_min_ns" : 0,
+            "request_response_delay_max_ns" : 0
+          }
+        ]
+      },
+      "required_signal_serialized_pdus" : [
+      ],
+      "port_mapping" : {
+        "name" : "MachineMappingRequiredSomeipRtk_Receive",
+        "address" : "179.16.0.10",
+        "network_mask" : "0.0.0.0",
+        "udp_port" : 40023,
+        "communication" : true,
+        "service_discovery" : true
+      }
+    }
+  ],
+  "provided_service_instances" : [
+    {
+      "service_id" : 18,
+      "instance_id" : 1037,
+      "major_version" : 1,
+      "minor_version" : 0,
+      "service_discovery" : {
+        "initial_delay_min_ns" : 10000000,
+        "initial_delay_max_ns" : 100000000,
+        "initial_repetitions_base_delay_ns" : 500000000,
+        "initial_repetitions_max" : 3,
+        "cyclic_offer_delay_ns" : 3000000000,
+        "request_response_delay_min_ns" : 1500000000,
+        "request_response_delay_max_ns" : 1500000000,
+        "ttl" : 4,
+        "eventgroups" : [
+          {
+            "id" : 32788,
+            "event_multicast_threshold" : 5
+          }
+        ]
+      },
+      "port_mappings" : [
+        {
+          "name" : "MachineMappingProvidedSomeipRtk_Provide",
+          "address" : "179.16.0.10",
+          "network_mask" : "0.0.0.0",
+          "udp_port" : 40022,
+          "communication" : true,
+          "service_discovery" : true
+        }
+      ]
+    }
+  ],
+  "network_endpoints" : [
+    {
+      "name" : "NetworkEndpoint",
+      "address" : "179.16.0.10",
+      "mtu" : 1500,
+      "service_discovery" : {
+        "multicast_address" : "224.0.0.17",
+        "port" : 12331
+      },
+      "ports" : [
+        {
+          "proto" : "udp",
+          "port" : 40022,
+          "enable_so_linger" : "false"
+        },
+        {
+          "proto" : "udp",
+          "port" : 40023,
+          "enable_so_linger" : "false"
+        }
+      ]
+    }
+  ],
+  "generatorVersion" : {
+    "name" : "amsr_someipbinding",
+    "commitId" : "34a78d6264927917d6838a378b15b039fd1cad4a"
+  }
+}

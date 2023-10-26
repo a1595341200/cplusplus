@@ -1,0 +1,29 @@
+
+{
+  "machine" : {
+    "resourceGroups" : [
+    ],
+    "functionGroups" : [
+      {
+        "name" : "MachineFG",
+        "states" : [
+          "Running",
+          "Startup",
+          "Shutdown",
+          "Restart",
+          "bootloader",
+          "SafeState",
+          "Factory",
+          "Off",
+          "Verify"
+        ]
+      }
+    ],
+    "enterTimeoutNanoSeconds" : 30000000000,
+    "exitTimeoutNanoSeconds" : 5000000000
+  },
+  "generatorVersion" : {
+    "name" : "amsr_em_machine_config",
+    "commitId" : "9c2c268bbe15726964bac7ee8071218f92848d4f"
+  }
+}

@@ -1,0 +1,85 @@
+
+{
+  "services" : [
+    {
+      "service_id" : 57,
+      "shortname_path" : "/JICA/Service/Interface/EHRSI_Out",
+      "major_version" : 1,
+      "minor_version" : 0,
+      "events" : [
+        {
+          "id" : 4714,
+          "shortname" : "EHR_Bus_NOAInfo"
+        },
+        {
+          "id" : 4715,
+          "shortname" : "EHR_Bus_LaneConnectivitys"
+        },
+        {
+          "id" : 4716,
+          "shortname" : "EHR_Bus_Nodes"
+        },
+        {
+          "id" : 4717,
+          "shortname" : "EHR_Bus_TrafficSigns"
+        },
+        {
+          "id" : 4718,
+          "shortname" : "EHR_Bus_GeoFences"
+        },
+        {
+          "id" : 4719,
+          "shortname" : "EHR_Bus_LinkCurvatures"
+        },
+        {
+          "id" : 4720,
+          "shortname" : "EHR_Bus_LinkSlopes"
+        },
+        {
+          "id" : 4721,
+          "shortname" : "EHR_Bus_LaneSpeedLimits"
+        },
+        {
+          "id" : 4722,
+          "shortname" : "EHR_Bus_LinkInfos"
+        },
+        {
+          "id" : 4892,
+          "shortname" : "EHR_Bus_AllMergePoints"
+        },
+        {
+          "id" : 4893,
+          "shortname" : "EHR_Bus_LinearObjects"
+        },
+        {
+          "id" : 4894,
+          "shortname" : "EHR_Bus_FormOfWays"
+        },
+        {
+          "id" : 4895,
+          "shortname" : "EHR_Bus_SequenceId"
+        },
+        {
+          "id" : 4896,
+          "shortname" : "EHR_Bus_LaneWidthes"
+        }
+      ],
+      "provided_service_instances" : [
+        {
+          "instance_id" : 1062,
+          "instance_specifier" : [
+            "EHRExe/EHR/EHR_EHRSI_Out_P"
+          ],
+          "domain" : 6,
+          "port" : 6,
+          "ttl" : 2,
+          "expected_client_integrity_level" : "QM"
+        }
+      ]
+    }
+  ],
+  "generatorVersion" : {
+    "name" : "amsr_ipcbinding",
+    "commitId" : "9519b950801d42a5bc7a25dd6db848903642b9ba"
+  }
+}

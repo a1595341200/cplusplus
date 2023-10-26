@@ -1,0 +1,19 @@
+
+{
+  "version" : "1.00.00",
+  "app" : {
+    "name" : "Process12",
+    "id" : "UTC",
+    "descr" : "UTC0 application",
+    "version" : "1.0.0+0001",
+    "level" : "error"
+  },
+  "sinks" : {
+    "console" : {
+      "enabled" : true
+    },
+    "file" : {
+      "file-path" : "/mnt/logfs/UTC0ExeProcess_LogChannel001.log"
+    }
+  }
+}

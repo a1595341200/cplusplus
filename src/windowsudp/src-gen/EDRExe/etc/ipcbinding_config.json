@@ -1,0 +1,33 @@
+
+{
+  "services" : [
+    {
+      "service_id" : 223,
+      "shortname_path" : "/JICA/Service/Interface/EDRSI_Out",
+      "major_version" : 1,
+      "minor_version" : 0,
+      "events" : [
+        {
+          "id" : 5024,
+          "shortname" : "EDR_Bus_EDRInfo"
+        }
+      ],
+      "provided_service_instances" : [
+        {
+          "instance_id" : 1153,
+          "instance_specifier" : [
+            "EDRExe/EDR/EDR_EDRSI_Out_P"
+          ],
+          "domain" : 59,
+          "port" : 59,
+          "ttl" : 2,
+          "expected_client_integrity_level" : "QM"
+        }
+      ]
+    }
+  ],
+  "generatorVersion" : {
+    "name" : "amsr_ipcbinding",
+    "commitId" : "9519b950801d42a5bc7a25dd6db848903642b9ba"
+  }
+}

@@ -1,0 +1,41 @@
+
+{
+  "services" : [
+    {
+      "service_id" : 175,
+      "shortname_path" : "/JICA/Service/Interface/PerceptionRearSI_Out",
+      "major_version" : 1,
+      "minor_version" : 0,
+      "events" : [
+        {
+          "id" : 4977,
+          "shortname" : "PerceptionRear_Bus_LaneInfo"
+        },
+        {
+          "id" : 4978,
+          "shortname" : "PerceptionRear_Bus_CameraStatus"
+        },
+        {
+          "id" : 4979,
+          "shortname" : "PerceptionRear_Bus_VisnObj"
+        }
+      ],
+      "provided_service_instances" : [
+        {
+          "instance_id" : 1141,
+          "instance_specifier" : [
+            "PerceptionRearExe/PerceptionRear/PerceptionRear_PerceptionRearSI_Out_P"
+          ],
+          "domain" : 53,
+          "port" : 53,
+          "ttl" : 2,
+          "expected_client_integrity_level" : "QM"
+        }
+      ]
+    }
+  ],
+  "generatorVersion" : {
+    "name" : "amsr_ipcbinding",
+    "commitId" : "9519b950801d42a5bc7a25dd6db848903642b9ba"
+  }
+}

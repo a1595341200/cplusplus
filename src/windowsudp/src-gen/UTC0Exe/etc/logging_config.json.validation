@@ -1,0 +1,16 @@
+
+{
+  "format_version" : "1.00.00",
+  "target" : "logging_config.json",
+  "files" : [
+    {
+      "filename" : "logging_config.json",
+      "checksum" : [
+        2060791218908431343
+      ],
+      "algorithm" : "CRC64",
+      "block_length" : 4194304
+    }
+  ]
+}
+é–òKfﬁ¿

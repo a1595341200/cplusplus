@@ -1,0 +1,19 @@
+
+{
+  "version" : "1.00.00",
+  "app" : {
+    "name" : "RTK_Process",
+    "id" : "RTK",
+    "descr" : "RTK server",
+    "version" : "1.0.0+0001",
+    "level" : "info"
+  },
+  "sinks" : {
+    "console" : {
+      "enabled" : true
+    },
+    "file" : {
+      "file-path" : "/mnt/logfs/RtkExeProcess_LogChannel001.log"
+    }
+  }
+}

@@ -1,0 +1,88 @@
+
+{
+  "services" : [
+    {
+      "service_id" : 176,
+      "shortname_path" : "/JICA/Service/Interface/EDRSI_In",
+      "major_version" : 1,
+      "minor_version" : 0,
+      "events" : [
+        {
+          "id" : 37748,
+          "shortname" : "OSM2_Bus_EDR_Data"
+        }
+      ],
+      "fields" : [
+      ],
+      "methods" : [
+      ],
+      "required_service_instances" : [
+        {
+          "instance_id" : 1140,
+          "instance_specifier" : [
+            "EDRExe/EDR/EDR_EDRSI_In_R"
+          ],
+          "minor_version" : 4294967295
+        }
+      ]
+    },
+    {
+      "service_id" : 163,
+      "shortname_path" : "/JICA/Service/Interface/ToSOCA_InfomationSI",
+      "major_version" : 1,
+      "minor_version" : 0,
+      "events" : [
+        {
+          "id" : 37708,
+          "shortname" : "OSM2_Bus_ToSOCA_COMInfo"
+        },
+        {
+          "id" : 37707,
+          "shortname" : "OSM2_Bus_ToSOCA_FunctionInfo"
+        }
+      ],
+      "fields" : [
+      ],
+      "methods" : [
+      ],
+      "required_service_instances" : [
+        {
+          "instance_id" : 1132,
+          "instance_specifier" : [
+            "EDRExe/EDR/EDR_ToSOCA_InfomationSI_R"
+          ],
+          "minor_version" : 4294967295
+        }
+      ]
+    },
+    {
+      "service_id" : 122,
+      "shortname_path" : "/JICA/Service/Interface/UTC0SI_In",
+      "major_version" : 1,
+      "minor_version" : 0,
+      "events" : [
+        {
+          "id" : 37621,
+          "shortname" : "OSM2_Bus_VehTiAndData"
+        }
+      ],
+      "fields" : [
+      ],
+      "methods" : [
+      ],
+      "required_service_instances" : [
+        {
+          "instance_id" : 1101,
+          "instance_specifier" : [
+            "EDRExe/EDR/EDR_UTC0SI_In_R"
+          ],
+          "minor_version" : 4294967295
+        }
+      ]
+    }
+  ],
+  "generatorVersion" : {
+    "name" : "amsr_someipbinding",
+    "commitId" : "34a78d6264927917d6838a378b15b039fd1cad4a"
+  }
+}

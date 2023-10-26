@@ -1,0 +1,153 @@
+
+{
+  "services" : [
+    {
+      "service_id" : 175,
+      "shortname_path" : "/JICA/Service/Interface/PerceptionRearSI_Out",
+      "major_version" : 1,
+      "minor_version" : 0,
+      "events" : [
+        {
+          "id" : 4977,
+          "shortname" : "PerceptionRear_Bus_LaneInfo"
+        },
+        {
+          "id" : 4978,
+          "shortname" : "PerceptionRear_Bus_CameraStatus"
+        },
+        {
+          "id" : 4979,
+          "shortname" : "PerceptionRear_Bus_VisnObj"
+        }
+      ],
+      "required_service_instances" : [
+        {
+          "instance_id" : 1141,
+          "instance_specifier" : [
+            "TrafficSignInformationExe/TrafficSignInformation/TrafficSignInformation_PerceptionRearSI_Out_R"
+          ],
+          "minor_version" : 4294967295,
+          "expected_server_integrity_level" : "QM"
+        }
+      ]
+    },
+    {
+      "service_id" : 37,
+      "shortname_path" : "/JICA/Service/Interface/PerceptionSI_Out",
+      "major_version" : 1,
+      "minor_version" : 0,
+      "events" : [
+        {
+          "id" : 4947,
+          "shortname" : "Perception_Bus_LaneInfo"
+        },
+        {
+          "id" : 4948,
+          "shortname" : "Perception_Bus_FrntCamInfo"
+        },
+        {
+          "id" : 4950,
+          "shortname" : "FrntCam_Bus_TrafficInfo"
+        },
+        {
+          "id" : 4616,
+          "shortname" : "FrntCam_Bus_TrfcLi"
+        },
+        {
+          "id" : 4982,
+          "shortname" : "FrntCam_Bus_LineSignGroup"
+        },
+        {
+          "id" : 4620,
+          "shortname" : "FrntCam_Bus_ExtInfo"
+        }
+      ],
+      "required_service_instances" : [
+        {
+          "instance_id" : 1060,
+          "instance_specifier" : [
+            "TrafficSignInformationExe/TrafficSignInformation/TrafficSignInformation_PerceptionSI_Out_R"
+          ],
+          "minor_version" : 4294967295,
+          "expected_server_integrity_level" : "QM"
+        }
+      ]
+    },
+    {
+      "service_id" : 118,
+      "shortname_path" : "/JICA/Service/Interface/PerceptionSideSI_Out",
+      "major_version" : 1,
+      "minor_version" : 0,
+      "events" : [
+        {
+          "id" : 4494,
+          "shortname" : "FRCam_Bus_VisnObj"
+        },
+        {
+          "id" : 4493,
+          "shortname" : "FLCam_Bus_VisnObj"
+        },
+        {
+          "id" : 4495,
+          "shortname" : "RLCam_Bus_VisnObj"
+        },
+        {
+          "id" : 4496,
+          "shortname" : "RRCam_Bus_VisnObj"
+        },
+        {
+          "id" : 4973,
+          "shortname" : "PerceptionSide_Bus_CameraStatus"
+        }
+      ],
+      "required_service_instances" : [
+        {
+          "instance_id" : 1097,
+          "instance_specifier" : [
+            "TrafficSignInformationExe/TrafficSignInformation/TrafficSignInformation_PerceptionSideSI_Out_R"
+          ],
+          "minor_version" : 4294967295,
+          "expected_server_integrity_level" : "QM"
+        }
+      ]
+    },
+    {
+      "service_id" : 49,
+      "shortname_path" : "/JICA/Service/Interface/RoadModelFusionSI_Out",
+      "major_version" : 1,
+      "minor_version" : 0,
+      "events" : [
+        {
+          "id" : 4953,
+          "shortname" : "RMF_Bus_RMFInfo"
+        },
+        {
+          "id" : 4954,
+          "shortname" : "RMF_Bus_MapInfo"
+        },
+        {
+          "id" : 4919,
+          "shortname" : "RMF_Bus_VectorMapInfo"
+        },
+        {
+          "id" : 4920,
+          "shortname" : "RMF_Bus_Position"
+        }
+      ],
+      "required_service_instances" : [
+        {
+          "instance_id" : 1127,
+          "instance_specifier" : [
+            "TrafficSignInformationExe/TrafficSignInformation/TrafficSignInformation_RoadModelFusionSI_Out_R"
+          ],
+          "minor_version" : 4294967295,
+          "expected_server_integrity_level" : "QM"
+        }
+      ]
+    }
+  ],
+  "generatorVersion" : {
+    "name" : "amsr_ipcbinding",
+    "commitId" : "9519b950801d42a5bc7a25dd6db848903642b9ba"
+  }
+}
