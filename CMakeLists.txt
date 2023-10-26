@@ -14,6 +14,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 include_directories(
     ${CMAKE_SOURCE_DIR}/utils/include
     ${CMAKE_SOURCE_DIR}/external
+    ${CMAKE_SOURCE_DIR}/external/json/include
 )
 
 add_subdirectory(utils)
