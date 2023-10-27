@@ -13,9 +13,10 @@ find_package(glog REQUIRED)
 find_package(Protobuf REQUIRED)
 find_package(Boost REQUIRED COMPONENTS system filesystem thread)
 find_package(Backward REQUIRED)
+find_package(Libevent CONFIG REQUIRED)
 
 file(GLOB_RECURSE SRCS ${PROJECT_SOURCE_DIR}/src/*.cpp)
-file(GLOB_RECURSE TEST_SRCS ${PROJECT_SOURCE_DIR}/test/*tests.cpp)
+file(GLOB_RECURSE TEST_SRCS ${PROJECT_SOURCE_DIR}/test/*.cpp)
 # a macro that gets all of the header containing directories. 
 MACRO(header_directories return_list includes_base_folder extention )
     FILE(GLOB_RECURSE new_list ${includes_base_folder}/*.${extention})
@@ -53,6 +54,9 @@ link_libraries(
     ${Boost_LIBRARIES}
     dl
     Backward::Backward
+    libevent::core
+    libevent::extra
+    libevent::pthreads
 )
 
 add_library(${PROJECT_N} SHARED ${SRCS}  ${BACKWARD_ENABLE})

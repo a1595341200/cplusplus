@@ -1,8 +1,8 @@
 <!--
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2023-09-12 17:51:54
- * @LastEditors: yao.xie 1595341200@qq.com
- * @LastEditTime: 2023-10-23 13:22:30
+ * @LastEditors: 谢瑶 
+ * @LastEditTime: 2023-10-27 17:03:47
  * @FilePath: /cplusplus/README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -51,6 +51,7 @@
   - [1.29. std::packaged\_task](#129-stdpackaged_task)
   - [1.30. std::shared\_future](#130-stdshared_future)
   - [1.31. notify\_all](#131-notify_all)
+  - [1.32. libevent](#132-libevent)
 
 # 1. cplusplus
 ## 1.1. 设置DEBUG与release前缀
@@ -336,3 +337,9 @@ notify_one()：因为只唤醒等待队列中的第一个线程；不存在锁�
 notify_all()：会唤醒所有等待队列中阻塞的线程，存在锁争用，只有一个线程能够获得锁。那其余未获取锁的线程接着会怎么样？会阻塞？还是继续尝试获得锁？
 
                              答案是会继续尝试获得锁(类似于轮询)，而不会再次阻塞。当持有锁的线程释放锁时，这些线程中的一个会获得锁。而其余的会接着尝试获得锁。
+## 1.32. libevent
+```
+ # this is heuristically generated, and may not be correct
+    find_package(Libevent CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE libevent::core libevent::extra libevent::pthreads)
+```
