@@ -246,7 +246,7 @@ def test2() :
 if __name__ == "__main__" :
     test()
     test1()
-    # test2()
+    test2()
     # tri_surface_3d()
 
     # # 3D线图
