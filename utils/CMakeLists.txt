@@ -7,8 +7,6 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(CMAKE_CXX_FLAGS_DEBUG "-O0 -g3")
 
-list(APPEND CMAKE_PREFIX_PATH ${CMAKE_SOURCE_DIR}/external/backward-cpp)
-
 find_package(glog REQUIRED)
 find_package(Protobuf REQUIRED)
 find_package(Boost REQUIRED COMPONENTS system filesystem thread)
