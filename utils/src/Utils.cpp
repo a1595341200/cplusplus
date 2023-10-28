@@ -1,8 +1,8 @@
 /*
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2023-09-12 18:26:13
- * @LastEditors: 谢瑶
- * @LastEditTime: 2023-10-12 09:43:12
+ * @LastEditors: yao.xie 1595341200@qq.com
+ * @LastEditTime: 2023-10-28 17:41:18
  * @FilePath: /utils/src/Utils.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置
  * 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
@@ -16,6 +16,7 @@
 
 #include <filesystem>
 #include <iomanip>
+#include <regex>
 #include <thread>
 
 #include "Log.h"
@@ -113,4 +114,23 @@ std::string getTime() {
           (int)dis_millseconds);
   return strTime;
 }
+
+std::optional<std::string> getExePath() {
+  const int MAXPATH = 250;
+  char buffer[MAXPATH];
+  getcwd(buffer, MAXPATH);
+  printf("The current directory is: %s\n", buffer);
+  return buffer;
+}
+
+void operator""_p(const char *str, size_t size) {
+  SLOG(INFO) << str;
+}
+
+std::vector<std::string> split(const std::string &str, const std::string &regex) {
+  std::regex re(regex);
+  std::sregex_token_iterator start{str.begin(), str.end(), re, -1}, end;
+  return {start, end};
+}
+
 }  // namespace Utils

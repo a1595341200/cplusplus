@@ -118,7 +118,8 @@
         "stack": "cpp",
         "*.inc": "cpp",
         "*.expression": "cpp",
-        "slist": "cpp"
+        "slist": "cpp",
+        "source_location": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
