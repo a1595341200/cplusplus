@@ -1,9 +1,0 @@
-
-{
-  "name" : "logd",
-  "dlt_id" : "LOGD",
-  "log_mode" : [
-    "kConsole"
-  ],
-  "log_level" : "kWarn"
-}

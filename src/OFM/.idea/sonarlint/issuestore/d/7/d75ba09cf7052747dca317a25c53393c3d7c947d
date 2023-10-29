@@ -1,94 +1,0 @@
-
-Fc:S1103Ç"&Remove the misleading "/*" characters.(©ÀÇ®øÿÿÿÿ8­ÍŞ€1
-Oc:S1135°"4Complete the task associated to this "ToDo" comment.(¹âÍ€8±ÍŞ€1
-Fc:S1103Î	"&Remove the misleading "//" characters.(£Ì¶‡ùÿÿÿÿ8´ÍŞ€1
-@c:S1103ü	"&Remove the misleading "//" characters.(…‚ï!8´ÍŞ€1
-Ic:S1144õ".unused function 'calculateFCRdrObjectAngle_4D'(ƒî½Æ8¹ÍŞ€1
-Mc:S954Å
-"4Move this #include directive to the top of the file.(ñı÷y8ÄÍŞ€1
-Gc:S5955à",Declare the variable "u16i" inside the loop.(õè£â8ÊÍŞ€1
-lc:S134â"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(™ıéƒûÿÿÿÿ8ÊÍŞ€1
-qc:S1871Ô"QThe code of this branch is a duplicate; refactor so that all branches are unique.(ÒÌâ–øÿÿÿÿ8ËÍŞ€1
-Gc:S5955¸",Declare the variable "u16i" inside the loop.(õè£â8ÍÍŞ€1
-lc:S134¾"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(èÇÏ­ıÿÿÿÿ8ÍÍŞ€1
-tc:S3776â"TRefactor this function to reduce its Cognitive Complexity from 27 to the 25 allowed.(²Ÿßšşÿÿÿÿ8ÏÍŞ€1
-Gc:S5955ï",Declare the variable "u16i" inside the loop.(õè£â8ÏÍŞ€1
-Gc:S5955‘",Declare the variable "u16j" inside the loop.(÷‰ó8ÏÍŞ€1
-gc:S134‘"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(÷‰ó8ÏÍŞ€1
-Lc:S886‘"2Refactor this loop so that it is less error-prone.(÷‰ó8ÒÍŞ€1
-{c:S108Å"\Fill this compound statement, remove it, or add a nested comment explaining why it is empty.(ÒÌâ–øÿÿÿÿ8ÒÍŞ€1
-oc:S3776í"TRefactor this function to reduce its Cognitive Complexity from 52 to the 25 allowed.(ĞˆÆ¼8ÔÍŞ€1
-gc:S134"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(ÙóË8ÔÍŞ€1
-gc:S134Æ"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(ÙóË8ÔÍŞ€1
-lc:S134æ"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(ÏØ¤ùÿÿÿÿ8ÔÍŞ€1
-lc:S134ï"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(«ß¼œüÿÿÿÿ8ÔÍŞ€1
-lc:S134ù"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(ã˜Óçüÿÿÿÿ8ÔÍŞ€1
-{c:S108ƒ"\Fill this compound statement, remove it, or add a nested comment explaining why it is empty.(ÒÌâ–øÿÿÿÿ8ÕÍŞ€1
-tc:S3776‘"TRefactor this function to reduce its Cognitive Complexity from 26 to the 25 allowed.(ÔËÅ¿úÿÿÿÿ8ÙÍŞ€1
-gc:S134¹"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(ˆˆ•8ÙÍŞ€1
-tc:S3776á"TRefactor this function to reduce its Cognitive Complexity from 48 to the 25 allowed.(ÖèÚãşÿÿÿÿ8ÚÍŞ€1
-Gc:S5955ª",Declare the variable "u16j" inside the loop.(Ù”†¬8ÛÍŞ€1
-gc:S134ª"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(Ù”†¬8ÛÍŞ€1
-Gc:S5955á",Declare the variable "u16i" inside the loop.(¦ĞÉ†8ŞÍŞ€1
-Lc:S886á"2Refactor this loop so that it is less error-prone.(¦ĞÉ†8ŞÍŞ€1
-Xc:S1199†"8Extract this nested code block into a separate function.(ÒÌâ–øÿÿÿÿ8ãÍŞ€1
-tc:S3776’"TRefactor this function to reduce its Cognitive Complexity from 41 to the 25 allowed.(æ¢“²üÿÿÿÿ8ãÍŞ€1
->c:S1110–"#Remove these redundant parentheses.(ÿ©ûï8ãÍŞ€1
->c:S1110¨"#Remove these redundant parentheses.(±¿Ù8ãÍŞ€1
->c:S1110ì"#Remove these redundant parentheses.(ª¡şá8ãÍŞ€1
->c:S1110õ"#Remove these redundant parentheses.(Âˆ¤¾8ãÍŞ€1
-Cc:S1110†
-"#Remove these redundant parentheses.(ÿÉ±öıÿÿÿÿ8ãÍŞ€1
-Ic:S1854Ê".Value stored to 'f32CorrLatency' is never read(ìº˜ı8«ìŞ€1
-Gc:S1854ü",Value stored to 'u16OldOffset' is never read(°²¾Ê8¬ìŞ€1
-Mc:S1854Ï"2Value stored to 'u16_CIPV_Idx_Rdr_F' is never read(ÉÜƒ¹8¬ìŞ€1
-Fc:S1854Ğ"+Value stored to 'f32ObjDxTmp' is never read(™èÑ£8¬ìŞ€1
-Gc:S1854"'Value stored to 'f32VarX' is never read(ç°«—ûÿÿÿÿ8¬ìŞ€1
-Gc:S1854—"'Value stored to 'f32VarY' is never read(Ê®¼˜şÿÿÿÿ8¬ìŞ€1
-Hc:S1854"(Value stored to 'f32VarVx' is never read(ğÎşÈûÿÿÿÿ8¬ìŞ€1
-Hc:S1854¥"(Value stored to 'f32VarVy' is never read(éè³´úÿÿÿÿ8¬ìŞ€1
-Bc:S1854°"'Value stored to 'f32VarX' is never read(»…åÆ8¬ìŞ€1
-Hc:S1854±"(Value stored to 'f32VarVx' is never read(×Áü–ûÿÿÿÿ8¬ìŞ€1
-Bc:S1854µ"'Value stored to 'f32VarX' is never read(‚€”8¬ìŞ€1
-Cc:S1854¶"(Value stored to 'f32VarVx' is never read(ÉãŸ8¬ìŞ€1
-8c:S125²"Remove the commented out code.(–±Ù8­ìŞ€1
-8c:S125ú"Remove the commented out code.(–±Ù8­ìŞ€1
-8c:S125²	"Remove the commented out code.(–±Ù8­ìŞ€1
-8c:S125Å	"Remove the commented out code.(–±Ù8­ìŞ€1
-8c:S125‹
-"Remove the commented out code.(–±Ù8­ìŞ€1
-8c:S125±
-"Remove the commented out code.(–±Ù8®ìŞ€1
-7c:S125X"Remove the commented out code.(¼ö¹Â8®ìŞ€1
-7c:S125u"Remove the commented out code.(ÇÎ˜8®ìŞ€1
-8c:S125"Remove the commented out code.(¨Ÿ§8®ìŞ€1
-7c:S125“"Remove the commented out code.(¾™8®ìŞ€1
-=c:S125´"Remove the commented out code.(‘ªŒ“ûÿÿÿÿ8®ìŞ€1
-8c:S125À"Remove the commented out code.(´È¸‡8®ìŞ€1
-=c:S125˜"Remove the commented out code.(Œ“ßµûÿÿÿÿ8®ìŞ€1
-=c:S125 "Remove the commented out code.(Œ“ßµûÿÿÿÿ8®ìŞ€1
-=c:S125ª"Remove the commented out code.(ÁÂªŠûÿÿÿÿ8®ìŞ€1
-8c:S125¯"Remove the commented out code.(ˆıÉŠ8®ìŞ€1
-8c:S125Ï"Remove the commented out code.(ªü…Ü8®ìŞ€1
-=c:S125Ö"Remove the commented out code.(İ¸ İşÿÿÿÿ8®ìŞ€1
-=c:S125Û"Remove the commented out code.(Şæêúÿÿÿÿ8®ìŞ€1
-=c:S125à"Remove the commented out code.(Ñ’ñ°şÿÿÿÿ8®ìŞ€1
-=c:S125å"Remove the commented out code.(Ñ’ñ°şÿÿÿÿ8®ìŞ€1
-8c:S125î"Remove the commented out code.(½‰ÇÀ8®ìŞ€1
-8c:S125÷"Remove the commented out code.(´Çí¾8®ìŞ€1
-8c:S125	"Remove the commented out code.(šÊ•¹8®ìŞ€1
-8c:S125–	"Remove the commented out code.(ıÛ¥×8®ìŞ€1
-8c:S125	"Remove the commented out code.(ïØÕ«8®ìŞ€1
-8c:S125£	"Remove the commented out code.(˜ã¨8®ìŞ€1
-8c:S125©	"Remove the commented out code.(ïØÕ«8®ìŞ€1
-8c:S125¯	"Remove the commented out code.(˜ã¨8®ìŞ€1
-=c:S125ˆ
-"Remove the commented out code.(Çƒºüÿÿÿÿ8¯ìŞ€1
-8c:S125š
-"Remove the commented out code.(°Šæè8¯ìŞ€1
-8c:S125 
-"Remove the commented out code.(ù›Û¸8¯ìŞ€1
-8c:S125¨
-"Remove the commented out code.(™½±Ê8¯ìŞ€1
-8c:S125®
-"Remove the commented out code.(ÄŞÌÀ8¯ìŞ€1

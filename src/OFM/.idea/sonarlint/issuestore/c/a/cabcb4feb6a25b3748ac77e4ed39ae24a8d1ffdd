@@ -1,10 +1,0 @@
-
-2	cpp:S1481"unused variable 'chks'(Ñˆ•ï8÷Úº®€1
-:	cpp:S1481"unused variable 'timeout'(š¬ûÿÿÿÿ8øÚº®€1
-D	cpp:S5817")This function should be declared "const".(ª¦‚<8øÚº®€1
-ˆcpp:S859"hconst_cast removing const qualification from the type of a reference may lead to an undefined behaviour.(“£Şşÿÿÿÿ8ç¡º®€1
-j	cpp:S6004/"IUse the init-statement to declare "timeInterval" inside the if statement.(›ĞÖıÿÿÿÿ8ë¡º®€1
-Z	cpp:S1854">Value stored to 'chks' during its initialization is never read(Ñˆ•ï8øÚº®€1
-b	cpp:S1854"AValue stored to 'timeout' during its initialization is never read(š¬ûÿÿÿÿ8øÚº®€1
->cpp:S125"Remove the commented out code.(ÙÜ‘×øÿÿÿÿ8¢º®€1
->cpp:S125"Remove the commented out code.(óÛ—üÿÿÿÿ8øÚº®€1
