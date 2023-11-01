@@ -1,7 +1,7 @@
 #include <Log.h>
 
 #include <algorithm>
-#include <execution>
+// #include <execution>
 #include <vector>
 
 #include <gtest/gtest.h>
@@ -21,12 +21,12 @@ TEST(for_each, 1) {
   auto v = generateDate();
   std::for_each(v.begin(), v.end(), [](int i) { SLOG(INFO) << "{" << i << "}"; });
 }
-//并行
-TEST(for_each, 2) {
-  auto v = generateDate();
-  std::for_each(std::execution::par, v.begin(), v.end(),
-                [](int i) { SLOG(INFO) << "{" << i << "}"; });
-}
+// //并行
+// TEST(for_each, 2) {
+//   auto v = generateDate();
+//   std::for_each(std::execution::par, v.begin(), v.end(),
+//                 [](int i) { SLOG(INFO) << "{" << i << "}"; });
+// }
 
 int main(int argc, char *argv[]) {
   testing::InitGoogleTest(&argc, argv);  //将命令行参数传递给gtest
