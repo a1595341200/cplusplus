@@ -16,6 +16,7 @@
 
 #include <filesystem>
 #include <iomanip>
+#include <optional>
 #include <regex>
 #include <thread>
 

@@ -142,13 +142,13 @@ bool GetProtoFromString(const std::string &file_name, google::protobuf::Message 
   // }
 
   // ZeroCopyInputStream *input = new FileInputStream(file_descriptor);
-  bool success = TextFormat::ParseFromString(file_name, message);
-  if (!success) {
-    std::cerr << "Failed to parse file " << file_name << " as text proto.";
-  }
+//  bool success = TextFormat::ParseFromString(file_name, message);
+//  if (!success) {
+//    std::cerr << "Failed to parse file " << file_name << " as text proto.";
+//  }
   // delete input;
   // close(file_descriptor);
-  return success;
+  return false;
 }
 
 bool SetProtoToBinaryFile(const google::protobuf::Message &message, const std::string &file_name) {

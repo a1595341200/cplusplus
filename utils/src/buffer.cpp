@@ -127,7 +127,7 @@ int buffer_push(buffer_t buffer, const void* data, size_t nbytes) {
     object->rear = 0;
     int left = nbytes - num;
     if (left > 0) {
-      memcpy(object->buffer, data + num, left);
+      memcpy(object->buffer, (char *)data + num, left);
       object->rear += left;
     }
   } else {
@@ -214,7 +214,7 @@ _end:
   pthread_mutex_unlock(&object->lock);
   if (left > 0) {
     /*递归*/
-    buffer_push_wait(buffer, data + nbytes, left);
+    buffer_push_wait(buffer, (char *)data + nbytes, left);
   }
   return 0;
 }
@@ -303,7 +303,7 @@ int buffer_push_state(buffer_t buffer, const void* data, size_t nbytes, int stat
 _end:
   pthread_mutex_unlock(&object->lock);
   if (left > 0) {
-    buffer_push_state(buffer, data + nbytes, left, state);
+    buffer_push_state(buffer, (char *)data + nbytes, left, state);
   }
   return 0;
 }
@@ -422,7 +422,7 @@ int buffer_pop_dump(buffer_t buffer, void* data, size_t maxbytes) {
     new_front = 0;
     int left = ret - num;
     if (left > 0) {
-      memcpy(data + num, object->buffer, left);
+      memcpy((char *)data + num, object->buffer, left);
     }
   } else {
     memcpy(data, object->buffer + new_front, ret);
@@ -528,7 +528,7 @@ int buffer_pop(buffer_t buffer, void* data, size_t nbytes) {
     object->front = 0;
     int left = nbytes - num;
     if (left > 0) {
-      memcpy(data + num, object->buffer, left);
+      memcpy((char *)data + num, object->buffer, left);
       object->front += left;
     }
   } else {

@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.10)
 
 if (CMAKE_HOST_WIN32)
 elseif (CMAKE_HOST_APPLE)
+    message("mac")
+    set(CMAKE_TOOLCHAIN_FILE "/Users/xieyao/vcpkg/scripts/buildsystems/vcpkg.cmake")
 elseif (CMAKE_HOST_UNIX)
     message("linux")
     set(CMAKE_TOOLCHAIN_FILE "/home/user/vcpkg-2023.08.09/scripts/buildsystems/vcpkg.cmake")

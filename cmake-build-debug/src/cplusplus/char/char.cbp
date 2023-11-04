@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="char"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\src\;CMake Files\src\cplusplus\;CMake Files\src\cplusplus\DesignMode\;CMake Files\src\cplusplus\DesignMode\CompositePattern\;CMake Files\src\cplusplus\DesignMode\DecoratorPattern\;CMake Files\src\cplusplus\DesignMode\Facade\;CMake Files\src\cplusplus\DesignMode\FactoryPattern\;CMake Files\src\cplusplus\DesignMode\ObserverPattern\;CMake Files\src\cplusplus\DesignMode\ProxyPattern\;CMake Files\src\cplusplus\DesignMode\StatePattern\;CMake Files\src\cplusplus\DesignMode\StrategyPattern\;CMake Files\src\cplusplus\DesignMode\VisitorPattern\;CMake Files\src\cplusplus\Crc\;CMake Files\src\cplusplus\Decorator\;CMake Files\src\cplusplus\EnumClass\;CMake Files\src\cplusplus\Execute_before_main\;CMake Files\src\cplusplus\FactoryMethod\;CMake Files\src\cplusplus\Variable_parameter_template\;CMake Files\src\cplusplus\addressof\;CMake Files\src\cplusplus\align\;CMake Files\src\cplusplus\any\;CMake Files\src\cplusplus\assert\;CMake Files\src\cplusplus\atomic\;CMake Files\src\cplusplus\auto\;CMake Files\src\cplusplus\boolalpha\;CMake Files\src\cplusplus\char\;CMake Files\src\cplusplus\chrnon\;CMake Files\src\cplusplus\class_ptr\;CMake Files\src\cplusplus\class_template\;CMake Files\src\cplusplus\conditional\;CMake Files\src\cplusplus\dynamic_cast\;CMake Files\src\cplusplus\enable_shared_from_this\;CMake Files\src\cplusplus\filesystem\;CMake Files\src\cplusplus\fold_expression_empty_packet_processing\;CMake Files\src\cplusplus\for_each\;CMake Files\src\cplusplus\from_chars\;CMake Files\src\cplusplus\fstream\;CMake Files\src\cplusplus\getline\;CMake Files\src\cplusplus\inline\;CMake Files\src\cplusplus\invocable\;CMake Files\src\cplusplus\mem_fn\;CMake Files\src\cplusplus\new\;CMake Files\src\cplusplus\optional\;CMake Files\src\cplusplus\overload\;CMake Files\src\cplusplus\proxy\;CMake Files\src\cplusplus\quoted\;CMake Files\src\cplusplus\ref\;CMake Files\src\cplusplus\regex\;CMake Files\src\cplusplus\stringAssign\;CMake Files\src\cplusplus\strto\;CMake Files\src\cplusplus\structure\;CMake Files\src\cplusplus\structured_binding\;CMake Files\src\cplusplus\thread\;CMake Files\src\cplusplus\time\;CMake Files\src\cplusplus\transform\;CMake Files\src\cplusplus\udl\;CMake Files\src\cplusplus\unique_ptr\;CMake Files\src\cplusplus\vector\;CMake Files\src\cplusplus\weakPtr\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\vcpkg\;CMake Files\..\..\vcpkg\scripts\;CMake Files\..\..\vcpkg\scripts\buildsystems\;CMake Files\..\..\vcpkg\installed\;CMake Files\..\..\vcpkg\installed\arm64-osx\;CMake Files\..\..\vcpkg\installed\arm64-osx\share\;CMake Files\..\..\vcpkg\installed\arm64-osx\share\protobuf\;CMake Files\..\..\vcpkg\installed\arm64-osx\share\libevent\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\opt\;CMake Files\..\..\..\..\opt\homebrew\;CMake Files\..\..\..\..\opt\homebrew\lib\;CMake Files\..\..\..\..\opt\homebrew\lib\cmake\;CMake Files\..\..\..\..\opt\homebrew\lib\cmake\glog\;CMake Files\..\..\..\..\opt\homebrew\lib\cmake\gflags\;CMake Files\..\..\..\..\opt\homebrew\lib\cmake\Boost-1.83.0\;CMake Files\..\..\..\..\opt\homebrew\lib\cmake\boost_headers-1.83.0\;CMake Files\..\..\..\..\opt\homebrew\lib\cmake\boost_system-1.83.0\;CMake Files\..\..\..\..\opt\homebrew\lib\cmake\boost_filesystem-1.83.0\;CMake Files\..\..\..\..\opt\homebrew\lib\cmake\boost_atomic-1.83.0\;CMake Files\..\..\..\..\opt\homebrew\lib\cmake\boost_thread-1.83.0\;CMake Files\..\..\..\..\opt\homebrew\lib\cmake\GTest\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\usr\local\lib\backward\;CMake Files\utils\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/xieyao/work/cplusplus/cmake-build-debug/src/cplusplus/char"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/xieyao/work/cplusplus/cmake-build-debug/src/cplusplus/char/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/xieyao/work/cplusplus/cmake-build-debug/src/cplusplus/char/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/xieyao/work/cplusplus/cmake-build-debug/src/cplusplus/char/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/xieyao/work/cplusplus/cmake-build-debug/src/cplusplus/char/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="char">
+				<Option output="/Users/xieyao/work/cplusplus/cmake-build-debug/src/cplusplus/char/char" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/xieyao/work/cplusplus/cmake-build-debug/src/cplusplus/char"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DGLOG_CUSTOM_PREFIX_SUPPORT"/>
+					<Add option="-DGFLAGS_IS_A_DLL=0"/>
+					<Add option="-DBOOST_SYSTEM_NO_LIB"/>
+					<Add option="-DBOOST_SYSTEM_DYN_LINK"/>
+					<Add option="-DBOOST_FILESYSTEM_NO_LIB"/>
+					<Add option="-DBOOST_FILESYSTEM_DYN_LINK"/>
+					<Add option="-DBOOST_ATOMIC_NO_LIB"/>
+					<Add option="-DBOOST_ATOMIC_DYN_LINK"/>
+					<Add option="-DBOOST_THREAD_NO_LIB"/>
+					<Add option="-DBOOST_THREAD_DYN_LINK"/>
+					<Add option="-DBACKWARD_HAS_UNWIND=1"/>
+					<Add option="-DBACKWARD_HAS_LIBUNWIND=0"/>
+					<Add option="-DBACKWARD_HAS_BACKTRACE=0"/>
+					<Add option="-DBACKWARD_HAS_BACKTRACE_SYMBOL=1"/>
+					<Add option="-DBACKWARD_HAS_DW=0"/>
+					<Add option="-DBACKWARD_HAS_BFD=0"/>
+					<Add option="-DBACKWARD_HAS_DWARF=0"/>
+					<Add directory="/Users/xieyao/work/cplusplus/utils/include"/>
+					<Add directory="/Users/xieyao/work/cplusplus/external"/>
+					<Add directory="/Users/xieyao/work/cplusplus/external/json/include"/>
+					<Add directory="/Users/xieyao/work/cplusplus/src/cplusplus/char/include"/>
+					<Add directory="/opt/homebrew/include"/>
+					<Add directory="/usr/local/lib/backward"/>
+					<Add directory="/Users/xieyao/vcpkg/installed/arm64-osx/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/xieyao/work/cplusplus/cmake-build-debug/src/cplusplus/char/Makefile&quot;  VERBOSE=1 char"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/xieyao/work/cplusplus/cmake-build-debug/src/cplusplus/char/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/xieyao/work/cplusplus/cmake-build-debug/src/cplusplus/char/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/xieyao/work/cplusplus/cmake-build-debug/src/cplusplus/char/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="char/fast">
+				<Option output="/Users/xieyao/work/cplusplus/cmake-build-debug/src/cplusplus/char/char" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/xieyao/work/cplusplus/cmake-build-debug/src/cplusplus/char"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DGLOG_CUSTOM_PREFIX_SUPPORT"/>
+					<Add option="-DGFLAGS_IS_A_DLL=0"/>
+					<Add option="-DBOOST_SYSTEM_NO_LIB"/>
+					<Add option="-DBOOST_SYSTEM_DYN_LINK"/>
+					<Add option="-DBOOST_FILESYSTEM_NO_LIB"/>
+					<Add option="-DBOOST_FILESYSTEM_DYN_LINK"/>
+					<Add option="-DBOOST_ATOMIC_NO_LIB"/>
+					<Add option="-DBOOST_ATOMIC_DYN_LINK"/>
+					<Add option="-DBOOST_THREAD_NO_LIB"/>
+					<Add option="-DBOOST_THREAD_DYN_LINK"/>
+					<Add option="-DBACKWARD_HAS_UNWIND=1"/>
+					<Add option="-DBACKWARD_HAS_LIBUNWIND=0"/>
+					<Add option="-DBACKWARD_HAS_BACKTRACE=0"/>
+					<Add option="-DBACKWARD_HAS_BACKTRACE_SYMBOL=1"/>
+					<Add option="-DBACKWARD_HAS_DW=0"/>
+					<Add option="-DBACKWARD_HAS_BFD=0"/>
+					<Add option="-DBACKWARD_HAS_DWARF=0"/>
+					<Add directory="/Users/xieyao/work/cplusplus/utils/include"/>
+					<Add directory="/Users/xieyao/work/cplusplus/external"/>
+					<Add directory="/Users/xieyao/work/cplusplus/external/json/include"/>
+					<Add directory="/Users/xieyao/work/cplusplus/src/cplusplus/char/include"/>
+					<Add directory="/opt/homebrew/include"/>
+					<Add directory="/usr/local/lib/backward"/>
+					<Add directory="/Users/xieyao/vcpkg/installed/arm64-osx/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/xieyao/work/cplusplus/cmake-build-debug/src/cplusplus/char/Makefile&quot;  VERBOSE=1 char/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/xieyao/work/cplusplus/cmake-build-debug/src/cplusplus/char/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/xieyao/work/cplusplus/cmake-build-debug/src/cplusplus/char/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/xieyao/work/cplusplus/cmake-build-debug/src/cplusplus/char/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/char/src/main.cpp">
+			<Option target="char"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/DesignMode/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\DesignMode\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/DesignMode/CompositePattern/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\DesignMode\CompositePattern\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/DesignMode/DecoratorPattern/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\DesignMode\DecoratorPattern\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/DesignMode/Facade/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\DesignMode\Facade\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/DesignMode/FactoryPattern/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\DesignMode\FactoryPattern\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/DesignMode/ObserverPattern/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\DesignMode\ObserverPattern\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/DesignMode/ProxyPattern/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\DesignMode\ProxyPattern\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/DesignMode/StatePattern/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\DesignMode\StatePattern\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/DesignMode/StrategyPattern/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\DesignMode\StrategyPattern\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/DesignMode/VisitorPattern/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\DesignMode\VisitorPattern\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/Crc/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\Crc\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/Decorator/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\Decorator\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/EnumClass/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\EnumClass\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/Execute_before_main/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\Execute_before_main\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/FactoryMethod/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\FactoryMethod\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/Variable_parameter_template/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\Variable_parameter_template\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/addressof/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\addressof\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/align/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\align\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/any/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\any\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/assert/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\assert\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/atomic/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\atomic\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/auto/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\auto\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/boolalpha/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\boolalpha\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/char/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\char\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/chrnon/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\chrnon\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/class_ptr/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\class_ptr\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/class_template/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\class_template\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/conditional/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\conditional\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/dynamic_cast/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\dynamic_cast\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/enable_shared_from_this/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\enable_shared_from_this\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/filesystem/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\filesystem\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/fold_expression_empty_packet_processing/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\fold_expression_empty_packet_processing\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/for_each/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\for_each\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/from_chars/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\from_chars\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/fstream/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\fstream\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/getline/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\getline\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/inline/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\inline\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/invocable/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\invocable\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/mem_fn/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\mem_fn\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/new/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\new\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/optional/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\optional\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/overload/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\overload\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/proxy/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\proxy\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/quoted/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\quoted\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/ref/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\ref\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/regex/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\regex\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/stringAssign/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\stringAssign\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/strto/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\strto\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/structure/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\structure\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/structured_binding/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\structured_binding\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/thread/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\thread\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/time/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\time\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/transform/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\transform\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/udl/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\udl\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/unique_ptr/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\unique_ptr\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/vector/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\vector\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/src/cplusplus/weakPtr/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\cplusplus\weakPtr\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../vcpkg/scripts/buildsystems/vcpkg.cmake">
+			<Option virtualFolder="CMake Files\..\..\vcpkg\scripts\buildsystems\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../vcpkg/installed/arm64-osx/share/protobuf/vcpkg-cmake-wrapper.cmake">
+			<Option virtualFolder="CMake Files\..\..\vcpkg\installed\arm64-osx\share\protobuf\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../vcpkg/installed/arm64-osx/share/libevent/LibeventConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\vcpkg\installed\arm64-osx\share\libevent\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../vcpkg/installed/arm64-osx/share/libevent/LibeventConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\vcpkg\installed\arm64-osx\share\libevent\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../vcpkg/installed/arm64-osx/share/libevent/LibeventTargets-static-debug.cmake">
+			<Option virtualFolder="CMake Files\..\..\vcpkg\installed\arm64-osx\share\libevent\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../vcpkg/installed/arm64-osx/share/libevent/LibeventTargets-static-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\vcpkg\installed\arm64-osx\share\libevent\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../vcpkg/installed/arm64-osx/share/libevent/LibeventTargets-static.cmake">
+			<Option virtualFolder="CMake Files\..\..\vcpkg\installed\arm64-osx\share\libevent\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../../../opt/homebrew/lib/cmake/BoostDetectToolset-1.83.0.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../../../opt/homebrew/lib/cmake/glog/glog-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\glog\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../../../opt/homebrew/lib/cmake/glog/glog-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\glog\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../../../opt/homebrew/lib/cmake/glog/glog-modules.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\glog\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../../../opt/homebrew/lib/cmake/glog/glog-targets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\glog\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../../../opt/homebrew/lib/cmake/glog/glog-targets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\glog\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../../../opt/homebrew/lib/cmake/gflags/gflags-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\gflags\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../../../opt/homebrew/lib/cmake/gflags/gflags-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\gflags\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../../../opt/homebrew/lib/cmake/gflags/gflags-nonamespace-targets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\gflags\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../../../opt/homebrew/lib/cmake/gflags/gflags-nonamespace-targets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\gflags\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../../../opt/homebrew/lib/cmake/Boost-1.83.0/BoostConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\Boost-1.83.0\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../../../opt/homebrew/lib/cmake/Boost-1.83.0/BoostConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\Boost-1.83.0\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../../../opt/homebrew/lib/cmake/boost_headers-1.83.0/boost_headers-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\boost_headers-1.83.0\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../../../opt/homebrew/lib/cmake/boost_headers-1.83.0/boost_headers-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\boost_headers-1.83.0\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../../../opt/homebrew/lib/cmake/boost_system-1.83.0/boost_system-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\boost_system-1.83.0\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../../../opt/homebrew/lib/cmake/boost_system-1.83.0/boost_system-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\boost_system-1.83.0\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../../../opt/homebrew/lib/cmake/boost_system-1.83.0/libboost_system-variant-mt-shared.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\boost_system-1.83.0\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../../../opt/homebrew/lib/cmake/boost_system-1.83.0/libboost_system-variant-mt-static.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\boost_system-1.83.0\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../../../opt/homebrew/lib/cmake/boost_system-1.83.0/libboost_system-variant-shared.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\boost_system-1.83.0\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../../../opt/homebrew/lib/cmake/boost_system-1.83.0/libboost_system-variant-static.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\boost_system-1.83.0\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../../../opt/homebrew/lib/cmake/boost_filesystem-1.83.0/boost_filesystem-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\boost_filesystem-1.83.0\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../../../opt/homebrew/lib/cmake/boost_filesystem-1.83.0/boost_filesystem-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\boost_filesystem-1.83.0\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../../../opt/homebrew/lib/cmake/boost_filesystem-1.83.0/libboost_filesystem-variant-mt-shared.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\boost_filesystem-1.83.0\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../../../opt/homebrew/lib/cmake/boost_filesystem-1.83.0/libboost_filesystem-variant-mt-static.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\boost_filesystem-1.83.0\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../../../opt/homebrew/lib/cmake/boost_filesystem-1.83.0/libboost_filesystem-variant-shared.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\boost_filesystem-1.83.0\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../../../opt/homebrew/lib/cmake/boost_filesystem-1.83.0/libboost_filesystem-variant-static.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\boost_filesystem-1.83.0\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../../../opt/homebrew/lib/cmake/boost_atomic-1.83.0/boost_atomic-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\boost_atomic-1.83.0\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../../../opt/homebrew/lib/cmake/boost_atomic-1.83.0/boost_atomic-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\boost_atomic-1.83.0\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../../../opt/homebrew/lib/cmake/boost_atomic-1.83.0/libboost_atomic-variant-mt-shared.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\boost_atomic-1.83.0\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../../../opt/homebrew/lib/cmake/boost_atomic-1.83.0/libboost_atomic-variant-mt-static.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\boost_atomic-1.83.0\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../../../opt/homebrew/lib/cmake/boost_thread-1.83.0/boost_thread-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\boost_thread-1.83.0\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../../../opt/homebrew/lib/cmake/boost_thread-1.83.0/boost_thread-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\boost_thread-1.83.0\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../../../opt/homebrew/lib/cmake/boost_thread-1.83.0/libboost_thread-variant-mt-shared.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\boost_thread-1.83.0\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../../../opt/homebrew/lib/cmake/boost_thread-1.83.0/libboost_thread-variant-mt-static.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\boost_thread-1.83.0\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../../../opt/homebrew/lib/cmake/GTest/GTestConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\GTest\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../../../opt/homebrew/lib/cmake/GTest/GTestConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\GTest\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../../../opt/homebrew/lib/cmake/GTest/GTestTargets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\GTest\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../../../opt/homebrew/lib/cmake/GTest/GTestTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\GTest\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/../../../../usr/local/lib/backward/BackwardConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\backward\"/>
+		</Unit>
+		<Unit filename="/Users/xieyao/work/cplusplus/utils/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\utils\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

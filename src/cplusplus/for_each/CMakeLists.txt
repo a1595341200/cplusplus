@@ -4,8 +4,15 @@ set(PROJECT_N for_each)
 project(${PROJECT_N} VERSION 1.0)
 
 set(CMAKE_CXX_STANDARD 17)
+
 set(CMAKE_CXX_STANDARD_REQUIRED True)
-find_package(TBB CONFIG REQUIRED)
+if (CMAKE_HOST_WIN32)
+    find_package(TBB CONFIG REQUIRED)
+elseif (CMAKE_HOST_APPLE)
+elseif (CMAKE_HOST_UNIX)
+    find_package(TBB CONFIG REQUIRED)
+endif ()
+
 file(GLOB_RECURSE SRCS ${PROJECT_SOURCE_DIR}/src/*.cpp)
 
 # a macro that gets all of the header containing directories. 
@@ -35,4 +42,10 @@ endforeach()
 add_executable(${PROJECT_N} ${SRCS})
 
 target_include_directories(${PROJECT_N} PUBLIC include)
-target_link_libraries(${PROJECT_N} utils TBB::tbb TBB::tbbmalloc)
+
+if (CMAKE_HOST_WIN32)
+    target_link_libraries(${PROJECT_N} utils TBB::tbb TBB::tbbmalloc)
+elseif (CMAKE_HOST_APPLE)
+elseif (CMAKE_HOST_UNIX)
+    target_link_libraries(${PROJECT_N} utils TBB::tbb TBB::tbbmalloc)
+endif ()

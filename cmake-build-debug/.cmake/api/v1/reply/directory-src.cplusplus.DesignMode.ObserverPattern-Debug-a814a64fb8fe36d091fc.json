@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "src/cplusplus/DesignMode/ObserverPattern",
+		"source" : "src/cplusplus/DesignMode/ObserverPattern"
+	}
+}
