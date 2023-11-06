@@ -8,7 +8,7 @@ set(PCAPPP_MAIN_PROJECT OFF)
 if(CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
   set(PCAPPP_MAIN_PROJECT ON)
 endif()
-
+set(CMAKE_CXX_FLAGS "-fPIC")
 project(
   PcapPlusPlus
   DESCRIPTION "PcapPlusPlus is a multiplatform C++ library for capturing, parsing and crafting of network packets."
