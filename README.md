@@ -1,8 +1,8 @@
 <!--
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2023-09-12 17:51:54
- * @LastEditors: 谢瑶 
- * @LastEditTime: 2023-10-27 17:03:47
+ * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
+ * @LastEditTime: 2023-11-06 17:52:57
  * @FilePath: /cplusplus/README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -52,6 +52,7 @@
   - [1.30. std::shared\_future](#130-stdshared_future)
   - [1.31. notify\_all](#131-notify_all)
   - [1.32. libevent](#132-libevent)
+  - [1.33. PIMPL](#133-pimpl)
 
 # 1. cplusplus
 ## 1.1. 设置DEBUG与release前缀
@@ -342,4 +343,20 @@ notify_all()：会唤醒所有等待队列中阻塞的线程，存在锁争用�
  # this is heuristically generated, and may not be correct
     find_package(Libevent CONFIG REQUIRED)
     target_link_libraries(main PRIVATE libevent::core libevent::extra libevent::pthreads)
+```
+## 1.33. PIMPL
+```
+PIMPL是"Pointer to Implementation"的缩写，它是一种设计模式，常用于实现接口与具体类之间的解耦。这种模式在C++中常用，通过将实现细节封装在对象中，而只对外暴露简单的接口，达到隐藏具体实现的目的。
+PIMPL模式主要通过以下步骤实现：
+定义一个接口类，这个类包含所有需要的公共方法。这个类通常被称为"接口"。
+创建一个具体类，这个类实现了接口，并添加了额外的私有成员变量和方法。这个类通常被称为"实现"。
+创建一个PIMPL对象，这个对象包含一个指向实现类的指针。这个对象通常被称为"智能指针"。
+将PIMPL对象作为接口对象返回给用户。用户只能通过接口对象来调用公共方法，而不能直接访问实现。
+PIMPL模式的优点包括：
+隐藏具体实现细节，使得代码更安全、更易于维护。
+可以通过更换实现类来改变程序的行为，而不需要修改调用代码。
+可以实现对资源的自动管理，避免内存泄漏等问题。
+然而，PIMPL模式也有一些缺点：
+增加了代码的复杂性，需要编写额外的智能指针和接口类。
+在调试时可能存在困难，因为问题可能出现在实现类的内部而不是接口类中。
 ```
