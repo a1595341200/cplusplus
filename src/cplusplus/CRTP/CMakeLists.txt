@@ -1,21 +1,16 @@
 cmake_minimum_required(VERSION 3.10)
 
-set(PROJECT_N for_each)
+set(PROJECT_N string)
 project(${PROJECT_N} VERSION 1.0)
 
 set(CMAKE_CXX_STANDARD 17)
-
 set(CMAKE_CXX_STANDARD_REQUIRED True)
-if (CMAKE_HOST_WIN32)
-    find_package(TBB CONFIG REQUIRED)
-elseif (CMAKE_HOST_APPLE)
-elseif (CMAKE_HOST_UNIX)
-    find_package(TBB CONFIG REQUIRED)
-endif ()
-
+set(CMAKE_EXPORT_COMPILE_COMMANDS True)
+set(Boost_USE_STATIC_LIBS ON)
+set(CMAKE_CXX_FLAGS "-O0 -g3")
 file(GLOB_RECURSE SRCS ${PROJECT_SOURCE_DIR}/src/*.cpp)
-
-# a macro that gets all of the header containing directories. 
+find_package(Boost COMPONENTS  system REQUIRED)
+# a macro that gets all of the header containing directories.
 MACRO(header_directories return_list includes_base_folder extention )
     FILE(GLOB_RECURSE new_list ${includes_base_folder}/*.${extention})
     SET(dir_list "")
@@ -32,25 +27,22 @@ header_directories(INCLUDES ${PROJECT_SOURCE_DIR}/include/ hpp)
 
 message("src files:")
 foreach(file ${SRCS})
-        message(STATUS ${file})
+    message(STATUS ${file})
 endforeach()
 
 message("include directories:")
 foreach(dir ${INCLUDES})
-        message(STATUS ${dir})
+    message(STATUS ${dir})
 endforeach()
-add_executable(${PROJECT_N} ${SRCS}
-        ../PIMPL/src/PIMPL.cpp
-        ../PIMPL/include/PIMPL.h
-        ../CRTP/src/main.cpp
-        ../CRTP/include.h
-        ../CRTP/src/emptyClass.cpp)
 
-target_include_directories(${PROJECT_N} PUBLIC include)
 
-if (CMAKE_HOST_WIN32)
-    target_link_libraries(${PROJECT_N} utils TBB::tbb TBB::tbbmalloc)
-elseif (CMAKE_HOST_APPLE)
-elseif (CMAKE_HOST_UNIX)
-    target_link_libraries(${PROJECT_N} utils TBB::tbb TBB::tbbmalloc)
-endif ()
+macro(BUILD curdir)
+    file(GLOB children ${curdir}/*.cpp)
+    foreach(child ${children})
+        get_filename_component(FILENAME ${child} NAME_WE)
+        add_executable(${FILENAME} ${child})
+        target_link_libraries(${FILENAME} ${Boost_LIBRARIES} pthread utils)
+    endforeach()
+endmacro()
+
+BUILD(src)

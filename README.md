@@ -2,7 +2,7 @@
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2023-09-12 17:51:54
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-11-06 17:52:57
+ * @LastEditTime: 2023-11-07 11:49:33
  * @FilePath: /cplusplus/README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -53,6 +53,7 @@
   - [1.31. notify\_all](#131-notify_all)
   - [1.32. libevent](#132-libevent)
   - [1.33. PIMPL](#133-pimpl)
+  - [1.34. CRTP从原理到应用](#134-crtp从原理到应用)
 
 # 1. cplusplus
 ## 1.1. 设置DEBUG与release前缀
@@ -360,3 +361,6 @@ PIMPL模式的优点包括：
 增加了代码的复杂性，需要编写额外的智能指针和接口类。
 在调试时可能存在困难，因为问题可能出现在实现类的内部而不是接口类中。
 ```
+## 1.34. CRTP从原理到应用
+![Alt text](imge/v2-47a2bc259811744a610183737331ead7_1440w.awebp.png)
+https://zhuanlan.zhihu.com/p/641758930
