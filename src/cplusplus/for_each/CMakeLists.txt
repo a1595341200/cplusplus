@@ -39,12 +39,7 @@ message("include directories:")
 foreach(dir ${INCLUDES})
         message(STATUS ${dir})
 endforeach()
-add_executable(${PROJECT_N} ${SRCS}
-        ../PIMPL/src/PIMPL.cpp
-        ../PIMPL/include/PIMPL.h
-        ../CRTP/src/main.cpp
-        ../CRTP/include.h
-        ../CRTP/src/emptyClass.cpp)
+add_executable(${PROJECT_N} ${SRCS})
 
 target_include_directories(${PROJECT_N} PUBLIC include)
 

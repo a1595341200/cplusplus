@@ -2,7 +2,7 @@
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2023-09-12 17:51:54
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-11-07 11:49:33
+ * @LastEditTime: 2023-11-08 14:30:53
  * @FilePath: /cplusplus/README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -361,6 +361,35 @@ PIMPL模式的优点包括：
 增加了代码的复杂性，需要编写额外的智能指针和接口类。
 在调试时可能存在困难，因为问题可能出现在实现类的内部而不是接口类中。
 ```
+GitHub Copilot: 当使用`std::unique_ptr`来实现PIMPL（Pointer to IMPLementation）模式时，通常需要在接口类中显式定义析构函数。这是因为`std::unique_ptr`在析构时需要知道如何删除其管理的对象，也就是需要知道对象的完整类型。
+
+然而，在PIMPL模式中，实现类的定义通常在源文件中，而不是头文件中。这意味着在接口类的头文件中，实现类的完整定义可能不可见，只有前向声明。如果没有显式定义析构函数，编译器在头文件中会自动生成一个，但在这个地方，编译器并不知道如何删除`std::unique_ptr`管理的对象，因为它不知道对象的完整类型。
+
+因此，我们需要在接口类的源文件中显式定义析构函数，这样在析构函数的定义处，实现类的完整定义是可见的，编译器就知道如何删除`std::unique_ptr`管理的对象。
+
+以下是一个简单的例子：
+
+```cpp
+// interface.h
+class Implementation;  // 前向声明
+
+class Interface {
+public:
+    Interface();
+    ~Interface();  // 显式定义析构函数
+private:
+    std::unique_ptr<Implementation> pimpl;
+};
+
+// interface.cpp
+#include "interface.h"
+#include "implementation.h"  // 实现类的完整定义
+
+Interface::Interface() : pimpl(new Implementation()) {}
+
+Interface::~Interface() = default;  // 在这里，编译器知道如何删除pimpl
+```
+shared_ptr 也会遇到同样的问题
 ## 1.34. CRTP从原理到应用
 ![Alt text](imge/v2-47a2bc259811744a610183737331ead7_1440w.awebp.png)
 https://zhuanlan.zhihu.com/p/641758930
