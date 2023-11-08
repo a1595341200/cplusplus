@@ -12,7 +12,6 @@
 #include <Looper.h>
 #include <Timer.h>
 #include <Utils.h>
-#include <event.h>
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <unistd.h>
@@ -28,13 +27,13 @@ int flags = false;
 
 class M : public MessageHandler {
  public:
-  MOCK_METHOD1(handleMessage, void(const std::shared_ptr<Message> &));
+  MOCK_METHOD1(handleMessage, void(std::shared_ptr<Message>));
 };
 
 class FdHandler : public LooperCallback {
  public:
   int handleEvent(int fd, short events, void *data) override {
-    if ((events & EV_READ) == EV_READ) {
+    if (events == 0) {
       fprintf(stderr, "fifo_read called with fd: %d, event: %d, arg: %p\n", (int)fd, events, data);
       char buf[1024] = {};
       int len;
@@ -70,12 +69,13 @@ TEST(Looper, LooperTest) {
     }
   });
   for (int i = 0; i < 100; i++) {
-    l->sendMessage(handler, std::make_shared<Message>(2));
+    l->sendMessage(handler, std::make_shared<Message>(i));
   }
   l->sendMessageDelay(std::chrono::duration_cast<std::chrono::nanoseconds>(1s), handler,
                       std::make_shared<Message>(3425));
   std::shared_ptr<LooperCallback> fda = std::make_shared<FdHandler>();
-  l->addFd(fd, fda, EV_READ | EV_PERSIST);
+  l->addFd(fd, fda, Looper::READ);
+  write(fd, "hello", 5);
   sleep(2);
   l->removeFd(fd);
   unlink("testf");

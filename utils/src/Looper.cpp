@@ -3,121 +3,160 @@
 //
 #define TAG "Looper"
 #include "Looper.h"
-#include <iostream>
-#include <functional>
-#include <unistd.h>
-#include <cassert>
+
 #include <Log.h>
+#include <unistd.h>
+
+#include <cassert>
+#include <functional>
+#include <iostream>
 #include <thread>
 
-void messageCallback(int fd, short event, void *arg) {
-	SLOG(INFO) << "messageCallback";
-	auto m = static_cast<Invok *>(arg);
-	m->handler->handleMessage(m->message);
-	std::lock_guard<std::mutex> _l(m->mLooper->mLock);
-	if (m->mLooper) {
-		m->mLooper->mMessages.erase(m->index);
-	}
-}
-
 void LooperCallback(int fd, short event, void *arg) {
-	auto m = static_cast<class LooperCallback *>(arg);
-	m->handleEvent(fd, event, arg);
+  auto m = static_cast<class LooperCallback *>(arg);
+  m->handleEvent(fd, event, arg);
 }
 
 void wakeUpEv(int fd, short event, void *arg) {
-	fprintf(stderr, "wakeUpEv called with fd: %d, event: %d, arg: %p\n",
-			(int) fd, event, arg);
+  fprintf(stderr, "wakeUpEv called with fd: %d, event: %d, arg: %p\n", (int)fd, event, arg);
 }
 
 Looper::Looper() {
-//    event_enable_debug_logging(EVENT_DBG_ALL);
-	base = event_base_new();
-	auto res = pipe(fds);
-	if (-1 == res) {
-		SLOG(INFO) << "failed to create pipe";
-		::exit(-1);
-	}
-
-	event_assign(&mWakeUp, base, fds[0], EV_READ | EV_PERSIST, wakeUpEv, event_self_cbarg());
-	event_add(&mWakeUp, nullptr);
+  auto res = pipe(mWakeUpFd);
+  if (-1 == res) {
+    SLOG(INFO) << "failed to create pipe";
+    ::exit(-1);
+  }
+  FD_ZERO(&mReadfdset);
+  FD_SET(mWakeUpFd[0], &mReadfdset);
 }
 
 Looper::~Looper() {
-	for (auto &e : events) {
-		event_del(e.second);
-	}
-	event_del(&mWakeUp);
-	event_base_free(base);
-	libevent_global_shutdown();
+  SLOG(INFO) << "~Looper";
+  close(mWakeUpFd[0]);
+  close(mWakeUpFd[1]);
+  for (auto &looperCallback : mLoopCallBacks) {
+    close(looperCallback.first);
+  }
+  mLoopCallBacks.clear();
+  for (auto &msg : mMessages) {
+    msg.second.handler->handleMessage(msg.second.message);
+  }
+  mMessages.clear();
 }
 
 void Looper::pollOnce(int timeOut) {
-	Invok::mLooper = shared_from_this();
-	 SLOG(INFO) << "pollOnce";
-	struct timeval time{timeOut, 0};
-	event_base_loopexit(base, &time);
-	auto res = event_base_dispatch(base);
-	 SLOG(INFO) << "pollOnce done res = " << res;
+  SLOG(INFO) << "pollOnce";
+  struct timeval time {
+    timeOut, 0
+  };
+
+  int max = mWakeUpFd[0] + 1;
+
+  while (!mStop) {
+    static int count{0};
+    fd_set readFdset = mReadfdset;
+    auto res = select(max, &readFdset, nullptr, nullptr, &time);
+    SLOG(INFO) << "pollOnce done res = " << res;
+    std::error_code ec(errno, std::generic_category());
+    if (ec == std::errc::interrupted) {
+      SLOG(INFO) << "maybe error : " << ec.message();
+      time.tv_sec = 1;
+      continue;
+    }
+
+    if (res == -1) {
+      std::lock_guard<std::mutex> _l(mLock);
+      break;
+    }
+
+    if (res == 0) {
+      SLOG(INFO) << "time out" << std::endl;
+      break;
+    }
+
+    if (res > 0) {
+      SLOG(INFO) << "recv : " << count++ << std::endl;
+      for (int i = 0; i < max; ++i) {
+        if (FD_ISSET(i, &readFdset) != 0) {
+          if (i == mWakeUpFd[0]) {
+            // select后必须处理否则会一直置位
+            char buf[2];
+            read(i, buf, 2);
+            SLOG(INFO) << "read wakeup";
+            auto now = std::chrono::high_resolution_clock::now();
+            std::lock_guard<std::mutex> _l(mLock);
+            for (auto it = mMessages.begin(); it != mMessages.end();) {
+              if (it->first.time_since_epoch() <= now.time_since_epoch()) {
+                it->second.handler->handleMessage(it->second.message);
+                it = mMessages.erase(it);
+              } else {
+                break;
+              }
+            }
+            // SLOG(INFO) << std::chrono::duration_cast<std::chrono::microseconds>(
+            //                   mMessages.begin()->first.time_since_epoch())
+            //                   .count();
+            // SLOG(INFO) << std::chrono::duration_cast<std::chrono::microseconds>(
+            //                   now.time_since_epoch())
+            //                   .count();
+            if (!mMessages.empty()) {
+              time.tv_sec = 0;
+              time.tv_usec =
+                  std::chrono::duration_cast<std::chrono::microseconds>(
+                      mMessages.begin()->first.time_since_epoch())
+                      .count() -
+                  std::chrono::duration_cast<std::chrono::microseconds>(now.time_since_epoch())
+                      .count();
+              SLOG(INFO) << time.tv_usec << "\n";
+            } else {
+              time.tv_sec = 1;
+              time.tv_usec = 0;
+            }
+          } else {
+            SLOG(INFO) << "message from fd " << i;
+            std::lock_guard<std::mutex> _l(mLock);
+            mLoopCallBacks[i]->handleEvent(i, Looper::READ, nullptr);
+          }
+        }
+      }
+    }
+  }
 }
 
-void Looper::sendMessage(const std::shared_ptr<MessageHandler> &handler, const std::shared_ptr<Message> &message) {
-	 SLOG(INFO) << "Looper::sendMessage " << message->what;
-	sendMessageDelay(std::chrono::nanoseconds(0), handler, message);
+void Looper::sendMessage(std::shared_ptr<MessageHandler> handler,
+                         std::shared_ptr<Message> message) {
+  sendMessageDelay(std::chrono::nanoseconds(0), handler, message);
 }
 
-void Looper::sendMessageDelay(std::chrono::nanoseconds uptimeDelay, const std::shared_ptr<MessageHandler> &handler,
-							  const std::shared_ptr<Message> &message) {
-	struct timeval tv{};
-	tv.tv_sec = uptimeDelay.count() / 1000000000;
-	tv.tv_usec = 0;
-	struct event *ev = nullptr;
-	{
-		std::lock_guard<std::mutex> _l(mLock);
-		size_t l = mMessages.size();
-		mMessages.emplace(l, Invok{handler, message, l});
-		ev = event_new(base, -1, 0, messageCallback, &mMessages[l]);
-	}
-	event_add(ev, &tv);
-	 SLOG(INFO) << "event_ad  " << &ev;
+void Looper::sendMessageDelay(std::chrono::nanoseconds uptimeDelay,
+                              std::shared_ptr<MessageHandler> handler,
+                              std::shared_ptr<Message> message) {
+  auto time = std::chrono::high_resolution_clock::now() + uptimeDelay;
+  {
+    std::lock_guard<std::mutex> _l(mLock);
+    mMessages.emplace(time, Invok{handler, message});
+  }
+  write(mWakeUpFd[1], "1", sizeof("1"));
 }
 
-int Looper::addEvent(struct event *ev, const struct timeval *timeout) {
-	int res = event_add(ev, nullptr);
-	assert(res == 0);
-	return 1;
-}
-
-struct event *
-Looper::newEvent(struct event_base *base, evutil_socket_t fd, short mask, event_callback_fn func, void *arg) {
-	struct event *ev = event_new(base, fd, mask, func, arg);
-	assert(ev != nullptr);
-	return ev;
-}
-
-int Looper::addFd(int fd, std::shared_ptr<class LooperCallback> &callback, short mask) {
-	auto ev = newEvent(base, fd, mask, LooperCallback, callback.get());
-	events[fd] = ev;
-	addEvent(ev, nullptr);
-	 SLOG(INFO) << "add event";
-	return 1;
+int Looper::addFd(int fd, std::shared_ptr<class LooperCallback> callback, short mask) {
+  std::lock_guard<std::mutex> _l(mLock);
+  FD_SET(fd, &mReadfdset);
+  mLoopCallBacks.emplace(fd, callback);
+  write(mWakeUpFd[1], "1", sizeof("1"));
+  return 1;
 }
 
 int Looper::removeFd(int fd) {
-	 SLOG(INFO) << "remove";
-	delEvent(events[fd]);
-	events.erase(fd);
-	close(fd);
-	return 1;
-}
-
-void Looper::delEvent(struct event *ev) {
-	int res = event_del(ev);
-	event_free(ev);
-	assert(res == 0);
+  std::lock_guard<std::mutex> _l(mLock);
+  FD_CLR(fd, &mReadfdset);
+  mLoopCallBacks.erase(fd);
+  write(mWakeUpFd[1], "1", sizeof("1"));
+  return 1;
 }
 
 void Looper::exit() {
-	event_base_loopbreak(base);
-	write(fds[1], "1", sizeof("1"));
+  mStop.store(true);
+  write(mWakeUpFd[1], "1", sizeof("1"));
 }

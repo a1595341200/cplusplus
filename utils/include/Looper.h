@@ -5,63 +5,58 @@
 #ifndef DEV_LOOPER_H
 #define DEV_LOOPER_H
 
-#include "Message.h"
-#include <event.h>
-#include <unordered_map>
 #include <atomic>
 #include <chrono>
+#include <map>
 #include <memory>
-#include <unordered_set>
-#include <unordered_map>
 #include <mutex>
+#include <unordered_set>
+
+#include "Message.h"
 
 class Message;
 
 class MessageHandler : virtual public std::enable_shared_from_this<MessageHandler> {
-public:
-	virtual ~MessageHandler() = default;
-	virtual void handleMessage(const std::shared_ptr<Message> &message) = 0;
+ public:
+  virtual ~MessageHandler() = default;
+  virtual void handleMessage(std::shared_ptr<Message> message) = 0;
 };
 
 class LooperCallback : public std::enable_shared_from_this<class LooperCallback> {
-public:
-	virtual ~LooperCallback() = default;
-	virtual int handleEvent(int fd, short events, void *data) = 0;
+ public:
+  virtual ~LooperCallback() = default;
+  virtual int handleEvent(int fd, short events, void *data) = 0;
 };
 
 class Looper;
 
 struct Invok {
-	std::shared_ptr<MessageHandler> handler;
-	std::shared_ptr<Message> message;
-	size_t index{0};
-	inline static std::shared_ptr<Looper> mLooper{nullptr};
+  std::shared_ptr<MessageHandler> handler;
+  std::shared_ptr<Message> message;
 };
 
 class Looper : public std::enable_shared_from_this<Looper> {
-public:
-	virtual ~Looper();
+ public:
+  enum { READ, WRITE };
+  virtual ~Looper();
 
-public:
-	explicit Looper();
-	void pollOnce(int timeOut = 1);
-	void sendMessage(const std::shared_ptr<MessageHandler> &handler, const std::shared_ptr<Message> &message);
-	void sendMessageDelay(std::chrono::nanoseconds uptimeDelay, const std::shared_ptr<MessageHandler> &handler,
-						  const std::shared_ptr<Message> &message);
-	int addFd(int fd, std::shared_ptr<class LooperCallback> &callback, short mask);
-	int removeFd(int fd);
-	void exit();
-	std::unordered_map<int, Invok> mMessages;
-	std::mutex mLock;
-private:
-	int addEvent(struct event *ev, const struct timeval *timeout);
-	struct event *newEvent(struct event_base *base, evutil_socket_t fd, short mask, event_callback_fn func, void *arg);
-	void delEvent(struct event *ev);
-	struct event_base *base;
-	std::unordered_map<int, struct event *> events;
-	std::atomic_bool mStop{false};
-	int fds[2];
-	struct event mWakeUp;
+ public:
+  explicit Looper();
+  void pollOnce(int timeOut = 1);
+  void sendMessage(std::shared_ptr<MessageHandler> handler, std::shared_ptr<Message> message);
+  void sendMessageDelay(std::chrono::nanoseconds uptimeDelay,
+                        std::shared_ptr<MessageHandler> handler, std::shared_ptr<Message> message);
+  int addFd(int fd, std::shared_ptr<class LooperCallback> callback, short mask);
+  int removeFd(int fd);
+  void exit();
+  std::mutex mLock;
+
+ private:
+  std::map<std::chrono::time_point<std::chrono::high_resolution_clock>, Invok> mMessages;
+  std::map<int, std::shared_ptr<class LooperCallback>> mLoopCallBacks;
+  std::atomic_bool mStop{false};
+  int mWakeUpFd[2];
+  fd_set mReadfdset;
 };
 
-#endif // DEV_LOOPER_H
+#endif  // DEV_LOOPER_H
