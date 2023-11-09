@@ -2,7 +2,7 @@
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2023-09-12 17:51:54
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-11-08 14:30:53
+ * @LastEditTime: 2023-11-09 13:35:59
  * @FilePath: /cplusplus/README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -54,6 +54,8 @@
   - [1.32. libevent](#132-libevent)
   - [1.33. PIMPL](#133-pimpl)
   - [1.34. CRTP从原理到应用](#134-crtp从原理到应用)
+  - [1.35. 智能指针](#135-智能指针)
+    - [1.35.1. 三种内存布局](#1351-三种内存布局)
 
 # 1. cplusplus
 ## 1.1. 设置DEBUG与release前缀
@@ -393,3 +395,22 @@ shared_ptr 也会遇到同样的问题
 ## 1.34. CRTP从原理到应用
 ![Alt text](imge/v2-47a2bc259811744a610183737331ead7_1440w.awebp.png)
 https://zhuanlan.zhihu.com/p/641758930
+## 1.35. 智能指针
+https://mp.weixin.qq.com/s/_ZqUm_rqbvn7yRt-Fj7oHg
+&emsp;&emsp; 使用两个引用计数的原因是：独立的控制托管对象与控制块对象的析构。通常而言，当强引用计数归零时，释放托管对象；当弱引用归零时，释放控制块对象。但有例外，后面会说明原因。
+```
+注：shared_ptr 和 weak_ptr 可看做由托管对象指针和控制块对象组成。控制块对象包含引用计数，以及可选的 Allocator、Deleter 成员。
+```
+&emsp;&emsp;如果只使用一个引用计数，我们无法保证 weak_ptr 观察者能合法的访问共享的控制块对象，如，weak_ptr 引用了已经释放的 shared_ptr。
+### 1.35.1. 三种内存布局
+shared_ptr 有三种不同的控制块对象，分别是：sp_counted_ptr、sp_counted_deleter 和 sp_counted_ptr_inplace。三者有个共同的基类 sp_counted_base。
+sp_counted_ptr 是最基础的版本，仅包含托管对象指针和引用计数。注意，这个控制块对象是被标准库 new 出来的，可能会抛异常。如果采用以下写法构造 shared_ptr 实际调用了 new 两次。
+```c++
+std::shared_ptr<Foo> obj(new Foo()); 
+```
+&emsp;&emsp;sp_counted_ptr_inplace 是一个优化版本，它包含了托管对象、引用计数和可选的 Allocator 成员。当我们使用 std::make_shared 构造 shared_ptr 时，就会使用该版本的内存布局。它的内部有一个 aligned_buffer，用于 placement new 托管对象。因此，我们实际上是一次性把托管对象和控制块对象内存都分配出来了。相比上述的基础版本，更加高效。这也是最为推荐的使用方式。
+&emsp;&emsp;正是因为托管对象和控制块对象的内存是一个整体。当 shared_ptr 引用计数归零，但是仍然存在有 weak_ptr 弱引用时，托管对象无法被释放。必须等待弱引用计数也归零时，一同释放内存。这就是 weak_ptr 可能延迟对象析构的由来。
+```
+注：Allocator 是可选参数，作为 shared_ptr 内存分配器。标准库为了节约内存，使用了 EBO (Empty Base Optimization) 优化。利用「私有继承」，将不传 Allocator 参数的内存占用优化为 0 字节，否则空对象也将占用至少 1 字节。
+```
+&emsp;&emsp;sp_counted_deleter 是完整版。它不仅包含托管对象、引用计数，也支持传入可选的 Allocator 和可选的 Deleter 参数。这两个可选成员，标准库也使用了 EBO 来优化存储。
