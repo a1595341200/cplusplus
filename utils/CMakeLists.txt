@@ -42,6 +42,7 @@ endforeach ()
 # add_executable(${PROJECT_N} ${SRCS})
 include_directories(
         include
+        ${Boost_INCLUDE_DIRS}
 )
 
 link_libraries(

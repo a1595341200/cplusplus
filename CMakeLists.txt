@@ -20,5 +20,5 @@ include_directories(
     ${CMAKE_SOURCE_DIR}/external/json/include
 )
 add_subdirectory(utils)
-# add_subdirectory(multi-objective-fusion)
+add_subdirectory(multi-objective-fusion)
 add_subdirectory(src)
