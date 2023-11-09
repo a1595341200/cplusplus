@@ -2,7 +2,7 @@
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2023-09-12 17:51:54
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-11-09 14:44:20
+ * @LastEditTime: 2023-11-09 15:33:28
  * @FilePath: /cplusplus/README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -59,6 +59,7 @@
     - [1.35.2. 线程安全 ?](#1352-线程安全-)
     - [1.35.3. 循环引用由来，善用 ？](#1353-循环引用由来善用-)
     - [1.35.4. 探究 enable\_shared\_from\_this 原理](#1354-探究-enable_shared_from_this-原理)
+    - [1.35.5. unique\_ptr](#1355-unique_ptr)
 
 # 1. cplusplus
 ## 1.1. 设置DEBUG与release前缀
@@ -485,4 +486,22 @@ auto ptr1 = foo->GetPtr();
 // that's fine
 auto raw_ptr = foo.get();
 auto ptr2 = raw_ptr->GetPtr();
+```
+### 1.35.5. unique_ptr
+&emsp;&emsp;unique_ptr 是一种独占型智能指针，资源只能 move，不支持拷贝。在日常开发中，使用频率非常高，多数时候表示一种 RAII 资源管理设施。
+在标准库中，unique_ptr 由 std::tuple<Ptr, Deleter> 组成。对于不提供 Deleter 模版参数的，有默认的 std::default_delete<Tp> 和 std::default_delete<Tp[]> 实现。
+以下是，两种常用的代码示例，
+```c++
+// case 1: 最常用
+auto ptr = std::make_unique<Foo>();
+
+// case 2
+template <typename T>
+struct CustomDeleter {
+ void operator()(T* ptr) const {
+  delete ptr;
+ }
+};
+
+std::unique_ptr<Bar, CustomDeleter<Bar>> obj(new Bar());
 ```
