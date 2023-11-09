@@ -110,7 +110,7 @@ void Engine::stop() {
   mLooper->sendMessage(shared_from_this(), std::make_shared<Message>(ENGINE_QUIT_CMD));
 }
 
-void Engine::handleMessage(std::shared_ptr<Message> message) {
+void Engine::handleMessage(const std::shared_ptr<Message> &message) {
   SLOG(INFO) << "handleMessage " << message->what;
   if (!mQuit) {
     if (isCustomMessage(message->what)) {

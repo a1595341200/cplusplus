@@ -2,7 +2,7 @@
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2023-09-12 17:51:54
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-11-09 13:35:59
+ * @LastEditTime: 2023-11-09 14:44:20
  * @FilePath: /cplusplus/README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -56,6 +56,9 @@
   - [1.34. CRTP从原理到应用](#134-crtp从原理到应用)
   - [1.35. 智能指针](#135-智能指针)
     - [1.35.1. 三种内存布局](#1351-三种内存布局)
+    - [1.35.2. 线程安全 ?](#1352-线程安全-)
+    - [1.35.3. 循环引用由来，善用 ？](#1353-循环引用由来善用-)
+    - [1.35.4. 探究 enable\_shared\_from\_this 原理](#1354-探究-enable_shared_from_this-原理)
 
 # 1. cplusplus
 ## 1.1. 设置DEBUG与release前缀
@@ -414,3 +417,72 @@ std::shared_ptr<Foo> obj(new Foo());
 注：Allocator 是可选参数，作为 shared_ptr 内存分配器。标准库为了节约内存，使用了 EBO (Empty Base Optimization) 优化。利用「私有继承」，将不传 Allocator 参数的内存占用优化为 0 字节，否则空对象也将占用至少 1 字节。
 ```
 &emsp;&emsp;sp_counted_deleter 是完整版。它不仅包含托管对象、引用计数，也支持传入可选的 Allocator 和可选的 Deleter 参数。这两个可选成员，标准库也使用了 EBO 来优化存储。
+### 1.35.2. 线程安全 ?
+&emsp;&emsp;简单来说，多线程读同一个 shared_ptr 是线程安全的。多线程写 shared_ptr 的不同拷贝对象也是线程安全的。但是多线程写同一个 shared_ptr 会出现竞态。
+### 1.35.3. 循环引用由来，善用 ？
+&emsp;&emsp;以下是常见的循环引用例子，Foo 和 Bar 相互持有对方的 shared_ptr。这导致对象foo 和 bar 离开作用域时，强引用计数都不会为零，造成内存泄漏。破环的办法是，将环中其中一个 shared_ptr 更换为 weak_ptr 即可。
+```c++
+struct Bar;
+
+struct Foo {
+ std::shared_ptr<Bar> bar;
+};
+
+struct Bar {
+ std::shared_ptr<Foo> foo;
+};
+
+auto foo = std::make_shared<Foo>();
+auto bar = std::make_shared<Bar>();
+
+foo->bar = bar;
+bar->foo = foo;
+
+```
+互相等待对方释放资源
+&emsp;&emsp;开发过程中，循环引用可能更加隐蔽。如，在 lambda 捕获了对象的 shared_ptr，然后又作为类成员变量存储下来。对于这类隐蔽的引用计数环，通常可以借助一些内存分析工具，跑单测发现，如ASAN。
+
+```c++
+struct Foo : public std::enable_shared_from_this<Foo> {
+  void Handle() {
+   pending_read = async_read(
+    [ptr=shared_from_this()](bool finished, size_t len) mutable {
+     // do something
+    }
+   );
+  }
+
+  Promise<std::pair<bool, size_t>> pending_read;
+};
+```
+&emsp;&emsp;循环引用也不都是弊端。有时，我们就期望对象是「你中有我，我中有你」的关系，且生命周期满足「只有你在，我就在」。此时，就可以使用循环引用，释放对象时，手动把环解开。生产环境并不推荐使用循环引用，除非你明确知道自己的行为。
+### 1.35.4. 探究 enable_shared_from_this 原理
+&emsp;&emsp;std::enable_shared_from_this 我们并不陌生了。它能安全的在类中拿到 this 指针的 shared_ptr。这是如何做到的呢？
+在大图中，可以看到 enable_shared_from_this 是个类模版，内部有个空的 weak_ptr 成员。公有继承会获得它的两个成员方法 shared_from_this 和 weak_from_this。使用这两个方法时，必须保证控制块已经存在。以下是错误示例，bar 不是 shared_ptr 对象，控制块尚未构建。
+```c++
+struct Bar : public std::enable_shared_from_this<Bar> {
+ std::shared_ptr<Bar> GetPtr() {
+  return shared_from_this();
+ }
+};
+
+Bar bar;
+auto ptr = bar.GetPtr();
+```
+&emsp;&emsp;实际上，标准库内部有一个模版 __has_esft_base 来检查是否继承 enable_shared_from_this。对于继承而来的，shared_ptr 构造函数会直接设置 enable_shared_from_this 的 weak_ptr 成员，让这个空的 weak_ptr 指向已经存在的控制块，并递增弱引用计数。
+因此，enable_shared_from_this 并不是魔法。前提你得是个 shared_ptr，否则你无法使用 shared_from_this 成员函数。
+```c++
+struct Foo : public std::enable_shared_from_this<Foo> {
+ std::shared_ptr<Foo> GetPtr() {
+  return shared_from_this();
+ }
+};
+
+// that's fine
+auto foo = std::make_shared<Foo>();
+auto ptr1 = foo->GetPtr();
+
+// that's fine
+auto raw_ptr = foo.get();
+auto ptr2 = raw_ptr->GetPtr();
+```

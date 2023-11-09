@@ -1,8 +1,8 @@
 /*
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2023-10-27 17:29:23
- * @LastEditors: yao.xie 1595341200@qq.com
- * @LastEditTime: 2023-10-27 17:33:46
+ * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
+ * @LastEditTime: 2023-11-09 15:28:10
  * @FilePath: /cplusplus/utils/test/looper_tests.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置:
  * https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
@@ -27,7 +27,7 @@ int flags = false;
 
 class M : public MessageHandler {
  public:
-  MOCK_METHOD1(handleMessage, void(std::shared_ptr<Message>));
+  MOCK_METHOD1(handleMessage, void(const std::shared_ptr<Message> &));
 };
 
 class FdHandler : public LooperCallback {

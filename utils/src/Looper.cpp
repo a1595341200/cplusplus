@@ -124,14 +124,14 @@ void Looper::pollOnce(int timeOut) {
   }
 }
 
-void Looper::sendMessage(std::shared_ptr<MessageHandler> handler,
-                         std::shared_ptr<Message> message) {
+void Looper::sendMessage(const std::shared_ptr<MessageHandler> &handler,
+                         const std::shared_ptr<Message> &message) {
   sendMessageDelay(std::chrono::nanoseconds(0), handler, message);
 }
 
 void Looper::sendMessageDelay(std::chrono::nanoseconds uptimeDelay,
-                              std::shared_ptr<MessageHandler> handler,
-                              std::shared_ptr<Message> message) {
+                              const std::shared_ptr<MessageHandler> &handler,
+                              const std::shared_ptr<Message> &message) {
   auto time = std::chrono::high_resolution_clock::now() + uptimeDelay;
   {
     std::lock_guard<std::mutex> _l(mLock);

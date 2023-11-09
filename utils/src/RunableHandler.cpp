@@ -1,8 +1,8 @@
 /*
  * @Author: 谢瑶
  * @Date: 2023-10-27 16:36:54
- * @LastEditors: 谢瑶
- * @LastEditTime: 2023-10-27 16:39:32
+ * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
+ * @LastEditTime: 2023-11-09 15:05:14
  * @FilePath: /cplusplus/utils/src/RunableHandler.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置:
  * https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
@@ -22,7 +22,7 @@ RunableHandler::RunableHandler(std::function<void(const std::shared_ptr<Message>
   mLooper = std::make_shared<Looper>();
 }
 
-void RunableHandler::handleMessage(std::shared_ptr<Message> message) {
+void RunableHandler::handleMessage(const std::shared_ptr<Message>& message) {
   if (mHandler) {
     mHandler(message);
   }

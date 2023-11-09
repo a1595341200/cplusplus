@@ -119,7 +119,7 @@ class Engine : public MessageHandler {
   StateInfo *addStateIn(std::shared_ptr<IState> state, std::shared_ptr<IState> parent);
   void invokeEnterMethods(int index);
   void invokeExitMethods(StateInfo *info);
-  void handleMessage(std::shared_ptr<Message> message) override;
+  void handleMessage(const std::shared_ptr<Message> &message) override;
   void onHandleMessage(std::shared_ptr<Message> msg);
   void onHandleMessageTravel(std::shared_ptr<Message> msg);
   void onHandleTransitionDone(std::shared_ptr<IState> state);
