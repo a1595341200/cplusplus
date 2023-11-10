@@ -2,7 +2,7 @@
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2023-09-12 17:51:54
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-11-09 15:33:28
+ * @LastEditTime: 2023-11-10 17:15:38
  * @FilePath: /cplusplus/README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -60,6 +60,8 @@
     - [1.35.3. 循环引用由来，善用 ？](#1353-循环引用由来善用-)
     - [1.35.4. 探究 enable\_shared\_from\_this 原理](#1354-探究-enable_shared_from_this-原理)
     - [1.35.5. unique\_ptr](#1355-unique_ptr)
+  - [1.36. C++之单例的几种写法](#136-c之单例的几种写法)
+    - [1.36.1. 单例的几种模式](#1361-单例的几种模式)
 
 # 1. cplusplus
 ## 1.1. 设置DEBUG与release前缀
@@ -505,3 +507,257 @@ struct CustomDeleter {
 
 std::unique_ptr<Bar, CustomDeleter<Bar>> obj(new Bar());
 ```
+## 1.36. C++之单例的几种写法
+https://mp.weixin.qq.com/s/Ed1Ua1_wpP9AYTq9OR8OFg
+&emsp;&emsp;单例可以说是众多设计模式中最常用的了，同时单例设计模式也是一个老生常谈的问题，这是因为写一个单例却是很简单，但是想要写好一个单例却比较难。
+首先我们先来理一下在C++中实现单例最基本的几个步骤：
+1. 私有化构造函数、拷贝构造函数、赋值运算符等；
+2. 确保线程安全；
+3. static静态变量只初始化一次；
+### 1.36.1. 单例的几种模式
+1. 最简单的饿汉模式
+```c++
+#include <iostream>
+
+class Singleton {
+private:
+    // 声明
+    static Singleton* instance;
+    int a{0};
+    Singleton() {
+        std::cout << "Singleton 构造函数" << std::endl;
+    }
+    Singleton(const Singleton& temp) {
+        std::cout << "Singleton 拷贝构造函数" << std::endl;
+    }
+    Singleton& operator = (const Singleton& temp){
+        return *instance;
+    }
+
+public:
+    static Singleton* getInstance() {
+        return instance;
+    }
+
+    void addA(){
+        a++;
+    }
+
+    void printA(){
+        std::cout << "printA:" << a << std::endl;
+    }
+};
+
+// 类静态变量要在类内声明，类外定义
+Singleton *Singleton::instance = new Singleton;
+
+int main() {
+    Singleton* singleton = Singleton::getInstance();
+    singleton->addA();
+    singleton->printA();
+    return 0;
+}
+```
+&emsp;&emsp;这种写法常用，但是也藏了一些隐患，比如如果使用者自作聪明在通过函数getInstance获取到了单例指针，使用完毕后调用delete删除了指针那怎么办？ 请问作为"资深"的复制粘贴工程师你知道怎么避免这种情况吗？
+一把情况下我们如果不希望开发者调用delete删除指针，可以直接重载delete函数，并且将其设置伟私有方法，或者在C++11以上我们直接使用delete关键字将delete函数禁用掉。
+上面的代码例子是指针形式的单例，当然你也可以试试非指针式的单例书写，其实更推荐非指针式的单例。
+2. 加锁的懒汉模式
+```c++
+#include <iostream>
+#include <mutex>
+
+class Singleton {
+private:
+    int a{0};
+    // 声明
+    static std::mutex mtx;
+    static Singleton* instance;
+    Singleton(){
+
+    }
+    Singleton(const Singleton& temp) {
+        std::cout << "Singleton 拷贝构造函数" << std::endl;
+    }
+    Singleton& operator=(const Singleton& temp){
+        return *instance;
+    }
+public:
+    static Singleton* getInstance() {
+        // 锁、双重判断
+        if(nullptr == instance){
+            mtx.lock();
+            if (nullptr == instance) {
+                instance = new Singleton();
+            }
+            mtx.unlock();
+        }
+        return instance;
+    }
+
+    void addA(){
+        a++;
+    }
+
+    void printA(){
+        std::cout << "printA:" << a << std::endl;
+    }
+};
+
+// 需要定义
+std::mutex Singleton::mtx;
+Singleton *Singleton::instance{nullptr};
+
+int main() {
+    Singleton* singleton = Singleton::getInstance();
+    singleton->addA();
+    singleton->printA();
+    return 0;
+}
+```
+&emsp;&emsp;想用懒加载模式，同时为了保证线程安全，以上代码是很多童鞋会写出的示例代码，然而在C++上述代码却并不能一定保证正确。
+这是因为程序在执行的过程中，出于效率的考量，两个（在当前线程中）没有依赖的指令可能会调换顺序执行也就是 CPU 动态调度。对于 CPU 来说，这已经是几十年的老技术了， 这里就不多说了。
+因此以上这个锁加双重判断的懒汉模式既繁琐又不安全，并不推荐。
+3. C++11之后新特性std::call_once的模式
+&emsp;&emsp;在单例的实现中，我们实际上是希望实现「执行且只执行一次」的语义。这在 C++11 之后，标准库实际已经提供了这样的实现。 那就是std::once_flag和std::call_once。它们内部利用互斥量和条件变量组合，实现了「执行且只执行一次」这样的语义。
+下面我们看看使用std::once_flag和std::call_once实现的单例代码实例：
+```c++
+#include <iostream>
+#include <mutex>
+
+class Singleton {
+private:
+    int a{0};
+    // 声明
+    static std::once_flag flag;
+    static Singleton* instance;
+    Singleton(){
+        std::cout << "Singleton 构造函数" << std::endl;
+    }
+    Singleton(const Singleton& temp) {
+        std::cout << "Singleton 拷贝构造函数" << std::endl;
+    }
+    Singleton& operator=(const Singleton& temp){
+        return *instance;
+    }
+public:
+    static Singleton* getInstance() {
+        std::call_once(flag, [&]() -> void {
+            instance = new Singleton;
+        });
+        return instance;
+    }
+
+    void addA(){
+        a++;
+    }
+
+    void printA(){
+        std::cout << "printA:" << a << std::endl;
+    }
+};
+
+// 需要定义
+std::once_flag Singleton::flag;
+Singleton *Singleton::instance{nullptr};
+
+int main() {
+    Singleton* singleton = Singleton::getInstance();
+    singleton->addA();
+    singleton->printA();
+    Singleton::getInstance()->addA();
+    Singleton::getInstance()->printA();
+    return 0;
+}
+```
+&emsp;&emsp;需要注意的是，所有的 std::once_flag 内部共享了同一对互斥量和条件变量。因此当存在很多 std::call_once 的时候，性能会有所下降。 但是从另外一个角度想想如果一个程序中存在很多的std::call_once，那么这个程序本身就设计得很不合理，这种情况更应该从程序设计的源头上避免。
+4. 函数内static变量的模式
+&emsp;&emsp;在 C++11 之后，C++标准保证函数静态成员的初始化是线程安全的，对其读写则不保证线程安全。既然如此，那么我在直接在函数内部使用static 修饰一个单例变量不就好了么？
+精简一下代码如下：
+```c++
+#include <iostream>
+
+class Singleton {
+private:
+    int a{0};
+    Singleton(){
+        std::cout << "Singleton 构造函数" << std::endl;
+    }
+    Singleton(const Singleton& temp) {
+        std::cout << "Singleton 拷贝构造函数" << std::endl;
+    }
+    Singleton& operator=(const Singleton& temp){
+        return *this;
+    }
+public:
+    static Singleton* getInstance() {
+        static Singleton instance;
+        return &instance;
+    }
+
+    void addA(){
+        a++;
+    }
+
+    void printA(){
+        std::cout << "printA:" << a << std::endl;
+    }
+};
+
+int main() {
+    Singleton* singleton = Singleton::getInstance();
+    singleton->addA();
+    singleton->printA();
+    Singleton::getInstance()->addA();
+    Singleton::getInstance()->printA();
+    return 0;
+}
+```
+&emsp;&emsp;以上代码实现的单例即是线程安全，同时也是懒加载的，这就是在C++11之后，Effective C++最推荐的单例模式写法。
+6. 模版形式的单例
+&emsp;&emsp;实现一个类模板，其模板参数是希望由单例管理的类的名字，并提供 getInstance 之类的静态接口。这种做法的好处是希望被单例管理的类，可以自由编写，而无需继承基类；并且在需要的时候，可以随时脱去单例外衣。
+```c++
+#include <iostream>
+
+template <typename T>
+struct Singleton {
+    static T* getInstance() {
+        static T ins;
+        return &ins;
+    }
+};
+
+class A{
+private:
+    int a{0};
+    A(const A& tmp){
+        std::cout << "A拷贝构造函数" << std::endl;
+    }
+    A& operator=(const A& tmp){
+        std::cout << "A赋值运算符" << std::endl;
+        return *this;
+    }
+
+public:
+    A(){
+        std::cout << "A构造函数" << std::endl;
+    }
+    void addA(){
+        a++;
+    }
+
+    void printA(){
+        std::cout << "printA:" << a << std::endl;
+    }
+};
+
+int main() {
+    A* singleton = Singleton<A>::getInstance();
+    singleton->addA();
+    singleton->printA();
+    A* singleton1 = Singleton<A>::getInstance();
+    singleton1->addA();
+    singleton1->printA();
+    return 0;
+}
+```
+&emsp;&emsp;由上面的代码可以看出，单例管理就交给了模版Singleton去控制了，类A本身就不知乎严格控制自己是否是单例了，这种实现就比较的灵活，如果你想使用单例的类A就搭配Singleton的模版进行使用即可， 如果你想使用非单例的类A就像正常那样使用即可。
