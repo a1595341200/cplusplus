@@ -1,3 +1,4 @@
+#include <filesystem>
 #include <fstream>
 #include <iostream>
 #include <type_traits>
@@ -5,6 +6,7 @@
 #include <gtest/gtest.h>
 
 #include "printT.h"
+
 void t(int) {
   std::cout << "int" << std::endl;
 }
@@ -49,6 +51,7 @@ void test1() {
   A c{1, 2};
   A{1, 2, 3};
   std::cout << std::boolalpha << std::is_move_constructible<A>::value << std::endl;
+  std::filesystem::remove("./1.txt");
 }
 
 void test2() {
@@ -57,6 +60,7 @@ void test2() {
          "b,"
          "c \n";
   out << 1 << "," << 2 << "," << 3 << ",\n";
+  std::filesystem::remove("./1.csv");
 }
 
 template <typename T, template <class> class Con>

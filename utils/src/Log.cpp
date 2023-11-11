@@ -15,7 +15,7 @@ void Log::init(int argc, char *argv[]) {
   google::InitGoogleLogging(argv[0]);
   FLAGS_alsologtostderr = true;
   FLAGS_colorlogtostderr = true;
-  FLAGS_log_dir = "/media/psf/Home/Desktop/work/cplusplus/log";
+  FLAGS_log_dir = "/home/user/Desktop/Parallels Shared Folders/Home/work/cplusplus/log";
   // google::SetLogDestination(google::GLOG_INFO, "./INFO_");
   // google::SetLogDestination(google::GLOG_WARNING, "./WARNING_");
   // google::SetLogDestination(google::GLOG_ERROR, "./ERROR_");

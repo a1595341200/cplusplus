@@ -31,7 +31,7 @@ bool B::processMessage(std::shared_ptr<Message> msg) {
 	SLOG(INFO) << "B processMessage";
 	mE->transitionState(mE->mStateMap[E::ASTATE]);
 	using namespace std::chrono_literals;
-	std::this_thread::sleep_for(1s);
+	std::this_thread::sleep_for(1ms);
 	return true;
 }
 

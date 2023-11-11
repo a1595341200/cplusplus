@@ -19,20 +19,20 @@ using namespace std;
 
 TEST(Engine, 2) {
   using namespace chrono_literals;
-  auto handle = std::make_shared<RunableHandler>(nullptr, 1000ms);
+  auto handle = std::make_shared<RunableHandler>(nullptr, 100ms);
   std::shared_ptr<E> p(new E("test", handle->getLooer()));
   handle->run();
-  std::this_thread::sleep_for(1s);
+  std::this_thread::sleep_for(10ms);
   p->start();
-  std::this_thread::sleep_for(1s);
+  std::this_thread::sleep_for(10ms);
   SLOG(INFO) << p->curState()->toString() << std::endl;
   int i = 0;
   while (i++ < 10) {
     std::string r = p->curState()->toString();
     SLOG(INFO) << r;
     if (r == "A" || r == "B") {
-      handle->getLooer()->sendMessageDelay(1s, p, std::shared_ptr<Message>(new Message(0)));
-      std::this_thread::sleep_for(300ms);
+      handle->getLooer()->sendMessageDelay(10ms, p, std::shared_ptr<Message>(new Message(0)));
+      std::this_thread::sleep_for(30ms);
     }
   }
   handle->requestExitAndWait();

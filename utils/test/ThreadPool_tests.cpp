@@ -1,8 +1,8 @@
 /*
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2023-10-27 17:50:01
- * @LastEditors: yao.xie 1595341200@qq.com
- * @LastEditTime: 2023-10-27 17:51:04
+ * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
+ * @LastEditTime: 2023-11-11 17:54:49
  * @FilePath: /cplusplus/utils/test/ThreadPool_tests.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置:
  * https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
@@ -24,7 +24,7 @@ TEST(ThreadPoolTest, test) {
   for (int i = 0; i < 100; i++) {
     threadpool.addTask([i] { SLOG(INFO) << i << "\n"; });
   }
-  std::this_thread::sleep_for(1s);
+  std::this_thread::sleep_for(100ms);
 }
 
 TEST(ThreadPool, test1) {

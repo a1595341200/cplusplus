@@ -26,6 +26,5 @@ TEST(JsonConfig, 1) {
   SLOG(INFO) << array0;
   ASSERT_EQ(array0, 1);
   auto array = dynamic_cast<Utils::JsonConfig*>(config.get())->get("/array");
-  std::cout << array << std::endl;
   Utils::lookType(array);
 }

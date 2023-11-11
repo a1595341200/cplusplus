@@ -1,7 +1,9 @@
 /*
  * @Author: 谢瑶
  * @Date: 2023-10-27 16:36:54
- * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
+ * @LastEditors: error: error: git config user.name & please set dead value or install git && error:
+ * git config user.email & please set dead value or install git & please set dead value or install
+ * git
  * @LastEditTime: 2023-11-09 15:05:14
  * @FilePath: /cplusplus/utils/src/RunableHandler.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置:
@@ -37,7 +39,7 @@ void RunableHandler::requestExitAndWait() {
 
 bool RunableHandler::threadLoop() {
   SLOG(INFO) << "threadLoop";
-  mLooper->pollOnce(1);
+  mLooper->pollOnce(1000);
   return true;
 }
 

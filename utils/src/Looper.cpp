@@ -7,15 +7,8 @@
 #include <Log.h>
 #include <unistd.h>
 
-#include <cassert>
-#include <functional>
 #include <iostream>
 #include <thread>
-
-void LooperCallback(int fd, short event, void *arg) {
-  auto m = static_cast<class LooperCallback *>(arg);
-  m->handleEvent(fd, event, arg);
-}
 
 void wakeUpEv(int fd, short event, void *arg) {
   fprintf(stderr, "wakeUpEv called with fd: %d, event: %d, arg: %p\n", (int)fd, event, arg);
@@ -41,6 +34,7 @@ Looper::Looper() {
     std::cout << "callback " << this->mWakeUpFd[0] << "event " << (int)event << std::endl;
   };
   if (epoll_ctl(mEpollFd, EPOLL_CTL_ADD, mWakeUpFd[0], &mEvents[mWakeUpFd[0]].event) == -1) {
+    SLOG(INFO) << "failed to add wakeUpFd";
     perror("epoll_ctl");
     ::exit(-1);
   }
@@ -61,21 +55,18 @@ Looper::~Looper() {
 
 void Looper::pollOnce(int timeOut) {
   SLOG(INFO) << "pollOnce";
-  struct timeval time {
-    timeOut, 0
-  };
-
+  static int timeout{1000};
+  timeout = timeOut;
   int max = mWakeUpFd[0] + 1;
 
   while (!mStop) {
     static int count{0};
-    int res = epoll_wait(mEpollFd, events, MAX_EVENTS, 1000);
+    int res = epoll_wait(mEpollFd, events, MAX_EVENTS, timeout);
 
-    SLOG(INFO) << "pollOnce done res = " << res;
     std::error_code ec(errno, std::generic_category());
     if (ec == std::errc::interrupted) {
       SLOG(INFO) << "maybe error : " << ec.message();
-      time.tv_sec = 1;
+      timeout = 1000;
       continue;
     }
 
@@ -84,12 +75,16 @@ void Looper::pollOnce(int timeOut) {
       break;
     }
 
-    if (res == 0) {
+    if (res == 0 && mMessages.empty()) {
       SLOG(INFO) << "time out" << std::endl;
       break;
     }
 
-    if (res > 0) {
+    if (res == 0) {
+      SLOG(INFO) << "handle message";
+    }
+
+    if (res >= 0) {
       SLOG(INFO) << "recv : " << count++ << std::endl;
       for (int i = 0; i < res; i++) {
         Event *event = (Event *)events[i].data.ptr;
@@ -106,17 +101,14 @@ void Looper::pollOnce(int timeOut) {
             }
           }
           if (!mMessages.empty()) {
-            time.tv_sec = 0;
-            time.tv_usec =
-                std::chrono::duration_cast<std::chrono::microseconds>(
-                    mMessages.begin()->first.time_since_epoch())
-                    .count() -
-                std::chrono::duration_cast<std::chrono::microseconds>(now.time_since_epoch())
-                    .count();
-            SLOG(INFO) << time.tv_usec << "\n";
+            timeout = std::chrono::duration_cast<std::chrono::milliseconds>(
+                          mMessages.begin()->first.time_since_epoch())
+                          .count() -
+                      std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch())
+                          .count();
+            SLOG(INFO) << timeout << "\n";
           } else {
-            time.tv_sec = 1;
-            time.tv_usec = 0;
+            timeout = 1000;
           }
         } else {
           SLOG(INFO) << "message from fd " << event->fd;
@@ -146,6 +138,7 @@ void Looper::sendMessageDelay(std::chrono::nanoseconds uptimeDelay,
 
 int Looper::addFd(int fd, std::shared_ptr<class LooperCallback> callback, short mask) {
   std::lock_guard<std::mutex> _l(mLock);
+  SLOG(INFO) << "add fd " << fd;
   mEvents[fd] = Event();
   mEvents[fd].fd = fd;
   mEvents[fd].event.events = EPOLLIN;
@@ -153,14 +146,21 @@ int Looper::addFd(int fd, std::shared_ptr<class LooperCallback> callback, short 
   mEvents[fd].callback = [fd, callback](uint8_t event) {
     callback->handleEvent(fd, event, nullptr);
   };
+  if (epoll_ctl(mEpollFd, EPOLL_CTL_ADD, fd, &mEvents[fd].event) == -1) {
+    perror("epoll_ctl");
+    SLOG(INFO) << "failed to removeFd";
+    ::exit(-1);
+  }
   write(mWakeUpFd[1], "1", sizeof("1"));
   return 1;
 }
 
 int Looper::removeFd(int fd) {
   std::lock_guard<std::mutex> _l(mLock);
-  if (epoll_ctl(mEpollFd, EPOLL_CTL_DEL, fd, &mEvents[fd].event) == -1) {
+  SLOG(INFO) << "removeFd " << fd;
+  if (epoll_ctl(mEpollFd, EPOLL_CTL_DEL, fd, nullptr) == -1) {
     perror("epoll_ctl");
+    SLOG(INFO) << "failed to removeFd";
     ::exit(-1);
   }
   mEvents.erase(fd);
