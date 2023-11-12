@@ -2,7 +2,7 @@
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2023-09-12 17:51:54
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-11-10 17:15:38
+ * @LastEditTime: 2023-11-12 12:04:46
  * @FilePath: /cplusplus/README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -62,6 +62,16 @@
     - [1.35.5. unique\_ptr](#1355-unique_ptr)
   - [1.36. C++之单例的几种写法](#136-c之单例的几种写法)
     - [1.36.1. 单例的几种模式](#1361-单例的几种模式)
+  - [1.37. C++ 八股文 --- C/C++内存有哪几种类型](#137-c-八股文-----cc内存有哪几种类型)
+    - [1.37.1. 内存分区](#1371-内存分区)
+    - [1.37.2. C/C++ 中内存分区总结](#1372-cc-中内存分区总结)
+      - [1.37.2.1. 背景](#13721-背景)
+      - [1.37.2.2. 常量数据区](#13722-常量数据区)
+      - [1.37.2.3. 全局/静态数据区](#13723-全局静态数据区)
+      - [1.37.2.4. 栈区](#13724-栈区)
+      - [1.37.2.5. 自由存储](#13725-自由存储)
+      - [1.37.2.6. 堆区](#13726-堆区)
+      - [1.37.2.7. 代码示例](#13727-代码示例)
 
 # 1. cplusplus
 ## 1.1. 设置DEBUG与release前缀
@@ -761,3 +771,84 @@ int main() {
 }
 ```
 &emsp;&emsp;由上面的代码可以看出，单例管理就交给了模版Singleton去控制了，类A本身就不知乎严格控制自己是否是单例了，这种实现就比较的灵活，如果你想使用单例的类A就搭配Singleton的模版进行使用即可， 如果你想使用非单例的类A就像正常那样使用即可。
+## 1.37. C++ 八股文 --- C/C++内存有哪几种类型
+https://mp.weixin.qq.com/s/H0yZ3c0MEB0tMsJqIPg19Q
+### 1.37.1. 内存分区
+&emsp;&emsp;C/C++ 中内存是 C++ 面试中常考的一个知识点。在 C/C++ 中，内存的概念非常重要，因为它直接关系到程序的性能和可靠性。
+### 1.37.2. C/C++ 中内存分区总结
+#### 1.37.2.1. 背景
+&emsp;&emsp;C++ 中最基本的存储单位是字节，C++ 中所有的数据都是由对象组成的，每一个对象都包含了一个或多个内存位置。
+
+&emsp;&emsp;C++ 中有多种不同类型的内存区域，不同区域存放不同的数据，赋予数据不同的生命周期。 程序在执行时将供用户使用内存大致划分为以下区域：常量数据区、全局/静态数据区、栈区、堆区、自由存储、代码区。
+#### 1.37.2.2. 常量数据区
+* 常量数据区主要用于存储字符串常量或者其他在编译期就已经知道的数据。
+* 常量数据区中的数据在整个程序的生命周期中都有效。
+* 常量数据区中的数据在程序结束后由操作系统进行释放。
+* 常量数据区中的数据是只读的。
+#### 1.37.2.3. 全局/静态数据区
+* 全局/静态数据区主要用于存放全局变量和静态变量。
+* 在程序启动时，全局/静态数据已经分配了存储空间。
+* 全局/静态数据区中的数据在程序结束后由操作系统释放。
+* 未初始化的静态变量会被程序自动初始化为 0，静态局部变量在程序执行到该对象的声明处时被首次初始化。
+#### 1.37.2.4. 栈区
+* 栈区用于存放函数的参数，局部变量、返回值等。
+* 栈区的数据由编译器自动进行分配，在作用域内有效。
+* 在超出变量作用域后，栈中数据由编译器自动释放。
+* 栈内存分配运算内置于处理器的指令集，效率高、但是分配的内存容量有限。
+#### 1.37.2.5. 自由存储
+* 自由存储是动态内存区域，通过 new/delete 来分配和释放。
+* 分配空间时，编译器根据指定类型自动分配空间大小，并调用构造函数进行初始化。
+* 释放空间时，编译器会调用析构函数，并回收内存空间。
+* new 和 delete 必须配套使用。
+#### 1.37.2.6. 堆区
+* 堆是动态内存区域，通过 malloc/free 来分配和释放。
+* 分配空间时，需要显示指定空间大小，不会调用构造函数。
+* 释放空间时，编译器不会调用析构函数，只是释放内存空间。
+m* alloc和 free 必须配套使用。
+#### 1.37.2.7. 代码示例
+```c++
+#include "iostream"
+#include <iomanip>
+
+using namespace std;
+
+constexpr int c_a = 10;
+const int c_b = 2;
+
+int g_a = 10;
+static int s_g_b = 10;
+
+int main()
+{
+  static int s_l_c = 0;
+
+  int l_a = 2;
+  const int l_c_b = 3;
+  constexpr int l_c_c = 10;
+
+  int * p_a = new int(10);
+  void * p_b = malloc(sizeof(int));
+
+  cout << "=========常量数据区======" << endl;
+  cout <<setw(30) << left << "字符串常量 hello 地址："<< static_cast<const void*>("hello") << endl;
+  cout <<setw(30) << left << "常量表达式 c_a 地址：" << &c_a << endl;
+  cout << setw(30) << left << "全局常量 c_b 地址：" << &c_b << endl;
+  cout << "=========全局数据区======" << endl;
+  cout << setw(30) << left << "全局变量 g_a 地址：" << &g_a << endl;
+  cout << setw(30) << left << "静态全局变量 s_g_b 地址：" << &s_g_b << endl;
+  cout << setw(30) << left << "静态局部变量 s_l_c 地址：" << &s_l_c << endl;
+  cout << "=========栈区======" << endl;
+  cout << setw(30) << left << "局部变量 l_a 地址：" << &l_a << endl;
+  cout << setw(30) << left << "局部常量 l_c_b 地址：" << &l_c_b << endl;
+  cout << setw(30) << left << "局部常量表达式 l_c_c 地址：" << &l_c_c << endl;
+  cout << "=========自由存储======" << endl;
+  cout << setw(30) << left << "指针 p_a 指向地址：" << p_a << endl;
+  cout << "=========堆区======" << endl;
+  cout << setw(30) << left << "指针 p_b 指向地址：" << p_b << endl;
+  cout << "=========代码区======" << endl;
+  cout << setw(30) << left << "main 函数地址：" << main << endl;
+
+  system("pause");
+    return 0;
+}
+```
