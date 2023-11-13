@@ -2,7 +2,7 @@
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2023-09-12 17:51:54
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-11-12 12:04:46
+ * @LastEditTime: 2023-11-13 10:13:02
  * @FilePath: /cplusplus/README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -72,6 +72,7 @@
       - [1.37.2.5. 自由存储](#13725-自由存储)
       - [1.37.2.6. 堆区](#13726-堆区)
       - [1.37.2.7. 代码示例](#13727-代码示例)
+  - [1.38. placement\_new](#138-placement_new)
 
 # 1. cplusplus
 ## 1.1. 设置DEBUG与release前缀
@@ -852,3 +853,7 @@ int main()
     return 0;
 }
 ```
+## 1.38. placement_new
+&emsp;&emsp;"Placement new" 是 C++ 中的一个概念，用于在已分配的内存位置上创建对象。通常，C++ 中的 new 操作符用于动态分配内存并调用对象的构造函数，而 "placement new" 允许你在已经分配的内存上构造对象。
+
+这通常用于一些特殊情况，例如在需要手动管理内存的情况下，或者在需要在已存在的内存区域上创建对象的情况下。这可以用于创建对象的内存池、硬件寄存器映射等。
