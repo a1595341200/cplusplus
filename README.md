@@ -2,7 +2,7 @@
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2023-09-12 17:51:54
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-11-13 10:13:02
+ * @LastEditTime: 2023-11-13 10:24:19
  * @FilePath: /cplusplus/README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -73,6 +73,9 @@
       - [1.37.2.6. 堆区](#13726-堆区)
       - [1.37.2.7. 代码示例](#13727-代码示例)
   - [1.38. placement\_new](#138-placement_new)
+  - [1.39. 再也不被时间束缚：C++ std::chrono时间库全面解析](#139-再也不被时间束缚c-stdchrono时间库全面解析)
+    - [1.39.1. 基本组成部分：duration、time\_point和clock](#1391-基本组成部分durationtime_point和clock)
+    - [1.39.2. duration的使用详解](#1392-duration的使用详解)
 
 # 1. cplusplus
 ## 1.1. 设置DEBUG与release前缀
@@ -857,3 +860,29 @@ int main()
 &emsp;&emsp;"Placement new" 是 C++ 中的一个概念，用于在已分配的内存位置上创建对象。通常，C++ 中的 new 操作符用于动态分配内存并调用对象的构造函数，而 "placement new" 允许你在已经分配的内存上构造对象。
 
 这通常用于一些特殊情况，例如在需要手动管理内存的情况下，或者在需要在已存在的内存区域上创建对象的情况下。这可以用于创建对象的内存池、硬件寄存器映射等。
+## 1.39. 再也不被时间束缚：C++ std::chrono时间库全面解析
+https://mp.weixin.qq.com/s/cMyZx7t77OMthMVuSpAurg
+* 精确的时间计量：std::chrono时间库提供了高精度的时间计量单位和操作，可以精确测量和计算代码的执行时间、延时等。
+
+* 跨平台兼容性：std::chrono时间库在不同平台上都具备良好的兼容性，无论是Windows、Linux还是其他操作系统，都可以使用该库进行时间处理，使代码具备良好的可移植性。
+
+* 高度可扩展性：该库提供了丰富的时间单位和精度选项，适应不同场景下的时间计算需求。无论是秒、毫秒、微秒还是纳秒的时间单位，都可以很方便地应用于代码中。
+
+* 时钟的灵活选择：std::chrono时间库提供了不同类型的时钟，如系统时钟（system_clock）、稳定时钟（steady_clock）和高分辨率时钟（high_resolution_clock），可以根据具体需求选择合适的时钟类型。
+
+* 时间点和时间段的处理：该库提供了表示时间点（time_point）和时间段（duration）的相关类，可以对时间进行精确刻度和处理。时间点表示具体的时间，时间段表示两个时间点之间的时间差。
+* 
+### 1.39.1. 基本组成部分：duration、time_point和clock
+时间库的基本组成部分包括duration（时间段）、time_point（时间点）和clock（时钟）。它们相互配合，用于表示和处理时间的不同方面。
+
+* duration（时间段）：
+duration是时间库中表示时间段的类。它表示两个时间点之间的时间差。时间段可以用秒（seconds）、毫秒（milliseconds）、微秒（microseconds）等不同的单位来表示。duration类的模板参数包括时间单位和所需的精度。比如：`std::chrono::duration<int, std::duratio<1, 1000>>`表示毫秒级别的时间段。在使用Duration时，可以进行加减、比较和表示等操作。
+
+* time_point（时间点）：
+time_point表示一个特定的时间点，可以理解为时间的戳记。时间点和时间段之间可以进行加减运算，用于计算时间的差异或延迟。time_point类的模板参数包括所采用的时钟类型和时间单位。比如：`std::chrono::time_point<std::chrono::system_clock, std::chrono::nanoseconds>`表示系统时钟下的纳秒级时间点。可以获取当前的时间点、比较不同时间点的顺序，以及对时间点进行格式化等操作。
+
+* clock（时钟）：
+clock是时间库中的时钟类，用于提供时间的基准和计量。不同的时钟类型提供不同的时间精度和功能。常用的时钟类型有系统时钟（system_clock）、稳定时钟（steady_clock）和高精度时钟（high_resolution_clock）。系统时钟提供了与操作系统相关的时间，稳定时钟提供了稳定的、不受系统时间变化影响的时间，而高精度时钟提供了更高的时间精度。时钟类可以获取当前时间，计算时间的间隔和延迟等。
+
+这三个基本组成部分相互配合，使时间库具有了强大的时间处理能力。Duration表示时间段，Time_point表示时间点，而Clock则提供了时钟的基准。通过使用它们，可以对时间进行准确的计算、比较和操作，从而灵活地处理时间相关的任务和逻辑。
+### 1.39.2. duration的使用详解
