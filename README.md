@@ -2,7 +2,7 @@
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2023-09-12 17:51:54
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-11-13 10:24:19
+ * @LastEditTime: 2023-11-13 21:21:58
  * @FilePath: /cplusplus/README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -76,6 +76,9 @@
   - [1.39. 再也不被时间束缚：C++ std::chrono时间库全面解析](#139-再也不被时间束缚c-stdchrono时间库全面解析)
     - [1.39.1. 基本组成部分：duration、time\_point和clock](#1391-基本组成部分durationtime_point和clock)
     - [1.39.2. duration的使用详解](#1392-duration的使用详解)
+  - [1.40. static 和 const](#140-static-和-const)
+    - [1.40.1. const](#1401-const)
+  - [1.41. static](#141-static)
 
 # 1. cplusplus
 ## 1.1. 设置DEBUG与release前缀
@@ -886,3 +889,30 @@ clock是时间库中的时钟类，用于提供时间的基准和计量。不同
 
 这三个基本组成部分相互配合，使时间库具有了强大的时间处理能力。Duration表示时间段，Time_point表示时间点，而Clock则提供了时钟的基准。通过使用它们，可以对时间进行准确的计算、比较和操作，从而灵活地处理时间相关的任务和逻辑。
 ### 1.39.2. duration的使用详解
+## 1.40. static 和 const
+回答清楚是什么? 用在哪里？为什么要用？
+### 1.40.1. const
+* 基本概念
+const 允许我们指定一个语义约束, 告诉编译器某个对象不应该被更改,编译器会强制实施这一约束。如果我们认定某个值不能被改变, 那么我们就应该使用const,让编译器帮助我们来保证这个条件不被违反。
+* 应用场景
+const 可以修饰很多内容
+    * 普通对象
+可以修饰局部的全局的或者区块作用域中的普通对象。
+    * 函数
+对于函数可以修饰函数的返回值，函数的形参。
+    * 指针
+可以修饰指针本身(指针常量)，也可以修饰指针指向的对象(常量指针)。
+    * 类
+可以修饰类的成员变量，成员函数，静态成员变量，静态成员函数。
+* 举例说明
+比如我们重写一个操作符*。我们就应该把这个返回值设置为const。因为我们知道这个操作符的返回值不可以被更改，这样就可以避免一些错误的语法，比如a * b = c(可能我们只是想判断a*b == c却漏写了一个=号)。
+## 1.41. static
+C++中的static有多重用途。可以声明静态成员变量,静态成员函数,静态局部变量，静态全局变量
+* 静态成员变量
+是类的所有对象共性的成员变量,他不属于任何特定的对象 ,只属于类。静态成员变量在所有的对象只之间只有一个实例。
+* 静态成员函数
+静态成员函数是不依赖于类的任何特定对象的成员数据，他们可以在没有实例化的对象情况下使用。
+* 静态局部变量
+静态局部变量是在函数内部声明的静态变量,静态函数局部变量只会初始化一次，即使函数多次被调用。
+* 静态全局变量
+静态全局变量是全局作用域内声明的静态变量。他们的可见性仅限于定义他们的文件，意味着他们不能在其他源文件中访问，有助于封装和避免命名冲突。

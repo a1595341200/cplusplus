@@ -119,7 +119,14 @@
         "*.inc": "cpp",
         "*.expression": "cpp",
         "slist": "cpp",
-        "source_location": "cpp"
+        "source_location": "cpp",
+        "__bits": "cpp",
+        "__nullptr": "cpp",
+        "__string": "cpp",
+        "__tuple": "cpp",
+        "compare": "cpp",
+        "concepts": "cpp",
+        "ranges": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
