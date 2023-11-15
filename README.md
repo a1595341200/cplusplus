@@ -2,7 +2,7 @@
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2023-09-12 17:51:54
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-11-13 21:21:58
+ * @LastEditTime: 2023-11-15 15:53:50
  * @FilePath: /cplusplus/README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -79,6 +79,7 @@
   - [1.40. static 和 const](#140-static-和-const)
     - [1.40.1. const](#1401-const)
   - [1.41. static](#141-static)
+  - [1.42. iota](#142-iota)
 
 # 1. cplusplus
 ## 1.1. 设置DEBUG与release前缀
@@ -916,3 +917,5 @@ C++中的static有多重用途。可以声明静态成员变量,静态成员函�
 静态局部变量是在函数内部声明的静态变量,静态函数局部变量只会初始化一次，即使函数多次被调用。
 * 静态全局变量
 静态全局变量是全局作用域内声明的静态变量。他们的可见性仅限于定义他们的文件，意味着他们不能在其他源文件中访问，有助于封装和避免命名冲突。
+## 1.42. iota
+以始于 value 并重复地求值 ++value 的顺序递增值填充范围 [first, last) 。
