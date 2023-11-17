@@ -1,8 +1,8 @@
 <!--
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2023-09-12 17:51:54
- * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-11-15 16:37:48
+ * @LastEditors: yao.xie 1595341200@qq.com
+ * @LastEditTime: 2023-11-17 13:27:17
  * @FilePath: /cplusplus/README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -81,6 +81,7 @@
   - [1.41. static](#141-static)
   - [1.42. iota](#142-iota)
   - [1.43. alignas](#143-alignas)
+  - [1.44. lambda](#144-lambda)
 
 # 1. cplusplus
 ## 1.1. 设置DEBUG与release前缀
@@ -149,19 +150,19 @@ sudo cmake --build build --target install
 ## 1.4. eigen
 ### 1.4.1. 模块与头文件
 https://zhuanlan.zhihu.com/p/462494086
-|模块	|头文件	|内容|
-|---|---|---|
-|Core       | #include <Eigen/Core>       |矩阵和数组 (向量) 类 (Matrix, Array)，基于线性代数还有数组操作|
-|Geometry|	| #include <Eigen/Geometry>   |变换，平移，缩放，2D 旋转和 3D 旋转 (包括四元数和角轴)|
-|LU	        | #include <Eigen/LU>         |使用求解器进行求逆，行列式，LU 分解操作|
-|Cholesky|	| #include <Eigen/Cholesky>   |使用求解器进行 LLT, LT, Cholesky 分解|
-|Householder|	#include <Eigen/Householder>|Householder 变换；被用作几个线性代数模块|
-|SVD        |	#include <Eigen/SVD>        |SVD 分解与最小二乘求解器|
-|QR         |	#include <Eigen/QR>	        |QR 分解|
-|Eigenvalues|	#include <EIgen/Eigenvalues>|特征值，特征向量分解|
-|Sparse     |	#include <Eigen/Sparse>     |稀疏矩阵存储以及相关的基本线性代数|
-|Dense      |	#include <Eigen/Dense>	    |包括 Core, Geometry, LU, Cholesky, SVD, QR, Eigenvalues 的头文件|
-|Eigen      |	#include <Eigen/Eigen>	    |包括 Dense 和 Sparse 的头文件|
+| 模块        | 头文件                       | 内容                                                             |
+| ----------- | ---------------------------- | ---------------------------------------------------------------- |
+| Core        | #include <Eigen/Core>        | 矩阵和数组 (向量) 类 (Matrix, Array)，基于线性代数还有数组操作   |
+| Geometry    |                              | #include <Eigen/Geometry>                                        | 变换，平移，缩放，2D 旋转和 3D 旋转 (包括四元数和角轴) |
+| LU          | #include <Eigen/LU>          | 使用求解器进行求逆，行列式，LU 分解操作                          |
+| Cholesky    |                              | #include <Eigen/Cholesky>                                        | 使用求解器进行 LLT, LT, Cholesky 分解                  |
+| Householder | #include <Eigen/Householder> | Householder 变换；被用作几个线性代数模块                         |
+| SVD         | #include <Eigen/SVD>         | SVD 分解与最小二乘求解器                                         |
+| QR          | #include <Eigen/QR>          | QR 分解                                                          |
+| Eigenvalues | #include <EIgen/Eigenvalues> | 特征值，特征向量分解                                             |
+| Sparse      | #include <Eigen/Sparse>      | 稀疏矩阵存储以及相关的基本线性代数                               |
+| Dense       | #include <Eigen/Dense>       | 包括 Core, Geometry, LU, Cholesky, SVD, QR, Eigenvalues 的头文件 |
+| Eigen       | #include <Eigen/Eigen>       | 包括 Dense 和 Sparse 的头文件                                    |
 ## 1.5. vector
 不允许存取引用
 ## 1.6. ref
@@ -923,3 +924,8 @@ C++中的static有多重用途。可以声明静态成员变量,静态成员函�
 ## 1.43. alignas
 alignas( 类型标识 )  等价于 alignas(alignof(类型))
 alignof 返回类型的字节对齐数
+## 1.44. lambda
+1 . 值捕获默认const, 要修改需要加mutable, 且lambda不修改外部捕获值
+2. 捕获引用
+3. 捕获this
+4. 捕获右值
