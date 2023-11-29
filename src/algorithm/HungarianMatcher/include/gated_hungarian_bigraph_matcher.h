@@ -22,9 +22,8 @@
 #include <utility>
 #include <vector>
 
-#include "cyber/common/log.h"
-#include "modules/perception/common/graph/connected_component_analysis.h"
-#include "modules/perception/common/graph/hungarian_optimizer.h"
+#include "connected_component_analysis.h"
+#include "hungarian_optimizer.h"
 
 namespace apollo {
 namespace perception {
@@ -147,7 +146,7 @@ void GatedHungarianMatcher<T>::Match(T cost_thresh, T bound_value, OptimizeFlag 
   std::vector<std::vector<size_t>> row_components;
   std::vector<std::vector<size_t>> col_components;
   this->ComputeConnectedComponents(&row_components, &col_components);
-  CHECK_EQ(row_components.size(), col_components.size());
+  // CHECK_EQ(row_components.size(), col_components.size());
 
   /* compute assignments */
   assignments_ptr_->clear();
@@ -171,12 +170,12 @@ void GatedHungarianMatcher<T>::MatchInit() {
       {OptimizeFlag::OPTMIN, std::greater<T>()},
   };
   auto find_ret = compare_fun_map.find(opt_flag_);
-  ACHECK(find_ret != compare_fun_map.end());
+  // ACHECK(find_ret != compare_fun_map.end());
   compare_fun_ = find_ret->second;
   is_valid_cost_ = std::bind1st(compare_fun_, cost_thresh_);
 
   /* check the validity of bound_value */
-  ACHECK(!is_valid_cost_(bound_value_));
+  // ACHECK(!is_valid_cost_(bound_value_));
 }
 
 template <typename T>
