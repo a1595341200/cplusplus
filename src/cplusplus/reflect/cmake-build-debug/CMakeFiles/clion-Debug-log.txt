@@ -1,0 +1,9 @@
+/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /tmp/tmp.pXHciPYv3D/src/cplusplus/reflect -B /tmp/tmp.pXHciPYv3D/src/cplusplus/reflect/cmake-build-debug
+src files:
+-- /tmp/tmp.pXHciPYv3D/src/cplusplus/reflect/src/reflect_1.cpp
+-- /tmp/tmp.pXHciPYv3D/src/cplusplus/reflect/src/reflect_2.cpp
+-- /tmp/tmp.pXHciPYv3D/src/cplusplus/reflect/src/reflect_3.cpp
+include directories:
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /tmp/tmp.pXHciPYv3D/src/cplusplus/reflect/cmake-build-debug

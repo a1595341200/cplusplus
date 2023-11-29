@@ -1,0 +1,78 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "reflect",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "reflect_1::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-reflect_1-Debug-143746929ad79e478d6f.json",
+					"name" : "reflect_1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "reflect_2::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-reflect_2-Debug-cddd1a92a86ef24879b5.json",
+					"name" : "reflect_2",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "reflect_3::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-reflect_3-Debug-e17bea9420b281dcf630.json",
+					"name" : "reflect_3",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/tmp/tmp.pXHciPYv3D/src/cplusplus/reflect/cmake-build-debug",
+		"source" : "/tmp/tmp.pXHciPYv3D/src/cplusplus/reflect"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

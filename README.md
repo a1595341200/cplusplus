@@ -2,7 +2,7 @@
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2023-09-12 17:51:54
  * @LastEditors: yao.xie 1595341200@qq.com
- * @LastEditTime: 2023-11-17 13:27:17
+ * @LastEditTime: 2023-11-29 10:23:06
  * @FilePath: /cplusplus/README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -82,6 +82,9 @@
   - [1.42. iota](#142-iota)
   - [1.43. alignas](#143-alignas)
   - [1.44. lambda](#144-lambda)
+  - [1.45. c++高级篇——静态反射实现之一](#145-c高级篇静态反射实现之一)
+  - [1.46. 学C++中级篇——Pimple中的unique\_ptr](#146-学c中级篇pimple中的unique_ptr)
+  - [1.47. c++中级篇——再论全局和静态智能指针](#147-c中级篇再论全局和静态智能指针)
 
 # 1. cplusplus
 ## 1.1. 设置DEBUG与release前缀
@@ -929,3 +932,13 @@ alignof 返回类型的字节对齐数
 2. 捕获引用
 3. 捕获this
 4. 捕获右值
+## 1.45. c++高级篇——静态反射实现之一
+https://mp.weixin.qq.com/s/-FMNZ3gOcteJ9Gbt3fpsFg
+* 静态反射
+* 动态反射
+* 侵入式
+* 非侵入式
+## 1.46. 学C++中级篇——Pimple中的unique_ptr
+https://mp.weixin.qq.com/s?__biz=MzU0OTkzNjU2OA==&mid=2247485442&idx=1&sn=7a5caaeb75395d9c205577c4030e3a55&chksm=fba904d5ccde8dc305d786e6b12d8eadc3433b9b9e5b61d18bb8eacffe8b11d672c60181751a&scene=132&exptype=timeline_recommend_article_extendread_samebiz#wechat_redirect
+## 1.47. c++中级篇——再论全局和静态智能指针
+https://mp.weixin.qq.com/s?__biz=MzU0OTkzNjU2OA==&mid=2247485451&idx=1&sn=5f70a223e4357743af60d8e173eee745&chksm=fba904dcccde8dca233fa441bc92515cfc6a56b4f66b9c1695e2672fc894d397f58e8e77451b&scene=132&exptype=timeline_recommend_article_extendread_samebiz#wechat_redirect

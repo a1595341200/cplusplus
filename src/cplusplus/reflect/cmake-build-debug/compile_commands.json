@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/tmp/tmp.pXHciPYv3D/src/cplusplus/reflect/cmake-build-debug",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB  -g -std=gnu++17 -o CMakeFiles/reflect_1.dir/src/reflect_1.cpp.o -c /tmp/tmp.pXHciPYv3D/src/cplusplus/reflect/src/reflect_1.cpp",
+  "file": "/tmp/tmp.pXHciPYv3D/src/cplusplus/reflect/src/reflect_1.cpp"
+},
+{
+  "directory": "/tmp/tmp.pXHciPYv3D/src/cplusplus/reflect/cmake-build-debug",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB  -g -std=gnu++17 -o CMakeFiles/reflect_2.dir/src/reflect_2.cpp.o -c /tmp/tmp.pXHciPYv3D/src/cplusplus/reflect/src/reflect_2.cpp",
+  "file": "/tmp/tmp.pXHciPYv3D/src/cplusplus/reflect/src/reflect_2.cpp"
+},
+{
+  "directory": "/tmp/tmp.pXHciPYv3D/src/cplusplus/reflect/cmake-build-debug",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB  -g -std=gnu++17 -o CMakeFiles/reflect_3.dir/src/reflect_3.cpp.o -c /tmp/tmp.pXHciPYv3D/src/cplusplus/reflect/src/reflect_3.cpp",
+  "file": "/tmp/tmp.pXHciPYv3D/src/cplusplus/reflect/src/reflect_3.cpp"
+}
+]
