@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/9.dir/src/9.cpp.o  -o 9  -lpthread 

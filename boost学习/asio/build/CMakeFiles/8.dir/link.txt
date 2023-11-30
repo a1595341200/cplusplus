@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/8.dir/src/8.cpp.o  -o 8  -lpthread 

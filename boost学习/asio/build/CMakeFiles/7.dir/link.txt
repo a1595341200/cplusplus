@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/7.dir/src/7.cpp.o  -o 7  -lpthread 

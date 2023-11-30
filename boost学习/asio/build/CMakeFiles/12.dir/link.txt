@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/12.dir/src/12.cpp.o  -o 12  -lpthread 
