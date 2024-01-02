@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "src/algorithm/CoordinateTransformation",
+		"source" : "src/algorithm/CoordinateTransformation"
+	}
+}

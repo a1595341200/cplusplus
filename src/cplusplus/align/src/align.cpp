@@ -8,27 +8,28 @@
  * 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 #include <Log.h>
+
 #include <gtest/gtest.h>
 
 using namespace std;
 
 struct unAlign {
-  char a;
-  int b;
+  char a{};
+  int b{};
 };
 
 #pragma pack(push, 1)
 struct Align {
-  char a;
-  int b;
+  char a{};
+  int b{};
 };
 
 #pragma pack(pop)
 // alignas 对齐不可小于最小对齐
 struct alignas(8) AlignAs {
-  double c;
-  char a;
-  int b;
+  double c{};
+  char a{};
+  int b{};
 };
 
 TEST(Align, PragmaTest) {
@@ -36,7 +37,9 @@ TEST(Align, PragmaTest) {
   SLOG(INFO) << alignof(Align);
 }
 
-TEST(Align, alignasTest) { SLOG(INFO) << alignof(AlignAs); }
+TEST(Align, alignasTest) {
+  SLOG(INFO) << alignof(AlignAs);
+}
 
 int main(int argc, char **argv) {
   testing::InitGoogleTest(&argc, argv);

@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "src/cplusplus/dynamic_cast",
+		"source" : "src/cplusplus/dynamic_cast"
+	}
+}

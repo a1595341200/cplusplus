@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "src/cplusplus/enable_shared_from_this",
+		"source" : "src/cplusplus/enable_shared_from_this"
+	}
+}

@@ -1,0 +1,6 @@
+[submodule "submodule/matplotlib"]
+	path = submodule/matplotlib
+	url = https://github.com/lava/matplotlib-cpp.git
+[submodule "submodule/CppBenchmark"]
+	path = submodule/CppBenchmark
+	url = https://github.com/chronoxor/CppBenchmark.git

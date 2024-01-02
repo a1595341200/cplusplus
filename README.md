@@ -2,7 +2,7 @@
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2023-09-12 17:51:54
  * @LastEditors: yao.xie 1595341200@qq.com
- * @LastEditTime: 2023-11-29 10:23:06
+ * @LastEditTime: 2024-01-01 21:52:33
  * @FilePath: /cplusplus/README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -83,8 +83,22 @@
   - [1.43. alignas](#143-alignas)
   - [1.44. lambda](#144-lambda)
   - [1.45. c++高级篇——静态反射实现之一](#145-c高级篇静态反射实现之一)
-  - [1.46. 学C++中级篇——Pimple中的unique\_ptr](#146-学c中级篇pimple中的unique_ptr)
+  - [1.46. C++中级篇——Pimple中的unique\_ptr](#146-c中级篇pimple中的unique_ptr)
   - [1.47. c++中级篇——再论全局和静态智能指针](#147-c中级篇再论全局和静态智能指针)
+  - [1.48. matplotlib-cpp](#148-matplotlib-cpp)
+  - [1.49. 指定动态库路径](#149-指定动态库路径)
+  - [1.50. 高精度的 C++ 性能基准框架](#150-高精度的-c-性能基准框架)
+  - [1.51. C++模板背后的黑箱操作:编译器](#151-c模板背后的黑箱操作编译器)
+  - [1.52. 掌握C++模板的艺术:类型参数、默认值和自动推导](#152-掌握c模板的艺术类型参数默认值和自动推导)
+  - [1.53. 缓存对性能的影响](#153-缓存对性能的影响)
+  - [1.54. 缓存行大小](#154-缓存行大小)
+  - [1.55. 反向调试](#155-反向调试)
+  - [1.56. 调试系列专题(3)：GDB动态打印 - 让你随时随地printf，不需修改代码，不需重新编译](#156-调试系列专题3gdb动态打印---让你随时随地printf不需修改代码不需重新编译)
+  - [1.57. C语言：当GDB遇到复杂数据结构，两分钟带你掌握四个高效调试技巧](#157-c语言当gdb遇到复杂数据结构两分钟带你掌握四个高效调试技巧)
+  - [1.58. 调试系列专题（2）：GDB无法调试宏定义？一个小技巧帮你一秒钟搞定](#158-调试系列专题2gdb无法调试宏定义一个小技巧帮你一秒钟搞定)
+  - [1.59. 高效遍历：C++中分隔字符串单词的3种方法详解与实例](#159-高效遍历c中分隔字符串单词的3种方法详解与实例)
+  - [1.60. C++如何快速调试异常位置？](#160-c如何快速调试异常位置)
+  - [1.61. 现代C++之万能引用、完美转发、引用折叠](#161-现代c之万能引用完美转发引用折叠)
 
 # 1. cplusplus
 ## 1.1. 设置DEBUG与release前缀
@@ -116,9 +130,13 @@ $ sudo cmake -S . -B build
 $ sudo cmake --build build -j20
 $ sudo cmake --build build --target install
 ```
+
 ## 1.3. glog
+
 [教程](https://blog.csdn.net/weixin_44947987/article/details/126214261)
+
 ### 1.3.1. 构建
+
 ```sh
 # cmake [<选项>] -S <源路径> -B <构建路径>
 cmake -S . -B build -G "Unix Makefiles"
@@ -126,8 +144,11 @@ cmake -S . -B build -G "Unix Makefiles"
 cmake --build build
 # 安装
 sudo cmake --build build --target install
+
 ```
+
 ### 1.3.2. 使用
+
 ```C++
     google::InitGoogleLogging("test");//使用glog之前必须先初始化库，仅需执行一次，括号内为程序名
     FLAGS_alsologtostderr = true;     //是否将日志输出到文件和stderr
@@ -149,9 +170,13 @@ sudo cmake --build build --target install
 	google::SetLogDestination(google::GLOG_ERROR, "E:\\logs\\ERROR_");	//ERROR级别的日志都存放到logs目录下且前缀为ERROR_
 	google::SetLogDestination(google::GLOG_FATAL, "E:\\logs\\FATAL_");	//FATAL级别的日志都存放到logs目录下且前缀为FATAL_
 ```
+
 ### 1.3.3. DLOG 只在Debug模式下生效
+
 ## 1.4. eigen
+
 ### 1.4.1. 模块与头文件
+
 https://zhuanlan.zhihu.com/p/462494086
 | 模块        | 头文件                       | 内容                                                             |
 | ----------- | ---------------------------- | ---------------------------------------------------------------- |
@@ -894,51 +919,142 @@ time_point表示一个特定的时间点，可以理解为时间的戳记。时�
 clock是时间库中的时钟类，用于提供时间的基准和计量。不同的时钟类型提供不同的时间精度和功能。常用的时钟类型有系统时钟（system_clock）、稳定时钟（steady_clock）和高精度时钟（high_resolution_clock）。系统时钟提供了与操作系统相关的时间，稳定时钟提供了稳定的、不受系统时间变化影响的时间，而高精度时钟提供了更高的时间精度。时钟类可以获取当前时间，计算时间的间隔和延迟等。
 
 这三个基本组成部分相互配合，使时间库具有了强大的时间处理能力。Duration表示时间段，Time_point表示时间点，而Clock则提供了时钟的基准。通过使用它们，可以对时间进行准确的计算、比较和操作，从而灵活地处理时间相关的任务和逻辑。
+
 ### 1.39.2. duration的使用详解
+
 ## 1.40. static 和 const
+
 回答清楚是什么? 用在哪里？为什么要用？
+
 ### 1.40.1. const
-* 基本概念
+
+- 基本概念
 const 允许我们指定一个语义约束, 告诉编译器某个对象不应该被更改,编译器会强制实施这一约束。如果我们认定某个值不能被改变, 那么我们就应该使用const,让编译器帮助我们来保证这个条件不被违反。
-* 应用场景
+
+- 应用场景
 const 可以修饰很多内容
-    * 普通对象
+  - 普通对象
 可以修饰局部的全局的或者区块作用域中的普通对象。
-    * 函数
+  - 函数
 对于函数可以修饰函数的返回值，函数的形参。
-    * 指针
+  - 指针
 可以修饰指针本身(指针常量)，也可以修饰指针指向的对象(常量指针)。
-    * 类
+  - 类
 可以修饰类的成员变量，成员函数，静态成员变量，静态成员函数。
-* 举例说明
-比如我们重写一个操作符*。我们就应该把这个返回值设置为const。因为我们知道这个操作符的返回值不可以被更改，这样就可以避免一些错误的语法，比如a * b = c(可能我们只是想判断a*b == c却漏写了一个=号)。
+- 举例说明
+比如我们重写一个操作符*。我们就应该把这个返回值设置为const。因为我们知道这个操作符的返回值不可以被更改，这样就可以避免一些错误的语法，比如a*b = c(可能我们只是想判断a*b == c却漏写了一个=号)。
+
 ## 1.41. static
+
 C++中的static有多重用途。可以声明静态成员变量,静态成员函数,静态局部变量，静态全局变量
-* 静态成员变量
+
+- 静态成员变量
 是类的所有对象共性的成员变量,他不属于任何特定的对象 ,只属于类。静态成员变量在所有的对象只之间只有一个实例。
-* 静态成员函数
+- 静态成员函数
 静态成员函数是不依赖于类的任何特定对象的成员数据，他们可以在没有实例化的对象情况下使用。
-* 静态局部变量
+- 静态局部变量
 静态局部变量是在函数内部声明的静态变量,静态函数局部变量只会初始化一次，即使函数多次被调用。
-* 静态全局变量
+- 静态全局变量
 静态全局变量是全局作用域内声明的静态变量。他们的可见性仅限于定义他们的文件，意味着他们不能在其他源文件中访问，有助于封装和避免命名冲突。
+
 ## 1.42. iota
+
 以始于 value 并重复地求值 ++value 的顺序递增值填充范围 [first, last) 。
+
 ## 1.43. alignas
+
 alignas( 类型标识 )  等价于 alignas(alignof(类型))
 alignof 返回类型的字节对齐数
+
 ## 1.44. lambda
+
 1 . 值捕获默认const, 要修改需要加mutable, 且lambda不修改外部捕获值
 2. 捕获引用
 3. 捕获this
 4. 捕获右值
+
 ## 1.45. c++高级篇——静态反射实现之一
-https://mp.weixin.qq.com/s/-FMNZ3gOcteJ9Gbt3fpsFg
-* 静态反射
-* 动态反射
-* 侵入式
-* 非侵入式
-## 1.46. 学C++中级篇——Pimple中的unique_ptr
-https://mp.weixin.qq.com/s?__biz=MzU0OTkzNjU2OA==&mid=2247485442&idx=1&sn=7a5caaeb75395d9c205577c4030e3a55&chksm=fba904d5ccde8dc305d786e6b12d8eadc3433b9b9e5b61d18bb8eacffe8b11d672c60181751a&scene=132&exptype=timeline_recommend_article_extendread_samebiz#wechat_redirect
+
+[c++高级篇——静态反射实现之一](https://mp.weixin.qq.com/s/-FMNZ3gOcteJ9Gbt3fpsFg)
+
+- 静态反射
+- 动态反射
+- 侵入式
+- 非侵入式
+
+## 1.46. C++中级篇——Pimple中的unique_ptr
+
+[C++中级篇——Pimple中的unique_ptr](https://mp.weixin.qq.com/s?__biz=MzU0OTkzNjU2OA==&mid=2247485442&idx=1&sn=7a5caaeb75395d9c205577c4030e3a55&chksm=fba904d5ccde8dc305d786e6b12d8eadc3433b9b9e5b61d18bb8eacffe8b11d672c60181751a&scene=132&exptype=timeline_recommend_article_extendread_samebiz#wechat_redirect)
+
 ## 1.47. c++中级篇——再论全局和静态智能指针
-https://mp.weixin.qq.com/s?__biz=MzU0OTkzNjU2OA==&mid=2247485451&idx=1&sn=5f70a223e4357743af60d8e173eee745&chksm=fba904dcccde8dca233fa441bc92515cfc6a56b4f66b9c1695e2672fc894d397f58e8e77451b&scene=132&exptype=timeline_recommend_article_extendread_samebiz#wechat_redirect
+
+[c++中级篇——再论全局和静态智能指针](https://mp.weixin.qq.com/s?__biz=MzU0OTkzNjU2OA==&mid=2247485451&idx=1&sn=5f70a223e4357743af60d8e173eee745&chksm=fba904dcccde8dca233fa441bc92515cfc6a56b4f66b9c1695e2672fc894d397f58e8e77451b&scene=132&exptype=timeline_recommend_article_extendread_samebiz#wechat_redirect)
+
+## 1.48. matplotlib-cpp
+
+```cmake
+    find_path(MATPLOTLIB_CPP_INCLUDE_DIRS "matplotlibcpp.h")
+    target_include_directories(main PRIVATE ${MATPLOTLIB_CPP_INCLUDE_DIRS})
+```
+
+## 1.49. 指定动态库路径
+
+```sh
+export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
+```
+
+## 1.50. 高精度的 C++ 性能基准框架
+
+[一个高精度的 C++ 性能基准框架](https://mp.weixin.qq.com/s/nj7yW7dbu5nrYdCXUS3ImQ)
+
+## 1.51. C++模板背后的黑箱操作:编译器
+
+[C++模板背后的黑箱操作:编译器](https://mp.weixin.qq.com/s?__biz=Mzg2NzY2NTUyMg==&mid=2247484699&idx=1&sn=22035077291ce1960529cf58845b3200&chksm=ceb95606f9cedf108b9df3a49c67c0cdeb04eed525aafae7126c5c0bda4e77a289af3fd56304&cur_album_id=2000637744867311616&scene=189#wechat_redirect)
+
+## 1.52. 掌握C++模板的艺术:类型参数、默认值和自动推导
+
+[掌握C++模板的艺术:类型参数、默认值和自动推导](https://mp.weixin.qq.com/s?__biz=Mzg2NzY2NTUyMg==&mid=2247484729&idx=1&sn=b35d5344e30119f3e57269f2b1a2370e&chksm=ceb95624f9cedf3296c6a68aefec784357d684f74c5f07f8de58cb801ba9f90f66e07522122f&cur_album_id=2000637744867311616&scene=189#wechat_redirect)
+
+## 1.53. 缓存对性能的影响
+
+[交换两个变量位置，运行耗时从4.9秒降到了1.2秒！](https://mp.weixin.qq.com/s?__biz=MzI2NTI3NDY0OA==&mid=2247483937&idx=1&sn=85649b05fd0846342dd7db240ba81fdc&chksm=ea9e9656dde91f405d3d2019eb783acac5531273ca3470a269a128484a13e8072ade44bb98b0&cur_album_id=3167933193489154048&scene=189#wechat_redirect)
+
+[改了一行代码，数组遍历耗时从10.3秒降到了0.5秒！](https://mp.weixin.qq.com/s?__biz=MzI2NTI3NDY0OA==&mid=2247483917&idx=1&sn=f08296811648f5d24ead04c51661a793&chksm=ea9e967adde91f6c580d48d01021ae553122d0b6047e73868be6e73df85e555addb0713d202b&cur_album_id=3167933193489154048&scene=189#wechat_redirect)
+
+## 1.54. 缓存行大小
+
+```
+ache Line 是 Cache和内存之间进行数据传输的最小单位，典型的CPU Cache line大小是64个字节。CPU在第一次访问一个地址的数据时，会把这个地址相邻的64个字节的数据一起加载到Cache中，这64个字节数据就位于同一条Cache Line上。
+
+数据在Cache和内存之间传输是以Cache Line为单位的，所以，即便每个CPU各自修改的是不同的变量，但只要这些变量是在同一个Cache Line上的，那么一个CPU修改了这个Cashe Line之后，为了Cache一致性，必然会导致另外一个CPU的本地Cache中的同一个Cache Line无效，进而引发Cache Miss。
+
+运行在不同CPU的多个线程，如果频繁修改位于同一个Cache Line上的数据（即便不是同一个地址的数据），必然会导致大量Cache Miss，严重降低程序性能。
+```
+
+## 1.55. 反向调试
+
+[Linux高级调试技巧：GDB反向调试，让程序逆序执行，调试代码原来这么简单！](https://mp.weixin.qq.com/s?__biz=MzI2NTI3NDY0OA==&mid=2247483917&idx=1&sn=f08296811648f5d24ead04c51661a793&chksm=ea9e967adde91f6c580d48d01021ae553122d0b6047e73868be6e73df85e555addb0713d202b&cur_album_id=3167933193489154048&scene=189#wechat_redirect)
+
+## 1.56. 调试系列专题(3)：GDB动态打印 - 让你随时随地printf，不需修改代码，不需重新编译
+
+[调试系列专题(3)：GDB动态打印 - 让你随时随地printf，不需修改代码，不需重新编译](https://mp.weixin.qq.com/s?__biz=MzI2NTI3NDY0OA==&mid=2247483705&idx=1&sn=7edfc6238f2da232f870b2efa560c946&chksm=ea9e954edde91c581efb12ddac2fe9288f571060f00ffd9afd8ba7c66b0064bb8352145eb391&scene=21#wechat_redirect)
+
+## 1.57. C语言：当GDB遇到复杂数据结构，两分钟带你掌握四个高效调试技巧
+
+[C语言：当GDB遇到复杂数据结构，两分钟带你掌握四个高效调试技巧](https://mp.weixin.qq.com/s?__biz=MzI2NTI3NDY0OA==&mid=2247483667&idx=1&sn=0b0f6ed5441b8afd0d26747f27612acd&chksm=ea9e9564dde91c7245471172e23aeb0d82e88680deab9a698b4f29f9a03aee129844dc4758c9&scene=21#wechat_redirect)
+
+## 1.58. 调试系列专题（2）：GDB无法调试宏定义？一个小技巧帮你一秒钟搞定
+
+[调试系列专题（2）：GDB无法调试宏定义？一个小技巧帮你一秒钟搞定](https://mp.weixin.qq.com/s?__biz=MzI2NTI3NDY0OA==&mid=2247483682&idx=1&sn=4fcf75d123310b530d0d8ffce3d24f8e&chksm=ea9e9555dde91c43ba185eeea31cc5434965e66e36b2963a7c97cbcfaf1424f33d88ddcb6200&cur_album_id=1385046126541504513&scene=189#wechat_redirect)
+
+## 1.59. 高效遍历：C++中分隔字符串单词的3种方法详解与实例
+
+[高效遍历：C++中分隔字符串单词的3种方法详解与实例](https://mp.weixin.qq.com/s/2rE0iTIa3TLswMN4AM0gmQ)
+
+## 1.60. C++如何快速调试异常位置？
+
+[C++如何快速调试异常位置？](https://mp.weixin.qq.com/s/REYgdAyKAn7_AgLNfvCxIw)
+
+## 1.61. 现代C++之万能引用、完美转发、引用折叠
+
+[现代C++之万能引用、完美转发、引用折叠](https://mp.weixin.qq.com/s/wEgHR_ZcrJsb60WtHiD6ZA)

@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "src/cplusplus/circularly_ordered_array",
+		"source" : "src/cplusplus/circularly_ordered_array"
+	}
+}

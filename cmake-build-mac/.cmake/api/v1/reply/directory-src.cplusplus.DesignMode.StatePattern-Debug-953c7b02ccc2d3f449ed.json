@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "src/cplusplus/DesignMode/StatePattern",
+		"source" : "src/cplusplus/DesignMode/StatePattern"
+	}
+}

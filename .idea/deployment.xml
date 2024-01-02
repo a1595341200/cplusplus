@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="远程开发" deleteMissingItems="true" preserveFilePermissions="true" autoUploadExternalChanges="true">
+  <component name="PublishConfigData" autoUpload="Always" serverName="远程开发" deleteMissingItems="true" preserveFilePermissions="true" confirmBeforeDeletion="false" autoUploadExternalChanges="true">
+    <option name="confirmBeforeDeletion" value="false" />
     <serverData>
       <paths name="远程主机 (41f51a2e-4b98-4c0e-a274-f8feb77a59c0)">
         <serverdata>
@@ -9,6 +10,7 @@
           </mappings>
           <excludedPaths>
             <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug" />
+            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-mac" />
             <excludedPath local="true" path="$PROJECT_DIR$/src/cplusplus/reflect/cmake-build-debug" />
           </excludedPaths>
         </serverdata>
