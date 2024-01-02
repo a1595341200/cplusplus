@@ -1,0 +1,29 @@
+[submodule "submodule/CppBenchmark"]
+	path = submodule/CppBenchmark
+	url = https://github.com/chronoxor/CppBenchmark.git
+	branch = master
+[submodule "submodule/matplotlib-cpp.git"]
+	path = submodule/matplotlib-cpp.git
+	url = https://github.com/lava/matplotlib-cpp.git
+	branch = master
+[submodule "submodule/backward-cpp"]
+	path = submodule/backward-cpp
+	url = https://github.com/bombela/backward-cpp.git
+[submodule "submodule/benchmark"]
+	path = submodule/benchmark
+	url = https://github.com/google/benchmark.git
+[submodule "submodule/fast-cpp-csv-parser"]
+	path = submodule/fast-cpp-csv-parser
+	url = https://github.com/ben-strasser/fast-cpp-csv-parser.git
+[submodule "submodule/glog"]
+	path = submodule/glog
+	url = https://github.com/google/glog.git
+[submodule "submodule/nlohmann"]
+	path = submodule/nlohmann
+	url = https://github.com/nlohmann/json.git
+[submodule "submodule/vcpkg"]
+	path = submodule/vcpkg
+	url = https://github.com/microsoft/vcpkg.git
+[submodule "submodule/rest_rpc"]
+	path = submodule/rest_rpc
+	url = https://github.com/qicosmos/rest_rpc.git

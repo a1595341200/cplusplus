@@ -12,6 +12,7 @@ find_package(Protobuf REQUIRED)
 find_package(Boost REQUIRED COMPONENTS system filesystem thread)
 find_package(Backward REQUIRED)
 find_package(Libevent CONFIG REQUIRED)
+find_package(nlohmann_json CONFIG REQUIRED)
 
 file(GLOB_RECURSE SRCS ${PROJECT_SOURCE_DIR}/src/*.cpp)
 file(GLOB_RECURSE TEST_SRCS ${PROJECT_SOURCE_DIR}/test/*.cpp)
@@ -56,6 +57,7 @@ link_libraries(
         libevent::core
         libevent::extra
         libevent::pthreads
+        nlohmann_json::nlohmann_json
 )
 
 add_library(${PROJECT_N} SHARED ${SRCS} ${BACKWARD_ENABLE})

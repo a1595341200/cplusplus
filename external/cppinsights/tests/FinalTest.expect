@@ -1,9 +1,0 @@
-struct test final
-{
-  inline virtual void m() final
-  {
-  }
-  
-};
-
-
