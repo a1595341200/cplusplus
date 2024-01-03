@@ -2,7 +2,7 @@
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2023-09-12 17:51:54
  * @LastEditors: yao.xie 1595341200@qq.com
- * @LastEditTime: 2024-01-02 16:01:48
+ * @LastEditTime: 2024-01-03 13:19:18
  * @FilePath: /cplusplus/README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -101,6 +101,7 @@
   - [1.61. 现代C++之万能引用、完美转发、引用折叠](#161-现代c之万能引用完美转发引用折叠)
   - [1.62. 【C++】一处map隐藏的性能问题](#162-c一处map隐藏的性能问题)
   - [1.63. C++类循环依赖破解：前向声明与智能指针的妙用](#163-c类循环依赖破解前向声明与智能指针的妙用)
+  - [1.64. 硬核干货！perf工具简介及火焰图制作与解读](#164-硬核干货perf工具简介及火焰图制作与解读)
 
 # 1. cplusplus
 ## 1.1. 设置DEBUG与release前缀
@@ -1069,3 +1070,7 @@ ache Line 是 Cache和内存之间进行数据传输的最小单位，典型的C
 ## 1.63. C++类循环依赖破解：前向声明与智能指针的妙用 
 
 [C++类循环依赖破解：前向声明与智能指针的妙用 ](https://mp.weixin.qq.com/s/3a0Jb2-1aXF4o_8zPwre7g?st=50AC4A9169E89DF1A9B422B8966C0D9282468F2A4BA9C0DA95C2FE33B8F14BF5C2FA3DD6C9BA692DBC74F21255D09D948A82C4AB57222C851B236139E93B16A6598C43DDAC03CF5BC8E25FEE9FBC5ED3761354997A6C9650F82105CA091C2A4E9C237F84EE4099510FC318AE8458B936C581C106E26F98E4DD67A7ADC4D1513767379E0F8880D75864F21AE6C8B2FA8DCD1B03FE807AA47ADC1A1220D2204F02E3F60B8B2412B765F10FA2C3A056304488680A930158624B9B5C844AF2A9CB8F4968EFA555D363CD3EBED34F3D1847B8&vid=1688854736413465&cst=2656D3F3054BE823DDE817EA02E85D2D553C1279704036B137E428E3AD656AB7622EDE8013FB4579CED9517E03FB329C&deviceid=6c385851-bf9d-41f0-8c87-8d90e2cd46cf&version=3.1.6.3605&platform=win)
+
+## 1.64. 硬核干货！perf工具简介及火焰图制作与解读
+
+[硬核干货！perf工具简介及火焰图制作与解读](https://zhuanlan.zhihu.com/p/530622057)

@@ -27,3 +27,6 @@
 [submodule "submodule/rest_rpc"]
 	path = submodule/rest_rpc
 	url = https://github.com/qicosmos/rest_rpc.git
+[submodule "submodule/FlameGraph"]
+	path = submodule/FlameGraph
+	url = https://github.com/brendangregg/FlameGraph.git
