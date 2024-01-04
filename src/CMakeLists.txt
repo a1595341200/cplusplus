@@ -8,7 +8,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # add_subdirectory(eigenlearning)
 # add_subdirectory(backtrace)
-# add_subdirectory(opencv)
+add_subdirectory(opencv)
 # add_subdirectory(graph)
 if (CMAKE_HOST_WIN32)
 elseif (CMAKE_HOST_APPLE)

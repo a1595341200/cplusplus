@@ -2,8 +2,8 @@
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2023-09-18 16:53:33
  * @LastEditors: yao.xie 1595341200@qq.com
- * @LastEditTime: 2023-10-18 15:21:23
- * @FilePath: /cplusplus/opencv/src/main.cpp
+ * @LastEditTime: 2024-01-04 13:35:58
+ * @FilePath: /cplusplus/src/opencv/src/main.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置
  * 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -44,18 +44,53 @@ TEST(opencv, matsub) {
 }
 
 TEST(opencv, cvRound) {
-	int a = cvRound(3.6);
+  int a = cvRound(3.6);
 
-	SLOG(INFO) << a;
+  SLOG(INFO) << a;
 }
 
 TEST(opencv, rect) {
-	//x,y 左上角坐标
-	auto rect = cv::Rect(0,0,10,10);
+  // x,y 左上角坐标
+  auto rect = cv::Rect(0, 0, 10, 10);
 
-	SLOG(INFO) << rect;
-	SLOG(INFO) << rect.width;
-	SLOG(INFO) << (rect.width >> 1);
+  SLOG(INFO) << rect;
+  SLOG(INFO) << rect.width;
+  SLOG(INFO) << (rect.width >> 1);
+}
+
+TEST(opencv, video) {
+  // 创建一个VideoCapture对象
+
+  cv::VideoCapture cap(0);  // 0代表默认摄像头
+
+  if (!cap.isOpened()) {
+     SLOG(INFO) << "无法打开摄像头" << std::endl;
+     return;
+  }
+  EXPECT_TRUE(cap.isOpened());
+  cv::Mat frame;
+
+  while (true) {
+    // 从摄像头中捕获一帧
+
+    cap >> frame;
+
+    if (frame.empty()) {
+       SLOG(INFO) << "无法从摄像头获取帧" << std::endl;
+      break;
+    }
+    EXPECT_FALSE(frame.empty());
+    // 显示帧（可选）
+    cv::imshow("Camera Feed", frame);
+    // 如果按下q键，退出循环
+    if (cv::waitKey(50) == 'q') {
+      break;
+    }
+  }
+
+  // 释放VideoCapture对象
+
+  cap.release();
 }
 
 int main(int argc, char *argv[]) {
