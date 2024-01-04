@@ -2,7 +2,7 @@
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2023-11-30 11:56:22
  * @LastEditors: yao.xie 1595341200@qq.com
- * @LastEditTime: 2023-11-30 11:57:52
+ * @LastEditTime: 2024-01-04 11:44:09
  * @FilePath: /cplusplus/src/cplusplus/c_call_C++/src/MyTest.cpp
  * @Description: 
  * 
@@ -13,8 +13,8 @@
 //
 
 #include "MyTest.h"
-
 #include <iostream>
+#include <MyTest_c.h>
 
 void MyTest::print(int a, int b) {
   std::cout << a << ", " << b << std::endl;
