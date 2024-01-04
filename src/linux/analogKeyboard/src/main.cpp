@@ -2,7 +2,7 @@
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2024-01-04 15:24:58
  * @LastEditors: yao.xie 1595341200@qq.com
- * @LastEditTime: 2024-01-04 16:18:32
+ * @LastEditTime: 2024-01-04 17:04:49
  * @FilePath: /cplusplus/src/linux/analogKeyboard/src/main.cpp
  * @Description:
  *
@@ -18,12 +18,13 @@
 #include <X11/Xlib.h>
 #include <X11/extensions/XTest.h>
 #include <X11/keysym.h>
+using namespace std::chrono_literals;
 
-int main() {
+void test01() {
   Display *display = XOpenDisplay(NULL);
   if (display == NULL) {
     SLOG(INFO) << "无法打开显示器！\n";
-    return 1;
+    return;
   }
 
   Window window = DefaultRootWindow(display);
@@ -51,5 +52,33 @@ int main() {
 
   XCloseDisplay(display);
   t.join();
+}
+
+void test02() {
+  Display *display = XOpenDisplay(NULL);
+  if (display == NULL) {
+    SLOG(INFO) << "无法打开显示器！\n";
+    return;
+  }
+
+  Window window = DefaultRootWindow(display);
+  std::cout << "test02 start \n";
+  // 模拟鼠标移动到屏幕的右下角
+  std::this_thread::sleep_for(std::chrono::seconds(1));
+  XTestFakeMotionEvent(display, DefaultScreen(display), 0, 0, CurrentTime);
+  XFlush(display);
+  XTestFakeButtonEvent(display, Button1, true, CurrentTime);
+  XTestFakeButtonEvent(display, Button1, false, CurrentTime);
+
+  std::this_thread::sleep_for(1s);
+
+  XTestFakeButtonEvent(display, Button1, true, CurrentTime);
+  XTestFakeButtonEvent(display, Button1, false, CurrentTime);
+  XFlush(display);
+  XCloseDisplay(display);
+}
+
+int main() {
+  test02();
   return 0;
 }
