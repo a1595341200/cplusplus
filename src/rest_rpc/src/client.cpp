@@ -3,6 +3,7 @@
 #include <iostream>
 
 #include <rest_rpc.hpp>
+
 #include "message.h"
 
 using namespace rest_rpc;
@@ -390,25 +391,33 @@ void test_sub1() {
   client.subscribe("key1", [](string_view data) {
     msgpack_codec codec;
     person p = codec.unpack<person>(data.data(), data.size());
-    std::cout <<  "name " << p.name << "\n";
+    std::cout << "name " << p.name << "\n";
     std::cout << "score " << p.score[4] << "\n";
   });
+  client.subscribe("key2", [](string_view data) {
+    msgpack_codec codec;
+    message::image image = codec.unpack<message::image>(data.data(), data.size());
+    cv::Mat m = vectorToMat(image.buffer, {image.width, image.height});
+    cv::imshow("image", m);
+    cv::waitKey(500);
+    cv::destroyAllWindows();
+  });
 
-//   bool stop = false;
-//   std::thread thd1([&client, &stop] {
-//     while (true) {
-//       try {
-//         if (client.has_connected()) {
-//           int r = client.call<int>("add", 2, 3);
-//           std::cout << "add result: " << r << "\n";
-//         }
+  //   bool stop = false;
+  //   std::thread thd1([&client, &stop] {
+  //     while (true) {
+  //       try {
+  //         if (client.has_connected()) {
+  //           int r = client.call<int>("add", 2, 3);
+  //           std::cout << "add result: " << r << "\n";
+  //         }
 
-//         std::this_thread::sleep_for(std::chrono::milliseconds(1));
-//       } catch (const std::exception &ex) {
-//         std::cout << ex.what() << "\n";
-//       }
-//     }
-//   });
+  //         std::this_thread::sleep_for(std::chrono::milliseconds(1));
+  //       } catch (const std::exception &ex) {
+  //         std::cout << ex.what() << "\n";
+  //       }
+  //     }
+  //   });
 
   /*rpc_client client1;
   bool r1 = client1.connect("127.0.0.1", 9000);
@@ -433,8 +442,8 @@ void test_sub1() {
   });
 */
 
-//   std::string str;
-//   std::cin >> str;
+  //   std::string str;
+  //   std::cin >> str;
   client.run();
 }
 
@@ -618,19 +627,19 @@ void benchmark_test() {
 
 int main() {
   // benchmark_test();
-//   test_connect();
-//   test_callback();
-//   test_echo();
-//   test_sync_client();
-//   test_async_client();
-//   test_threads();
+  //   test_connect();
+  //   test_callback();
+  //   test_echo();
+  //   test_sync_client();
+  //   test_async_client();
+  //   test_threads();
   test_sub1();
-//   test_call_with_timeout();
-//   test_connect();
-//   test_upload();
-//   test_download();
-//   multi_client_performance(20);
-//   test_performance1();
-//   test_multiple_thread();
+  //   test_call_with_timeout();
+  //   test_connect();
+  //   test_upload();
+  //   test_download();
+  //   multi_client_performance(20);
+  //   test_performance1();
+  //   test_multiple_thread();
   return 0;
 }

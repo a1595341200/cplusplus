@@ -8,6 +8,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(CMAKE_EXPORT_COMPILE_COMMANDS True)
 set(Boost_USE_STATIC_LIBS ON)
 file(GLOB_RECURSE SRCS ${PROJECT_SOURCE_DIR}/src/*.cpp)
+find_package(OpenCV REQUIRED)
 
 include_directories(
   include
@@ -21,7 +22,12 @@ macro(BUILD curdir)
   foreach(child ${children})
   get_filename_component(FILENAME ${child} NAME_WE)
   add_executable(${FILENAME} ${child})
-  target_link_libraries(${FILENAME} ${Boost_LIBRARIES} pthread utils)
+  target_link_libraries(${FILENAME} 
+      ${Boost_LIBRARIES}
+      pthread 
+      utils 
+      ${OpenCV_LIBS}
+  )
   endforeach()
 endmacro()
 

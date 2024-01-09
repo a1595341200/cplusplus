@@ -2,7 +2,7 @@
  * @Author: yao.xie 1595341200@qq.com
  * @Date: 2024-01-09 11:08:31
  * @LastEditors: yao.xie 1595341200@qq.com
- * @LastEditTime: 2024-01-09 11:46:21
+ * @LastEditTime: 2024-01-09 13:36:29
  * @FilePath: /cplusplus/src/rest_rpc/src/server.cpp
  * @Description:
  *
@@ -171,6 +171,12 @@ int main() {
     while (!stop) {
       server.publish("key", "hello subscriber");
       server.publish("key1", p);
+      cv::Mat m = cv::imread(
+          "/home/user/cplusplus/imge/v2-47a2bc259811744a610183737331ead7_1440w.awebp.png");
+
+      std::cout << m.size() << std::endl;
+      message::image im(m.size().width, m.size().height, matToVector(m));
+      server.publish("key2", im);
       //   auto list = server.get_token_list();
       //   for (auto &token : list) {
       //     server.publish_by_token("key", token, p);
